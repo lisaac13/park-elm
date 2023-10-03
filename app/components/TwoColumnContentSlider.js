@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Flickity from "react-flickity-component";
 import styled from "styled-components";

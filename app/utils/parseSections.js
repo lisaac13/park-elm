@@ -1,8 +1,8 @@
-import Hero from "@/components/Hero";
-import Map from "@/components/Map";
-import TwoColumnTextContent from "@/components/TwoColumnTextContent";
-import TwoColumnMediaContent from "@/components/TwoColumnMediaContent";
-import TwoColumnContentSlider from "@/components/TwoColumnContentSlider";
+import Hero from "../components/Hero";
+import Map from "../components/Map";
+import TwoColumnTextContent from "../components/TwoColumnTextContent";
+import TwoColumnMediaContent from "../components/TwoColumnMediaContent";
+import TwoColumnContentSlider from "../components/TwoColumnContentSlider";
 
 export default function parseSections(sections) {
 	for (const [index, section] of sections.entries()) {
