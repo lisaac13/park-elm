@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { useRef, useState } from "react";
 import Flickity from "react-flickity-component";
 import styled from "styled-components";
 
@@ -28,6 +29,7 @@ export const TwoColumnContentSliderQueryFragment = `
 
 export default function TwoColumnContentSlider(props) {
 	const { anchor, content, title, subtitle, images } = props;
+	const slider = useRef(null);
 	return (
 		<TwoColumnContentSliderSection>
 			<InnerContainer>
