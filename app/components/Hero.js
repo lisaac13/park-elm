@@ -35,10 +35,8 @@ export const HeroQueryFragment = `
 export default function Hero(props) {
 	const { anchor, videoMp4, imagePoster, videoWebm } = props;
 
-	if (!videoMp4 && !videoWebm) return null;
-
 	return (
-		<HeroSection $bg={imagePoster.mediaItemUrl}>
+		<HeroSection>
 			<StyledVideo autoPlay muted loop playsInline>
 				{videoMp4 ? (
 					<source

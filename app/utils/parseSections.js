@@ -77,6 +77,7 @@ export default function parseSections(sections) {
 				);
 				break;
 			case "Page_Flexiblecontent_Sections_TwoColumnTextContent":
+			case "Page_Flexiblecontent_Sections_TwoColumnTitleContent":
 				gatheredSections.push(
 					<TwoColumnTextContent
 						key={componentKey}
