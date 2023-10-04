@@ -22,7 +22,17 @@
 		url(/webfonts/austin/AustinRomanItalicWeb.woff) format("woff");
 }
 
-@import url("https://use.typekit.net/lcs2pok.css");
+@font-face {
+	font-family: "PangramSansMedium";
+	src: url(/webfonts/pangram/PangramSansMedium.woff2) format("woff2"),
+		url(/webfonts/pangram/PangramSansMedium.woff) format("woff");
+}
+
+@font-face {
+	font-family: "PangramSansMediumItalic";
+	src: url(/webfonts/pangram/PangramSansMediumItalic.woff2) format("woff2"),
+		url(/webfonts/pangram/PangramSansMediumItalic.woff) format("woff");
+}
 
 :root {
 --pearl: #F7F7F5;
@@ -41,7 +51,7 @@
 --font-serif-reg-italic: "AustinRomanItalic", serif;
 --font-serif-medium: "AustinMedium", serif;
 --font-serif-med-italic: "AustinMediumItalic", serif;
---font-sans-serif: "objektiv-mk1", sans-serif;
+--font-sans-serif: "PangramSansMedium", sans-serif;
 }
 
 * {
