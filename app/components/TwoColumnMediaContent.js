@@ -74,6 +74,8 @@ export default function TwoColumnMediaContent(props) {
 						<StyledImage
 							src={imagePoster.mediaItemUrl}
 							alt={imagePoster.altText}
+							width={100}
+							height={200}
 						/>
 					) : null}
 				</MediaContainer>

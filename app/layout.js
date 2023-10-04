@@ -6,6 +6,10 @@ const Header = dynamic(() => import("@/app/components/Header"), {
 	ssr: false,
 });
 
+const Footer = dynamic(() => import("@/app/components/Footer"), {
+	ssr: false,
+});
+
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
@@ -13,6 +17,7 @@ export default function RootLayout({ children }) {
 				<body>
 					<Header />
 					<main>{children}</main>
+					<Footer />
 				</body>
 			</StyledComponentsRegistry>
 		</html>

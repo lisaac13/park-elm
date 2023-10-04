@@ -1,12 +1,43 @@
 "use client";
 import styled from "styled-components";
 
-const TwoColumnTextContentSection = styled.section``;
-const InnerContainer = styled.div``;
-const Title = styled.h2``;
-const ContentContainer = styled.div``;
-const Subtitle = styled.p``;
-const Content = styled.p``;
+const TwoColumnTextContentSection = styled.section`
+	width: 100%;
+	background: var(--pearl);
+`;
+const InnerContainer = styled.div`
+	display: flex;
+	gap: 4rem;
+	align-items: flex-start;
+	justify-content: center;
+`;
+const Title = styled.h2`
+	max-width: 465px;
+	font-family: var(--font-sans-serif);
+	font-size: var(--heading);
+	color: var(--rose);
+	
+	& span {
+		font-family: var(--font-serif-med-italic);
+	}
+`;
+const ContentContainer = styled.div`
+	max-width: 367px;
+`;
+const Subtitle = styled.p`
+	font-family: var(--font-sans-serif);
+	color: var(--rose);
+	letter-spacing: 0.1rem;
+	text-transform: uppercase;
+	font-size: var(--body);
+	line-height: 1.5;
+`;
+const Content = styled.p`
+	font-family: var(--font-sans-serif);
+	color: var(--black);
+	font-size: var(--body);
+	line-height: 1.5;
+`;
 
 export const TwoColumnTextContentSectionQueryFragment = `
     ... on Page_Flexiblecontent_Sections_TwoColumnTitleContent {
