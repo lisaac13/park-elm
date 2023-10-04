@@ -18,8 +18,9 @@ const HeaderContainer = styled.header`
 		z-index: 100;
 		width: 100%;
 		display: flex;
-		justify-content: space-between;
+		flex-wrap: wrap;
 		align-items: center;
+		padding: 0.5rem 4rem;
 	}
 
 	&.sitebranding.sticky {
@@ -28,6 +29,11 @@ const HeaderContainer = styled.header`
 `;
 
 const ImageContainer = styled.div`
+	width: 50%;
+	position: relative;
+	text-align: center;
+	margin: 0 auto;
+
 	.sitebranding.sticky & .parkElmLogo,
 	.sitebranding & .parkElmIcon {
 		display: none;
@@ -40,6 +46,9 @@ const ImageContainer = styled.div`
 
 	.sitebranding & .parkElmLogo {
 		position: relative;
+		width: 100%;
+		margin: auto;
+		text-align: center;
 		max-width: 223px;
 	}
 
@@ -50,12 +59,16 @@ const ImageContainer = styled.div`
 `;
 
 const LeftNavigation = styled.div`
+	width: 25%;
+	position: relative;
+	display: flex;
+	justify-content: flex-start;
+
 	.sitebranding & a,
 	.sitebranding & a:visited,
 	.sitebranding & a:focus {
 		color: var(--pearl);
 		text-decoration: none;
-		padding: 0 0rem 0 2rem;
 		font-family: var(--font-sans-serif);
 		letter-spacing: 0.1rem;
 	}
@@ -65,12 +78,16 @@ const LeftNavigation = styled.div`
 	}
 `;
 const RightNavigation = styled.div`
+	width: 25%;
+	position: relative;
+	display: flex;
+	justify-content: flex-end;
+
 	.sitebranding & a,
 	.sitebranding & a:visited,
 	.sitebranding & a:focus {
 		color: var(--pearl);
 		text-decoration: none;
-		padding: 0 2rem 0 0rem;
 		text-transform: uppercase;
 		font-family: var(--font-sans-serif);
 		letter-spacing: 0.1rem;
