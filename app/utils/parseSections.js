@@ -3,17 +3,36 @@ import Map from "../components/Map";
 import TwoColumnTextContent from "../components/TwoColumnTextContent";
 import TwoColumnMediaContent from "../components/TwoColumnMediaContent";
 import TwoColumnContentSlider from "../components/TwoColumnContentSlider";
+import SingleColumnSlider from "../components/SingleColumnSlider";
+import FullWidthBackgroundImage from "../components/FullWidthBackgroundImage";
+import ContentTimline from "../components/ContentTimline";
+import Forms from "../components/Forms";
 
 export default function parseSections(sections) {
+	const gatheredSections = [];
 	for (const [index, section] of sections.entries()) {
 		if (section.hideComponent == true) continue;
 
 		const componentKey = `section-${index}`;
 
 		switch (section.fieldGroupName) {
-			case "Page_Sections_Sections_Hero":
+			case "Page_Flexiblecontent_Sections_Hero":
 				gatheredSections.push(
 					<Hero key={componentKey} {...section} index={index} />
+				);
+				break;
+			case "Page_Flexiblecontent_Sections_Map":
+				gatheredSections.push(
+					<Map key={componentKey} {...section} index={index} />
+				);
+				break;
+			case "Page_Flexiblecontent_Sections_TwoColumnTextContent":
+				gatheredSections.push(
+					<TwoColumnTextContent
+						key={componentKey}
+						{...section}
+						index={index}
+					/>
 				);
 				break;
 			default:

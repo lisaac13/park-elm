@@ -4,6 +4,12 @@ const nextConfig = {
 	compiler: {
 		styledComponents: true,
 	},
+	images: {
+		domains: ["parkelmcms.wpenginepowered.com"],
+	},
+	env: {
+		API_URL: "https://parkelmcms.wpenginepowered.com/graphql",
+	},
 };
 
 module.exports = nextConfig;

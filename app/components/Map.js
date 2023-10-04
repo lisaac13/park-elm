@@ -53,7 +53,12 @@ export default function Map(props) {
 	return (
 		<MapSection $bg={backgroundImage}>
 			<InnerContainer>
-				<MapImage src={mapImage.mediaItemUrl} alt={mapImage.altText} />
+				<MapImage
+					src={mapImage.mediaItemUrl}
+					alt={mapImage.altText}
+					width={100}
+					height={100}
+				/>
 				<ContentContainer>
 					<Title>{title}</Title>
 					<Subtitle>{subtitle}</Subtitle>

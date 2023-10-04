@@ -60,6 +60,8 @@ export default function SingleColumnSlider(props) {
 									<Image
 										src={item.image.mediaItemUrl}
 										alt={item.image.altText}
+										width={200}
+										height={200}
 									/>
 								</div>
 							);
