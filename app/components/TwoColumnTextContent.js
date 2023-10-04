@@ -5,6 +5,7 @@ import parse from "html-react-parser";
 const TwoColumnTextContentSection = styled.section`
 	width: 100%;
 	background: var(--pearl);
+	padding: 6rem 0 6rem 0;
 `;
 const InnerContainer = styled.div`
 	display: flex;
@@ -17,6 +18,7 @@ const Title = styled.h2`
 	font-family: var(--font-serif-medium);
 	font-size: var(--heading);
 	color: var(--rose);
+	font-weight: 500;
 
 	& span {
 		font-family: var(--font-serif-med-italic);
@@ -28,14 +30,17 @@ const ContentContainer = styled.div`
 const Subtitle = styled.p`
 	font-family: var(--font-sans-serif);
 	color: var(--rose);
-	letter-spacing: 0.1rem;
+	letter-spacing: 0.13rem;
+	font-weight: 500;
 	text-transform: uppercase;
 	font-size: var(--body);
 	line-height: 1.5;
+	padding: 0 0 1rem 0;
 `;
 const Content = styled.p`
 	font-family: var(--font-sans-serif);
 	color: var(--black);
+	font-weight: 500;
 	font-size: var(--body);
 	line-height: 1.5;
 `;

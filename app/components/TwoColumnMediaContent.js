@@ -4,6 +4,8 @@ import Image from "next/image";
 
 const TwoColumnMediaContentSection = styled.section`
 	background: var(--rose);
+	width: 100%;
+	padding: 6rem 0 6rem 0;
 `;
 const InnerContainer = styled.div`
 	display: flex;
@@ -27,9 +29,34 @@ const ContentContainer = styled.div`
 	width: 100%;
 	max-width: 367px;
 `;
-const Title = styled.h2``;
-const Subtitle = styled.p``;
-const Content = styled.p``;
+const Title = styled.h2`
+	font-family: var(--font-serif-medium);
+	font-size: var(--heading);
+	color: var(--pearl);
+	font-weight: 500;
+	padding: 0 0 2rem 0;
+
+	& span {
+		font-family: var(--font-serif-med-italic);
+		}
+`;
+const Subtitle = styled.p`
+	font-family: var(--font-sans-serif);
+	color: var(--pearl);
+	letter-spacing: 0.13rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	font-size: var(--body);
+	line-height: 1.5;
+	padding: 0 0 1rem 0;
+`;
+const Content = styled.p`
+	font-family: var(--font-sans-serif);
+	color: var(--pearl);
+	font-weight: 500;
+	font-size: var(--body);
+	line-height: 1.5;
+`;
 
 export const TwoColumnMediaContentQueryFragment = `
     ... on Page_Flexiblecontent_Sections_TwoColumnMediaContent {
