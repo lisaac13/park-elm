@@ -29,10 +29,16 @@ const HeaderContainer = styled.header`
 `;
 
 const ImageContainer = styled.div`
-	width: 50%;
+	width: 30%;
 	position: relative;
 	text-align: center;
 	margin: 0 auto;
+
+	& a,
+	& a:visited,
+	& a:focus {
+		text-decoration: none;
+	}
 
 	.sitebranding.sticky & .parkElmLogo,
 	.sitebranding & .parkElmIcon {
@@ -59,9 +65,10 @@ const ImageContainer = styled.div`
 `;
 
 const LeftNavigation = styled.div`
-	width: 25%;
+	width: 35%;
 	position: relative;
 	display: flex;
+	align-items: center;
 	justify-content: flex-start;
 
 	.sitebranding & a,
@@ -78,9 +85,10 @@ const LeftNavigation = styled.div`
 	}
 `;
 const RightNavigation = styled.div`
-	width: 25%;
+	width: 35%;
 	position: relative;
 	display: flex;
+	align-items: center;
 	justify-content: flex-end;
 
 	.sitebranding & a,
@@ -114,6 +122,7 @@ export default function Header() {
 			</LeftNavigation>
 
 			<ImageContainer>
+				<Link href="/">
 				<Image 
 				className="parkElmLogo"
 				src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/PE_Logo_white.svg" 
@@ -127,6 +136,7 @@ export default function Header() {
 				width={24}
 				height={27}
 				alt="Park Elm at Century Plaza Palm Tree Icon" />
+				</Link>
 			</ImageContainer>
 
 			<RightNavigation>
