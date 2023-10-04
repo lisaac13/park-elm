@@ -94,11 +94,13 @@ export default function Footer() {
 			</FooterLinksTwo>
 
 			<SocialContainer>
-				<Image 
-				src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/instagram.svg"
-				alt="instagram icon"
-				width={24}
-				height={24}/>
+				<Link target="_blank" href="https://www.instagram.com/parkelmcenturyplaza/">
+					<Image 
+						src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/instagram.svg"
+						alt="instagram icon"
+						width={24}
+						height={24}/>
+				</Link>
 			</SocialContainer>
 			</InnerContainer>
 		</StyledFooter>
