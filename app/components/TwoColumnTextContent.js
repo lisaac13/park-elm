@@ -14,7 +14,7 @@ const InnerContainer = styled.div`
 `;
 const Title = styled.h2`
 	max-width: 465px;
-	font-family: var(--font-sans-serif);
+	font-family: var(--font-serif-medium);
 	font-size: var(--heading);
 	color: var(--rose);
 

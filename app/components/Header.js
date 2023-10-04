@@ -40,17 +40,17 @@ const ImageContainer = styled.div`
 		text-decoration: none;
 	}
 
-	.sitebranding.sticky & .parkElmLogo,
-	.sitebranding & .parkElmIcon {
+	.sitebranding.sticky & a .parkElmLogo,
+	.sitebranding & a .parkElmIcon {
 		display: none;
 	}
 
-	.sitebranding & .parkElmLogo,
-	.sitebranding.sticky & .parkElmIcon {
+	.sitebranding & a .parkElmLogo,
+	.sitebranding.sticky & a .parkElmIcon {
 		display: block;
 	}
 
-	.sitebranding & .parkElmLogo {
+	.sitebranding & a .parkElmLogo {
 		position: relative;
 		width: 100%;
 		margin: auto;
@@ -58,8 +58,11 @@ const ImageContainer = styled.div`
 		max-width: 223px;
 	}
 
-	.sitebranding.sticky & .parkElmIcon {
+	.sitebranding.sticky & a .parkElmIcon {
 		position: relative;
+		width: 100%;
+		text-align: center;
+		margin: auto;
 		max-width: 24px;
 	}
 `;
@@ -134,7 +137,7 @@ export default function Header() {
 
 				<Image 
 				className="parkElmIcon"
-				src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/PE_Logo_white.svg" 
+				src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/PE_Icon_GLD.svg" 
 				width={24}
 				height={27}
 				alt="Park Elm at Century Plaza Palm Tree Icon" />

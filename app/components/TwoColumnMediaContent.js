@@ -2,12 +2,31 @@
 import styled from "styled-components";
 import Image from "next/image";
 
-const TwoColumnMediaContentSection = styled.section``;
-const InnerContainer = styled.div``;
-const MediaContainer = styled.div``;
-const StyledImage = styled(Image)``;
+const TwoColumnMediaContentSection = styled.section`
+	background: var(--rose);
+`;
+const InnerContainer = styled.div`
+	display: flex;
+	gap: 4rem;
+	align-items: center;
+	justify-content: center;
+`;
 
-const ContentContainer = styled.div``;
+const MediaContainer = styled.div`
+	width: 100%;
+	max-width: 560px;
+	position: relative;
+`;
+const StyledImage = styled(Image)`
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+`;
+
+const ContentContainer = styled.div`
+	width: 100%;
+	max-width: 367px;
+`;
 const Title = styled.h2``;
 const Subtitle = styled.p``;
 const Content = styled.p``;
