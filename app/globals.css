@@ -36,6 +36,7 @@
 --subheading: clamp(0.9rem, 0.9vw, 1.8rem);
 --body: clamp(0.8125rem, 0.8125vw, 1.6rem);
 --quote: clamp(1.695rem, 1.695vw, 2.9rem);
+--address: clamp(1.25rem, 1.25vw, 1.5rem);
 --font-serif-regular: "AustinRoman", serif;
 --font-serif-reg-italic: "AustinRomanItalic", serif;
 --font-serif-medium: "AustinMedium", serif;
