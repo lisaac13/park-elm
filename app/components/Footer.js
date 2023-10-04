@@ -61,6 +61,8 @@ const FooterLinksTwo = styled.ul`
 	}
 `;
 
+const SocialContainer = styled.div``;
+
 export default function Footer() {
 	return (
 		<StyledFooter>
@@ -88,7 +90,7 @@ export default function Footer() {
 				<li>Accessibility</li>
 				<li>Disclaimer</li>
 			</FooterLinksTwo>
-			
+
 			<SocialContainer>
 				<Image 
 				src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/instagram.svg"
