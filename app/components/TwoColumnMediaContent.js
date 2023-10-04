@@ -16,7 +16,6 @@ export const TwoColumnMediaContentQueryFragment = `
           anchor
           content
           fieldGroupName
-          headline
           hideComponent
           subtitle
           title
