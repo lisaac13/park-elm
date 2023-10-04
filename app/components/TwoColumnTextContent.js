@@ -1,5 +1,6 @@
 "use client";
 import styled from "styled-components";
+import parse from "html-react-parser";
 
 const TwoColumnTextContentSection = styled.section`
 	width: 100%;
@@ -16,7 +17,7 @@ const Title = styled.h2`
 	font-family: var(--font-sans-serif);
 	font-size: var(--heading);
 	color: var(--rose);
-	
+
 	& span {
 		font-family: var(--font-serif-med-italic);
 	}
@@ -56,7 +57,7 @@ export default function TwoColumnTextContent(props) {
 		<TwoColumnTextContentSection>
 			{anchor && <a id={anchor}></a>}
 			<InnerContainer>
-				<Title>{title}</Title>
+				<Title>{parse(title)}</Title>
 				<ContentContainer>
 					<Subtitle>{subtitle}</Subtitle>
 					<Content>{content}</Content>
