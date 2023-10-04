@@ -76,6 +76,7 @@ const LeftNavigation = styled.div`
 	.sitebranding & a:focus {
 		color: var(--pearl);
 		text-decoration: none;
+		font-weight: 400;
 		font-family: var(--font-sans-serif);
 		letter-spacing: 0.1rem;
 	}
@@ -97,6 +98,7 @@ const RightNavigation = styled.div`
 		color: var(--pearl);
 		text-decoration: none;
 		text-transform: uppercase;
+		font-weight: 400;
 		font-family: var(--font-sans-serif);
 		letter-spacing: 0.1rem;
 	}

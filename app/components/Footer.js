@@ -43,6 +43,7 @@ const FooterLinks = styled.ul`
 		font-family: var(--font-sans-serif);
 		font-size: var(--cta);
 		color: var(--pearl);
+		font-weight: 400;
 		text-transform: uppercase;
 		letter-spacing: 0.1rem;
 	}
@@ -55,6 +56,7 @@ const FooterLinksTwo = styled.ul`
 		font-family: var(--font-sans-serif);
 		font-size: var(--cta);
 		color: var(--pearl);
+		font-weight: 400;
 		text-transform: uppercase;
 		letter-spacing: 0.1rem;
 		opacity: 0.7;
