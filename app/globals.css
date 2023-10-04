@@ -22,6 +22,8 @@
 		url(/webfonts/austin/AustinRomanItalicWeb.woff) format("woff");
 }
 
+@import url("https://use.typekit.net/lcs2pok.css");
+
 :root {
 --pearl: #F7F7F5;
 --black: #000000;
@@ -38,6 +40,7 @@
 --font-serif-reg-italic: "AustinRomanItalic", serif;
 --font-serif-medium: "AustinMedium", serif;
 --font-serif-med-italic: "AustinMediumItalic", serif;
+--font-sans-serif: "objektiv-mk1", sans-serif;
 }
 
 * {

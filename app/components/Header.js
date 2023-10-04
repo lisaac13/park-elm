@@ -56,10 +56,12 @@ const LeftNavigation = styled.div`
 		color: var(--pearl);
 		text-decoration: none;
 		padding: 0 0rem 0 2rem;
+		font-family: var(--font-sans-serif);
+		letter-spacing: 0.1rem;
 	}
 
 	.sitebranding.sticky & a {
-		color: var(--black);
+		color: var(--rose);
 	}
 `;
 const RightNavigation = styled.div`
@@ -70,10 +72,12 @@ const RightNavigation = styled.div`
 		text-decoration: none;
 		padding: 0 2rem 0 0rem;
 		text-transform: uppercase;
+		font-family: var(--font-sans-serif);
+		letter-spacing: 0.1rem;
 	}
 
 	.sitebranding.sticky & a {
-		color: var(--black);
+		color: var(--rose);
 	}
 `;
 
