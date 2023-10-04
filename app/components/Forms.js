@@ -12,10 +12,6 @@ const FieldGroup = styled.div``;
 
 const RadioContainer = styled.div``;
 
-const FormType = {
-	inquire: InquireForm,
-};
-
 const InquireForm = (
 	<>
 		<FormContainer>
@@ -77,6 +73,10 @@ const InquireForm = (
 		</FormContainer>
 	</>
 );
+
+const FormType = {
+	inquire: InquireForm,
+};
 
 export const FormQueryFragment = `
     ... on Page_Flexiblecontent_Sections_SingleColumnForm {

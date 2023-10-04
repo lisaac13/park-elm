@@ -2,7 +2,7 @@
 import Flickity from "react-flickity-component";
 import styled from "styled-components";
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const SingleColumnSliderSection = styled.section``;
 const InnerContainer = styled.div``;

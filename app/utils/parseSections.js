@@ -21,6 +21,56 @@ export default function parseSections(sections) {
 					<Hero key={componentKey} {...section} index={index} />
 				);
 				break;
+			case "Page_Flexiblecontent_Sections_ContentTimeline":
+				gatheredSections.push(
+					<ContentTimline
+						key={componentKey}
+						{...section}
+						index={index}
+					/>
+				);
+				break;
+			case "Page_Flexiblecontent_Sections_Forms":
+				gatheredSections.push(
+					<Forms key={componentKey} {...section} index={index} />
+				);
+				break;
+			case "Page_Flexiblecontent_Sections_FullWidthBackgroundImage":
+				gatheredSections.push(
+					<FullWidthBackgroundImage
+						key={componentKey}
+						{...section}
+						index={index}
+					/>
+				);
+				break;
+			case "Page_Flexiblecontent_Sections_SingleColumnSlider":
+				gatheredSections.push(
+					<SingleColumnSlider
+						key={componentKey}
+						{...section}
+						index={index}
+					/>
+				);
+				break;
+			case "Page_Flexiblecontent_Sections_TwoColumnContentSlider":
+				gatheredSections.push(
+					<TwoColumnContentSlider
+						key={componentKey}
+						{...section}
+						index={index}
+					/>
+				);
+				break;
+			case "Page_Flexiblecontent_Sections_TwoColumnMediaContent":
+				gatheredSections.push(
+					<TwoColumnMediaContent
+						key={componentKey}
+						{...section}
+						index={index}
+					/>
+				);
+				break;
 			case "Page_Flexiblecontent_Sections_Map":
 				gatheredSections.push(
 					<Map key={componentKey} {...section} index={index} />

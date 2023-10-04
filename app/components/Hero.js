@@ -3,7 +3,11 @@
 import styled from "styled-components";
 
 const HeroSection = styled.section`
+	position: relative;
+	width: 100%;
+	height: 100%;
 	aspect-ratio: 16 / 9;
+	background: url(${(props) => props.$bg}) cover no-repeat center center;
 `;
 const StyledVideo = styled.video`
 	position: absolute;
@@ -19,6 +23,9 @@ export const HeroQueryFragment = `
           anchor
           fieldGroupName
           hideComponent
+		  imagePoster {
+            mediaItemUrl
+          }
           videoWebm {
             mediaItemUrl
           }
@@ -26,12 +33,12 @@ export const HeroQueryFragment = `
 `;
 
 export default function Hero(props) {
-	const { anchor, videoMp4, videoWebm } = props;
+	const { anchor, videoMp4, imagePoster, videoWebm } = props;
 
 	if (!videoMp4 && !videoWebm) return null;
 
 	return (
-		<HeroSection>
+		<HeroSection $bg={imagePoster.mediaItemUrl}>
 			<StyledVideo autoPlay muted loop playsInline>
 				{videoMp4 ? (
 					<source
