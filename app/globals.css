@@ -1,15 +1,43 @@
+@font-face {
+	font-family: "AustinMedium";
+	src: url(/webfonts/austin/AustinMediumWeb.woff2) format("woff2"),
+		url(/webfonts/austin/AustinMediumWeb.woff) format("woff");
+}
+
+@font-face {
+	font-family: "AustinMediumItalic";
+	src: url(/webfonts/austin/AustinMediumItalicWeb.woff2) format("woff2"),
+		url(/webfonts/austin/AustinMediumItalicWeb.woff) format("woff");
+}
+
+@font-face {
+	font-family: "AustinRoman";
+	src: url(/webfonts/austin/AustinRomanWeb.woff2) format("woff2"),
+		url(/webfonts/austin/AustinRomanWeb.woff) format("woff");
+}
+
+@font-face {
+	font-family: "AustinRomanItalic";
+	src: url(/webfonts/austin/AustinRomanItalicWeb.woff2) format("woff2"),
+		url(/webfonts/austin/AustinRomanItalicWeb.woff) format("woff");
+}
+
 :root {
 --pearl: #F7F7F5;
 --black: #000000;
 --sky: #CCDCD7;
 --rose: #CCDCD7;
---avenue: #153E56; 
+--avenue: #153E56;
 --palm: #9BB681;
 --plaza: #D6A38A;
 --heading: clamp(3.1rem, 3.1vw, 6.2rem);
 --subheading: clamp(0.9rem, 0.9vw, 1.8rem);
 --body: clamp(0.8125rem, 0.8125vw, 1.6rem);
 --quote: clamp(1.695rem, 1.695vw, 2.9rem);
+--font-serif-regular: "AustinRoman", serif;
+--font-serif-reg-italic: "AustinRomanItalic", serif;
+--font-serif-medium: "AustinMedium", serif;
+--font-serif-med-italic: "AustinMediumItalic", serif;
 }
 
 * {
@@ -24,23 +52,7 @@ body {
   overflow-x: hidden;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
 a {
   color: inherit;
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }
