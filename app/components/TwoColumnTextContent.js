@@ -6,12 +6,23 @@ const TwoColumnTextContentSection = styled.section`
 	width: 100%;
 	background: var(--pearl);
 	padding: 6rem 4rem;
+
+	@media only screen and (max-width: 700px) {
+		& {padding: 6rem 2rem;}
+	}
 `;
 const InnerContainer = styled.div`
 	display: flex;
 	gap: 6rem;
 	align-items: flex-start;
 	justify-content: center;
+
+	@media only screen and (max-width: 820px) {
+		& {
+			flex-direction: column;
+			gap: 2rem;
+		}
+	}
 `;
 
 const TitleContainer = styled.div`
@@ -20,6 +31,12 @@ const TitleContainer = styled.div`
 	position: relative;
 	display: flex;
 	justify-content: center;
+
+	@media only screen and (max-width: 820px) {
+		& {
+			max-width: 100%;
+		}
+	}
 `;
 	
 const Title = styled.h2`
@@ -41,6 +58,13 @@ const Title = styled.h2`
 const ContentContainer = styled.div`
 	width: 100%;
 	max-width: calc(50% - 3rem);
+
+	@media only screen and (max-width: 820px) {
+		& {
+			width: 100%;
+			max-width: 100%;
+		}
+	}
 `;
 const Subtitle = styled.p`
 	font-family: var(--font-sans-serif);
@@ -51,6 +75,13 @@ const Subtitle = styled.p`
 	font-size: var(--body);
 	line-height: 1.5;
 	padding: 0 0 1rem 0;
+
+	@media only screen and (max-width: 1680px) {
+		& {max-width: 367px;}
+	}
+	@media only screen and (max-width: 820px) {
+		& {margin: auto;}
+	}
 `;
 const Content = styled.p`
 	max-width: 60%;
@@ -62,6 +93,10 @@ const Content = styled.p`
 
 	@media only screen and (max-width: 1680px) {
 		& {max-width: 367px;}
+	}
+
+	@media only screen and (max-width: 820px) {
+		& {margin: auto;}
 	}
 `;
 

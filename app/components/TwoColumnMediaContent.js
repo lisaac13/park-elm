@@ -5,19 +5,37 @@ import Image from "next/image";
 const TwoColumnMediaContentSection = styled.section`
 	background: var(--rose);
 	width: 100%;
-	padding: 6rem 4rem;
+	padding: 6rem 4rem 4rem 4rem;
+	
+	@media only screen and (max-width: 700px) {
+		& {
+			padding: 6rem 2rem 4rem 2rem;
+		}
+	}
 `;
 const InnerContainer = styled.div`
 	display: flex;
 	gap: 6rem;
 	align-items: center;
 	justify-content: center;
+
+	@media only screen and (max-width: 820px) {
+		& {
+			flex-direction: column;
+			gap: 4rem;
+		}
+	}
 `;
 
 const MediaContainer = styled.div`
 	width: 100%;
 	max-width: calc(50% - 3rem);
 	position: relative;
+	@media only screen and (max-width: 820px) {
+		& {
+			max-width: 100%;
+		}
+	}
 `;
 const StyledImage = styled(Image)`
 	width: 100%;
@@ -31,6 +49,12 @@ const ContentContainer = styled.div`
 	position: relative;
 	display: flex;
 	justify-content: center;
+
+	@media only screen and (max-width: 820px) {
+		& {
+			max-width: 100%;
+		}
+	}
 `;
 
 const ContentInner = styled.div`
