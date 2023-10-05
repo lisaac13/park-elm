@@ -27,6 +27,9 @@ export const HeroQueryFragment = `
 		  imagePoster {
             mediaItemUrl
           }
+          videoMp4 {
+            mediaItemUrl
+          }
           videoWebm {
             mediaItemUrl
           }
@@ -43,7 +46,7 @@ export default function Hero(props) {
 					<source
 						src={
 							videoMp4
-								? videoMp4
+								? videoMp4.mediaItemUrl
 								: "https://www.youtube.com/watch?v=5qap5aO4i9A"
 						}
 						type="video/mp4"
@@ -52,7 +55,7 @@ export default function Hero(props) {
 				{videoWebm ? (
 					<source
 						src={
-							videoWebm
+							videoWebm.mediaItemUrl
 								? videoWebm
 								: "https://www.youtube.com/watch?v=5qap5aO4i9A"
 						}

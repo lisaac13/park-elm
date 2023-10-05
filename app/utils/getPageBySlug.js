@@ -95,6 +95,9 @@ async function getPageBySlug(pathname) {
           imagePoster {
             mediaItemUrl
           }
+          videoMp4 {
+            mediaItemUrl
+          }
           videoWebm {
             mediaItemUrl
           }
