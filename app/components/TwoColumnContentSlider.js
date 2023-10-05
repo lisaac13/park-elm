@@ -1,16 +1,63 @@
 "use client";
 import Image from "next/image";
 import { useRef, useState } from "react";
+import "flickity/css/flickity.css";
 import Flickity from "react-flickity-component";
 import styled from "styled-components";
 
-const TwoColumnContentSliderSection = styled.section``;
-const InnerContainer = styled.div``;
-const ContentContainer = styled.div``;
-const Title = styled.h2``;
-const Subtitle = styled.p``;
-const Content = styled.p``;
-const ImageContainer = styled.div``;
+const TwoColumnContentSliderSection = styled.section`
+	background: var(--pearl);
+	width: 100%;
+	padding: 6rem 0 6rem 4rem;
+`;
+const InnerContainer = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 4rem;
+`;
+const ContentContainer = styled.div`
+	width: calc(40% - 2rem);
+`;
+const Title = styled.h2`
+	font-family: var(--font-serif-medium);
+	font-size: var(--heading);
+	color: var(--rose);
+	padding: 0 0 2rem 0;
+	font-weight: 500;
+`;
+const Subtitle = styled.p`
+	font-family: var(--font-sans-serif);
+	color: var(--rose);
+	letter-spacing: 0.13rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	font-size: var(--body);
+	line-height: 1.5;
+	padding: 0 0 1rem 0;
+`;
+const Content = styled.p`
+	font-family: var(--font-sans-serif);
+	color: var(--black);
+	font-weight: 500;
+	font-size: var(--body);
+	line-height: 1.5;
+`;
+const ImageContainer = styled.div`
+	width: calc(60% - 2rem);
+	position: relative;
+
+	& .flickity-cell {
+		height: 55vh;
+		margin-right: 2rem;
+	}
+
+	& img {
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+	}
+`;
 
 export const TwoColumnContentSliderQueryFragment = `
     ... on Page_Flexiblecontent_Sections_TwoColumnContentSlider {
@@ -21,15 +68,25 @@ export const TwoColumnContentSliderQueryFragment = `
           hideComponent
           fieldGroupName
           images {
-            altText
+           	altText
             mediaItemUrl
-          }
+		  }
         }
 `;
 
 export default function TwoColumnContentSlider(props) {
 	const { anchor, content, title, subtitle, images } = props;
 	const slider = useRef(null);
+	const [activeIndex, setActiveIndex] = useState(0);
+
+	function changeSlider(index) {
+		setActiveIndex(index);
+		slider.current.select(index);
+	}
+
+	slider?.current?.on("change", function () {
+		setActiveIndex(slider.current.selectedIndex);
+	});
 	return (
 		<TwoColumnContentSliderSection>
 			<InnerContainer>
@@ -41,7 +98,7 @@ export default function TwoColumnContentSlider(props) {
 				<ImageContainer>
 					<Flickity
 						options={{
-							cellAlign: "center",
+							cellAlign: "left",
 							prevNextButtons: true,
 							pageDots: false,
 							prevNextButtons: false,
@@ -49,6 +106,7 @@ export default function TwoColumnContentSlider(props) {
 							wrapAround: true,
 							selectedAttraction: 0.01,
 							friction: 0.2,
+							initialIndex: 1,
 						}}
 						disableImagesLoaded={false} // default false
 						reloadOnUpdate={false} // default false
@@ -57,6 +115,7 @@ export default function TwoColumnContentSlider(props) {
 							slider.current = c;
 						}}>
 						{images.map((image, index) => (
+							<div key={`carousel-${index}`}>
 							<Image
 								key={`tccs-images-${index}`}
 								src={image.mediaItemUrl}
@@ -65,6 +124,7 @@ export default function TwoColumnContentSlider(props) {
 								height={413}
 								style={{ width: "100%", height: "100%" }}
 							/>
+							</div>
 						))}
 					</Flickity>
 				</ImageContainer>
