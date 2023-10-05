@@ -15,6 +15,7 @@ const ContentContainer = styled.div`
 	flex-direction: row;
 	gap: 2.25rem;
 	margin-bottom: 3rem;
+	margin-inline: auto;
 
 	> div {
 		display: flex;
@@ -142,6 +143,7 @@ const SubmitButton = styled.input`
 	font-style: normal;
 	transition: 0.3s ease all;
 	margin-left: auto;
+	grid-column: span 2;
 
 	&:hover {
 		background-color: var(--white);
