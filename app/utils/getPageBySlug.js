@@ -101,6 +101,11 @@ async function getPageBySlug(pathname) {
         }
         ... on Page_Flexiblecontent_Sections_FullWidthBackgroundImage {
           fieldGroupName
+          hideComponent
+          anchor
+          imagePoster {
+            mediaItemUrl
+          }
         }
         ... on Page_Flexiblecontent_Sections_ContentTimeline {
           anchor
