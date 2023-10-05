@@ -5,16 +5,26 @@ import parse from "html-react-parser";
 const TwoColumnTextContentSection = styled.section`
 	width: 100%;
 	background: var(--pearl);
-	padding: 6rem 0 6rem 0;
+	padding: 6rem 4rem;
 `;
 const InnerContainer = styled.div`
 	display: flex;
-	gap: 4rem;
+	gap: 6rem;
 	align-items: flex-start;
 	justify-content: center;
 `;
+
+const TitleContainer = styled.div`
+	width: 100%;
+	max-width: calc(50% - 3rem);
+	position: relative;
+	display: flex;
+	justify-content: center;
+`;
+	
 const Title = styled.h2`
-	max-width: 465px;
+	width: 100%;
+	max-width: 50%;
 	font-family: var(--font-serif-medium);
 	font-size: var(--heading);
 	color: var(--rose);
@@ -23,9 +33,14 @@ const Title = styled.h2`
 	& span {
 		font-family: var(--font-serif-med-italic);
 	}
+
+	@media only screen and (max-width: 1680px) {
+		& {max-width: 414px;}
+	}
 `;
 const ContentContainer = styled.div`
-	max-width: 367px;
+	width: 100%;
+	max-width: calc(50% - 3rem);
 `;
 const Subtitle = styled.p`
 	font-family: var(--font-sans-serif);
@@ -38,11 +53,16 @@ const Subtitle = styled.p`
 	padding: 0 0 1rem 0;
 `;
 const Content = styled.p`
+	max-width: 60%;
 	font-family: var(--font-sans-serif);
 	color: var(--black);
 	font-weight: 500;
 	font-size: var(--body);
 	line-height: 1.5;
+
+	@media only screen and (max-width: 1680px) {
+		& {max-width: 367px;}
+	}
 `;
 
 export const TwoColumnTextContentSectionQueryFragment = `
@@ -62,7 +82,9 @@ export default function TwoColumnTextContent(props) {
 		<TwoColumnTextContentSection>
 			{anchor && <a id={anchor}></a>}
 			<InnerContainer>
-				<Title>{parse(title)}</Title>
+				<TitleContainer>
+					<Title>{parse(title)}</Title>
+				</TitleContainer>
 				<ContentContainer>
 					<Subtitle>{subtitle}</Subtitle>
 					<Content>{content}</Content>

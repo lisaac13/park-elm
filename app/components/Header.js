@@ -64,6 +64,7 @@ const ImageContainer = styled.div`
 		text-align: center;
 		margin: auto;
 		max-width: 24px;
+		height: auto;
 	}
 `;
 

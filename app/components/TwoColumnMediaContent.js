@@ -5,18 +5,18 @@ import Image from "next/image";
 const TwoColumnMediaContentSection = styled.section`
 	background: var(--rose);
 	width: 100%;
-	padding: 6rem 0 6rem 0;
+	padding: 6rem 4rem;
 `;
 const InnerContainer = styled.div`
 	display: flex;
-	gap: 4rem;
+	gap: 6rem;
 	align-items: center;
 	justify-content: center;
 `;
 
 const MediaContainer = styled.div`
 	width: 100%;
-	max-width: 560px;
+	max-width: calc(50% - 3rem);
 	position: relative;
 `;
 const StyledImage = styled(Image)`
@@ -27,8 +27,23 @@ const StyledImage = styled(Image)`
 
 const ContentContainer = styled.div`
 	width: 100%;
-	max-width: 367px;
+	max-width: calc(50% - 3rem);
+	position: relative;
+	display: flex;
+	justify-content: center;
 `;
+
+const ContentInner = styled.div`
+	width: 100%;
+	max-width: 65%;
+
+	@media only screen and (max-width: 1680px) {
+		& {
+			max-width: 367px;
+		}
+	}
+`;
+
 const Title = styled.h2`
 	font-family: var(--font-serif-medium);
 	font-size: var(--heading);
@@ -126,9 +141,11 @@ export default function TwoColumnMediaContent(props) {
 					) : null}
 				</MediaContainer>
 				<ContentContainer>
-					<Title>{title}</Title>
-					<Subtitle>{subtitle}</Subtitle>
-					<Content>{content}</Content>
+					<ContentInner>
+						<Title>{title}</Title>
+						<Subtitle>{subtitle}</Subtitle>
+						<Content>{content}</Content>
+					</ContentInner>
 				</ContentContainer>
 			</InnerContainer>
 		</TwoColumnMediaContentSection>
