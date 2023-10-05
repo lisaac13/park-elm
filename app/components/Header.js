@@ -26,6 +26,9 @@ const HeaderContainer = styled.header`
 	&.sitebranding.sticky {
 		background: var(--sky);
 	}
+	@media only screen and (max-width: 700px) {
+		&.sitebranding {padding: 0.5rem 2rem;}
+	}
 `;
 
 const ImageContainer = styled.div`
@@ -66,6 +69,11 @@ const ImageContainer = styled.div`
 		max-width: 24px;
 		height: auto;
 	}
+	@media only screen and (max-width: 600px) {
+		.sitebranding & a .parkElmLogo {
+			max-width: 150px;
+		}
+	}
 `;
 
 const LeftNavigation = styled.div`
@@ -87,6 +95,21 @@ const LeftNavigation = styled.div`
 
 	.sitebranding.sticky & a {
 		color: var(--rose);
+	}
+
+	.sitebranding & .telIconWhite,
+	.sitebranding.sticky & .telIconWhite,
+	.sitebranding & .telIconGold,
+	.sitebranding.sticky & .telIconGold {
+		display: none;
+	}
+
+	@media only screen and (max-width: 700px) {
+		.sitebranding & a.telNumber {display: none;}
+		.sitebranding & .telIconWhite,
+		.sitebranding.sticky & .telIconGold {
+			display: block;
+		}
 	}
 `;
 const RightNavigation = styled.div`
@@ -124,7 +147,21 @@ export default function Header() {
 	return (
 		<HeaderContainer className="sitebranding">
 			<LeftNavigation>
-				<Link href="/">### ### ####</Link>
+				<Link href="/" className="telNumber">### ### ####</Link>
+				<Link href="" className="telIconWhite">
+					<Image 
+					src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/ic_baseline-phone.svg"
+					alt="telephone icon"
+					width={24}
+					height={24}/>
+				</Link>
+				<Link href="" className="telIconGold">
+					<Image 
+					src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/ic_baseline-phone-1.svg"
+					alt="telephone icon"
+					width={24}
+					height={24}/>
+				</Link>
 			</LeftNavigation>
 
 			<ImageContainer>
