@@ -142,13 +142,15 @@ export default function SingleColumnSlider(props) {
 						src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/Left-Arrow.svg"
 						alt="left arrow"
 						width={24}
-						height={11}/>
+						height={11}
+						onClick={() => slider.current.previous()}/>
 
 						<Image
 						src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/Right-Arrow.svg"
 						alt="right arrow"
 						width={24}
-						height={11}/>
+						height={11}
+						onClick={() => slider.current.next()}/>
 					</NavigationContainer>
 				</BottomContainer>
 			</InnerContainer>

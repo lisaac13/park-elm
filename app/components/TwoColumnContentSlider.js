@@ -59,6 +59,26 @@ const ImageContainer = styled.div`
 	}
 `;
 
+const BottomContainer = styled.div`
+	width: 100%; 
+	position: relative;
+	padding: 2rem 4rem 0 4rem;
+`;
+
+const NavigationContainer = styled.div`
+	display: flex;
+	align-items: center;
+	gap: 3rem;
+	justify-content: flex-end;
+
+	& img {
+		cursor: pointer;
+		width: 100%;
+		max-width: 30px;
+		height: auto;
+	}
+`;
+
 export const TwoColumnContentSliderQueryFragment = `
     ... on Page_Flexiblecontent_Sections_TwoColumnContentSlider {
           anchor
@@ -127,6 +147,23 @@ export default function TwoColumnContentSlider(props) {
 							</div>
 						))}
 					</Flickity>
+					<BottomContainer>
+					<NavigationContainer>
+						<Image
+						src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/Left-Arrow-1.svg"
+						alt="left arrow"
+						width={24}
+						height={11}
+						onClick={() => slider.current.previous()}/>
+
+						<Image
+						src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/Right-Arrow-1.svg"
+						alt="right arrow"
+						width={24}
+						height={11}
+						onClick={() => slider.current.next()}/>
+					</NavigationContainer>
+					</BottomContainer>
 				</ImageContainer>
 			</InnerContainer>
 		</TwoColumnContentSliderSection>
