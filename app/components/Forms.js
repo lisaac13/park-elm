@@ -187,7 +187,7 @@ export default function Forms(props) {
 		e.preventDefault();
 
 		const res = await fetch(
-			"https://hooks.zapier.com/hooks/catch/2001353/3ivuf0n/",
+			"https://hooks.zapier.com/hooks/catch/2001353/3s3a7jh/",
 			{
 				method: "POST",
 				body: JSON.stringify(formState),
