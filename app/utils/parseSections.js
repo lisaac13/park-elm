@@ -30,7 +30,7 @@ export default function parseSections(sections) {
 					/>
 				);
 				break;
-			case "Page_Flexiblecontent_Sections_Forms":
+			case "Page_Flexiblecontent_Sections_SingleColumnForm":
 				gatheredSections.push(
 					<Forms key={componentKey} {...section} index={index} />
 				);

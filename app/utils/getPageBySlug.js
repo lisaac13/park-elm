@@ -92,6 +92,9 @@ async function getPageBySlug(pathname) {
           anchor
           fieldGroupName
           hideComponent
+          imagePoster {
+            mediaItemUrl
+          }
           videoWebm {
             mediaItemUrl
           }

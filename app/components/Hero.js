@@ -7,7 +7,8 @@ const HeroSection = styled.section`
 	width: 100%;
 	height: 100%;
 	aspect-ratio: 16 / 9;
-	background: url(${(props) => props.$bg}) cover no-repeat center center;
+	background: url(${(props) => props.$bg}) no-repeat center center;
+	background-size: cover;
 `;
 const StyledVideo = styled.video`
 	position: absolute;
@@ -36,7 +37,7 @@ export default function Hero(props) {
 	const { anchor, videoMp4, imagePoster, videoWebm } = props;
 
 	return (
-		<HeroSection>
+		<HeroSection $bg={imagePoster.mediaItemUrl}>
 			<StyledVideo autoPlay muted loop playsInline>
 				{videoMp4 ? (
 					<source
