@@ -15,6 +15,7 @@ const ContentContainer = styled.div`
 	flex-direction: row;
 	gap: 2.25rem;
 	margin-bottom: 3rem;
+	margin-inline: auto;
 
 	> div {
 		display: flex;
