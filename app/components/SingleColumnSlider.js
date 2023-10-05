@@ -1,16 +1,61 @@
 "use client";
 import Flickity from "react-flickity-component";
+import "flickity/css/flickity.css";
 import styled from "styled-components";
 import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 
-const SingleColumnSliderSection = styled.section``;
-const InnerContainer = styled.div``;
-const SliderContainer = styled.div``;
+const SingleColumnSliderSection = styled.section`
+	width: 100%;
+	padding: 6rem 4rem;
+	position: relative;
+	display: block;
+	background: var(--rose);
+`;
+const InnerContainer = styled.div`
+	width: 100%;
+	position: relative;
+`;
 
-const BottomContainer = styled.div``;
-const Caption = styled.div``;
-const NavigationContainer = styled.div``;
+const SliderContainer = styled.div`
+	width: 100%;
+	position: relative;
+
+	& .flickity-cell {
+		width: 100%;
+	}
+
+	& img {
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+	}
+
+	& p {
+		max-width: 75%;
+		padding: 2rem 0 0 2rem;
+		color: var(--pearl);
+	}
+`;
+
+const BottomContainer = styled.div`
+	position: absolute;
+	bottom: 0; 
+	right: 0;
+`;
+
+const NavigationContainer = styled.div`
+	display: flex;
+	align-items: center;
+	gap: 3rem;
+	cursor: pointer;
+
+	& img {
+		width: 100%;
+		max-width: 50px;
+		height: auto;
+	}
+`;
 
 export const SingleColumnSliderQueryFragment = `
     ... on Page_Flexiblecontent_Sections_SingleColumnSlider {
@@ -46,6 +91,7 @@ export default function SingleColumnSlider(props) {
 							draggable: true,
 							wrapAround: true,
 							selectedAttraction: 0.01,
+							initialIndex: 1,
 							friction: 0.2,
 						}}
 						disableImagesLoaded={false} // default false
@@ -60,17 +106,31 @@ export default function SingleColumnSlider(props) {
 									<Image
 										src={item.image.mediaItemUrl}
 										alt={item.image.altText}
-										width={200}
-										height={200}
+										width={1140}
+										height={650}
 									/>
+									<p>
+										{item.caption}
+									</p>
 								</div>
 							);
 						})}
 					</Flickity>
 				</SliderContainer>
 				<BottomContainer>
-					<Caption type={captionPlacement}></Caption>
-					<NavigationContainer></NavigationContainer>
+					<NavigationContainer>
+						<Image
+						src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/Left-Arrow.svg"
+						alt="left arrow"
+						width={24}
+						height={11}/>
+
+						<Image
+						src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/Right-Arrow.svg"
+						alt="right arrow"
+						width={24}
+						height={11}/>
+					</NavigationContainer>
 				</BottomContainer>
 			</InnerContainer>
 		</SingleColumnSliderSection>
