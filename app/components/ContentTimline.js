@@ -79,16 +79,15 @@ const TimelineItemTitle = styled.h3`
 	}
 `;
 const TimelineItemContent = styled.p`
-	max-width: 60%;
 	font-family: var(--font-sans-serif);
 	color: var(--black);
 	font-weight: 500;
 	font-size: var(--body);
 	line-height: 1.5;
+	max-width: 367px;
 
 	@media only screen and (max-width: 1680px) {
 		& {
-			max-width: 367px;
 		}
 	}
 
@@ -124,7 +123,7 @@ const Divider = styled.div`
 	width: 100%;
 	height: 100%;
 	grid-column: 2/3;
-	grid-row: 1/6;
+	grid-row: 1/-1;
 	position: relative;
 	display: flex;
 	flex-direction: column;
