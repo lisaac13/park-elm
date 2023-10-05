@@ -11,6 +11,10 @@ const SingleColumnSliderSection = styled.section`
 	position: relative;
 	display: block;
 	background: var(--rose);
+
+	@media only screen and (max-width: 700px) {
+		padding: 6rem 2rem;
+	}
 `;
 const InnerContainer = styled.div`
 	width: 100%;
@@ -33,7 +37,7 @@ const SliderContainer = styled.div`
 
 	& p {
 		max-width: 75%;
-		padding: 2rem 0 0 2rem;
+		padding: 2rem 0 0 0rem;
 		color: var(--pearl);
 	}
 `;
@@ -41,7 +45,19 @@ const SliderContainer = styled.div`
 const BottomContainer = styled.div`
 	position: absolute;
 	bottom: 0; 
-	right: 0;
+	right: 5rem;
+	@media only screen and (max-width: 1200px) {
+		& {bottom: 1rem;}
+	}
+	@media only screen and (max-width: 820px) {
+		& {right: 2rem;}
+	}
+	@media only screen and (max-width: 700px) {
+		& {right: 0rem;}
+	}
+	@media only screen and (max-width: 600px) {
+		& {bottom: 2rem;}
+	}
 `;
 
 const NavigationContainer = styled.div`
@@ -54,6 +70,9 @@ const NavigationContainer = styled.div`
 		width: 100%;
 		max-width: 50px;
 		height: auto;
+	}
+	@media only screen and (max-width: 600px) {
+		&{gap: 2rem;}
 	}
 `;
 
