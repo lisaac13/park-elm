@@ -133,7 +133,7 @@ const SubmitButton = styled.input`
 	border: 1px solid var(--rose);
 	padding: 1rem 2rem;
 	cursor: pointer;
-	/* grid-column: span 2; */
+
 	letter-spacing: 0.1rem;
 	color: var(--avenue);
 	font-size: var(--body);
@@ -144,6 +144,10 @@ const SubmitButton = styled.input`
 	transition: 0.3s ease all;
 	margin-left: auto;
 	grid-column: span 2;
+
+	@media screen and (max-width: 820px) {
+		grid-column: auto;
+	}
 
 	&:hover {
 		background-color: var(--white);
