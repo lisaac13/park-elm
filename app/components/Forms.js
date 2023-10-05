@@ -143,6 +143,7 @@ const SubmitButton = styled.input`
 	font-style: normal;
 	transition: 0.3s ease all;
 	margin-left: auto;
+	grid-column: span 2;
 
 	&:hover {
 		background-color: var(--white);
