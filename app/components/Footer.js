@@ -16,6 +16,10 @@ const InnerContainer = styled.div`
 	align-items: flex-start;
 	justify-content: space-between;
 	gap: 2rem;
+
+	@media only screen and (max-width: 600px) {
+		padding: 4rem 2rem;
+	}
 `;
 
 const ImageContainer = styled.div`
@@ -27,6 +31,32 @@ const ImageContainer = styled.div`
 		max-width: 100%;
 		height: auto;
 	}
+	@media only screen and (max-width: 515px) {
+		& {
+			max-width: 150px;
+			position: relative;
+		}
+	}
+`;
+
+const MobileAddress = styled.div`
+	display: none;
+
+	@media only screen and (max-width: 1024px) {
+		display: block;
+		padding: 2rem 0 0 0;
+
+		& address {
+			font-family: var(--font-serif-med-italic);
+			color: var(--pearl);
+			font-size: var(--address);
+		}
+	}
+	@media only screen and (max-width: 515px) {
+		& {
+			display: none;
+		}
+	}
 `;
 const Address = styled.div`
 	& address {
@@ -34,12 +64,17 @@ const Address = styled.div`
 		color: var(--pearl);
 		font-size: var(--address);
 	}
+
+	@media only screen and (max-width: 1024px) {
+		&{display: none;}
+	}
 `;
 
 const FooterLinks = styled.ul`
 	list-style: none;
 
 	& li {
+		padding: 0 0 0.5rem 0;
 		font-family: var(--font-sans-serif);
 		font-size: var(--cta);
 		color: var(--pearl);
@@ -47,12 +82,44 @@ const FooterLinks = styled.ul`
 		text-transform: uppercase;
 		letter-spacing: 0.1rem;
 	}
+
+	& li.xsmobile,
+	& li.mobile {
+		display: none;
+	}
+
+	@media only screen and (max-width: 900px) {
+		& li.mobile {
+			display: block;
+			opacity: 0.7;
+		}
+		& li.mobile.first {
+			padding: 1rem 0 0.5rem 0;
+		}
+		& li.mobile.social {
+			padding: 1rem 0 0rem 0;
+			opacity: 1;
+		}
+	}
+	@media only screen and (max-width: 515px) {
+		& li.xsmobile {display: block;}
+		& li.xsmobile address {
+			font-family: var(--font-serif-med-italic);
+			color: var(--pearl);
+			text-transform: none;
+			font-size: 1.1rem;
+			padding: 0 0 1rem 0;
+			letter-spacing: 0;
+			line-height: 1.3;
+		}
+	}
 `;
 
 const FooterLinksTwo = styled.ul`
 	list-style: none;
 
 	& li {
+		padding: 0 0 0.5rem 0;
 		font-family: var(--font-sans-serif);
 		font-size: var(--cta);
 		color: var(--pearl);
@@ -61,10 +128,96 @@ const FooterLinksTwo = styled.ul`
 		letter-spacing: 0.1rem;
 		opacity: 0.7;
 	}
+
+	@media only screen and (max-width: 900px) {
+		display: none;
+	}
 `;
 
-const SocialContainer = styled.div``;
+const SocialContainer = styled.div`
+	@media only screen and (max-width: 900px) {
+		display: none;
+	}
+`;
 
+const BottomContainer = styled.div`
+	width: 100%;
+	border-top: 0.5px solid rgba(247, 247, 245, 0.5);
+	position: relative;
+`;
+
+const BottomFlexContainer = styled.div`
+	width: 100%;
+	padding: 2rem 4rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4rem;
+
+	@media only screen and (max-width: 1024px) {
+		& {
+			flex-direction: column;
+			gap: 2rem;
+		}
+	}
+	@media only screen and (max-width: 600px) {
+		& { padding: 2rem 2rem;}
+	}
+`;
+
+ const Disclaimer = styled.div`
+	width: calc(65% - 2rem);
+	& p {
+		color: var(--pearl);
+		font-family: var(--font-sans-serif);
+		font-size: clamp(0.7rem, 0.7vw, 1rem);
+		line-height: 1.3;
+		opacity: 0.7;
+	}
+	@media only screen and (max-width: 1220px) {
+		& {width: calc(60% - 2rem);}
+	}
+	@media only screen and (max-width: 1024px) {
+		& {width: 100%;}
+	}
+ `;
+
+ const DeveloperContainer = styled.ul`
+ 	width: calc(35% - 2rem);
+	list-style: none;
+	display: flex;
+	gap: 2rem;
+	align-items: center;
+	justify-content: flex-end;
+
+	& li .equalHousiing {
+		width: 100%;
+		max-width: 30px;
+		height: auto;
+	}
+	& li .ncpLogo {
+		width: 100%;
+		max-width: 55px;
+		height: auto;
+	}
+	& li .agencyLogo {
+		width: 100%;
+		max-width:80px;
+		height: auto;
+	}
+	& li .reubenbrothersLogo {
+		width: 100%;
+		max-width: 150px;
+		height: auto;
+	}
+
+	@media only screen and (max-width: 1220px) {
+		& {width: calc(40% - 2rem);}
+	}
+
+	@media only screen and (max-width: 1024px) {
+		& {width: 100%;}
+	}
+ `;
 export default function Footer() {
 	return (
 		<StyledFooter>
@@ -75,22 +228,40 @@ export default function Footer() {
 				width={209}
 				height={118}
 				alt="Park Elm at Century Park Logo with Palm Icon"/>
+
+				<MobileAddress>
+					<address>2025 Avenue of the Stars<br/>Los Angeles, CA 90067</address>
+				</MobileAddress>
 			</ImageContainer>
 			<Address>
 				<address>2025 Avenue of the Stars<br/>Los Angeles, CA 90067</address>
 			</Address>
 			<FooterLinks>
+				<li className="xsmobile">
+				<address>2025 Avenue of the Stars<br/>Los Angeles, CA 90067</address>
+				</li>
 				<li>Residences</li>
 				<li>Services & Amenities</li>
 				<li>Century Plaza</li>
 				<li>Neighborhood</li>
 				<li>Team</li>
+				<li className="mobile first">Privacy Policy</li>
+				<li className="mobile">Cookie Policy</li>
+				<li className="mobile">Accessibility</li>
+				<li className="mobile social">
+					<Link target="_blank" href="https://www.instagram.com/parkelmcenturyplaza/">
+					<Image 
+						src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/instagram.svg"
+						alt="instagram icon"
+						width={24}
+						height={24}/>
+					</Link>
+				</li>
 			</FooterLinks>
 			<FooterLinksTwo>
 				<li>Privacy Policy</li>
 				<li>Cookie Policy</li>
 				<li>Accessibility</li>
-				<li>Disclaimer</li>
 			</FooterLinksTwo>
 
 			<SocialContainer>
@@ -103,6 +274,48 @@ export default function Footer() {
 				</Link>
 			</SocialContainer>
 			</InnerContainer>
+
+			<BottomContainer>
+				<BottomFlexContainer>
+					<Disclaimer>
+						<p>All floorplans shown are for illustrative purposes only. Floorplans may not depict final designs of units as constructed. All dimensions and square footages are approximate and subject to normal construction variances and tolerances and changes resulting from unforeseen conditions. Dimensions and square footages include certain perimeter and interior walls, windows, shafts, columns and other structural elements. The developer reserves the right to make modifications to the floor plans and unit dimensions at any time. Exclusive sales and marketing: Next Century Realty, Inc., BRE # 02028123. The Agency NRED #B.1002525.CORP Equal Housing Opportunity</p>
+					</Disclaimer>
+					<DeveloperContainer>
+						<li>
+							<Image 
+								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/equal-housing-opportunity-black-copy-1.svg" 
+								alt="equal housing opportunity logo" 
+								width={30} 
+								height={31}
+								className="equalHousiing"/>
+						</li>
+						<li>
+							<Image
+								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/ncp-logo.svg" 
+								alt="ncp logo" 
+								width={55} 
+								height={33}
+								className="ncpLogo"/>
+						</li>
+						<li>
+							<Image
+								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/agency-logo.png" 
+								alt="the agency logo" 
+								width={80} 
+								height={80}
+								className="agencyLogo"/>
+						</li>
+						<li>
+							<Image
+								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/reuben-brothers-logo.svg" 
+								alt="reuben brothers logo" 
+								width={150} 
+								height={25}
+								className="reubenbrothersLogo"/>
+						</li>
+					</DeveloperContainer>
+				</BottomFlexContainer>
+			</BottomContainer>
 		</StyledFooter>
 	);
 }
