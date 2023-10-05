@@ -64,12 +64,19 @@ const NavigationContainer = styled.div`
 	display: flex;
 	align-items: center;
 	gap: 3rem;
-	cursor: pointer;
 
 	& img {
-		width: 100%;
+		width: 50px;
 		max-width: 50px;
 		height: auto;
+		cursor: pointer;
+	}
+
+	@media only screen and (max-width: 1680px) {
+		& img {
+			width: 30px;
+			max-width: 30px;
+		}
 	}
 	@media only screen and (max-width: 600px) {
 		&{gap: 2rem;}
