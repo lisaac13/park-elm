@@ -181,6 +181,7 @@ export default function Map(props) {
 					alt={mapImage.altText}
 					width={656}
 					height={652}
+					style={{ width: "100%", height: "auto" }}
 				/>
 				<ContentContainer>
 					<Title>{parse(title)}</Title>
