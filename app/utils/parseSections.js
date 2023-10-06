@@ -33,22 +33,22 @@ export default function parseSections(sections) {
 				);
 				break;
 			case "Page_Flexiblecontent_Sections_ContentBlock":
-					gatheredSections.push(
-						<ContentBlock
-							key={componentKey}
-							{...section}
-							index={index}
-						/>
-					);
+				gatheredSections.push(
+					<ContentBlock
+						key={componentKey}
+						{...section}
+						index={index}
+					/>
+				);
 				break;
 			case "Page_Flexiblecontent_Sections_FullWidthImageWithOverlay":
-					gatheredSections.push(
-						<FullWidthImageWithOverlay
-							key={componentKey}
-							{...section}
-							index={index}
-						/>
-					);
+				gatheredSections.push(
+					<FullWidthImageWithOverlay
+						key={componentKey}
+						{...section}
+						index={index}
+					/>
+				);
 				break;
 			case "Page_Flexiblecontent_Sections_SingleColumnForm":
 				gatheredSections.push(
