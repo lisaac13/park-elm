@@ -23,6 +23,7 @@ const InnerContainer = styled.div`
 		justify-content: left;
 	}
 `;
+
 const ContentContainer = styled.div`
 	width: calc(40% - 2rem);
 	padding: 0 6rem 0 0;
@@ -40,6 +41,7 @@ const ContentContainer = styled.div`
 		padding: 0 2rem 0 0;
 	}
 `;
+
 const Title = styled.h2`
 	font-family: var(--font-serif-medium);
 	font-size: var(--heading);
