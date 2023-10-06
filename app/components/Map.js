@@ -4,60 +4,75 @@ import Image from "next/image";
 import parse from "html-react-parser";
 
 const MapSection = styled.section`
-	background-image: url(${({ $bg }) => $bg.mediaItemUrl});
-	background-repeat: no-repeat;
-	background-position: left bottom;
-	padding-block: 4rem;
-	@media only screen and (max-width: 1150px) {
-		background-position: left -30px bottom -50px;
-	}
-	@media only screen and (max-width: 1010px) {
-		background-image: none;
+	width: 100%;
+	padding: 6rem 4rem;
+
+	@media only screen and (max-width: 700px) {
+		padding: 6rem 2rem;
 	}
 `;
 const InnerContainer = styled.div`
 	display: flex;
-	flex-direction: row;
+	align-items: flex-end;
 	justify-content: space-between;
-	max-width: 85vw;
-	margin-left: auto;
-	padding-right: 7vw;
+	width: 100%;
+	gap: 6rem;
 
-	@media only screen and (max-width: 1150px) {
-		margin-inline: auto;
-	}
-
-	@media only screen and (max-width: 1010px) {
-		max-width: 90vw;
-		padding-right: 0;
-		margin-left: unset;
+	@media only screen and (max-width: 820px) {
 		flex-direction: column;
-		margin-inline: auto;
-		gap: 2rem;
 	}
 `;
+const ImageContainer = styled.div`
+	width: 100%;
+	max-width: calc(70% - 3rem);
+	position: relative;
+
+	@media only screen and (max-width: 1220px) {
+		width: 100%;
+		max-width: calc(65% - 3rem);
+	}
+	@media only screen and (max-width: 1024px) {
+		width: 100%;
+		max-width: calc(55% - 3rem);
+	}
+	@media only screen and (max-width: 820px) {
+		width: 100%;
+		max-width: 100%;
+	}
+`
 const MapImage = styled(Image)`
+	width: 100%;
 	max-width: 100%;
+	height: auto;
 `;
 const ContentContainer = styled.div`
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	align-self: flex-end;
-	@media only screen and (max-width: 820px) {
-		align-self: unset;
+	width: 100%;
+	max-width: calc(30% - 3rem);
+	position: relative;
+
+	@media only screen and (max-width: 1220px) {
 		width: 100%;
-		text-align: center;
+		max-width: calc(35% - 3rem);
+	}
+
+	@media only screen and (max-width: 1024px) {
+		width: 100%;
+		max-width: calc(45% - 3rem);
+	}
+	@media only screen and (max-width: 820px) {
+		width: 100%;
+		max-width: 100%;
 	}
 `;
 
 const Title = styled.h2`
 	width: 100%;
-	max-width: 50%;
+	max-width: 100%;
 	font-family: var(--font-serif-medium);
 	font-size: var(--heading);
 	color: var(--rose);
 	font-weight: 500;
+	padding: 0 0 2rem 0;
 
 	& span {
 		font-family: var(--font-serif-med-italic);
@@ -65,11 +80,13 @@ const Title = styled.h2`
 
 	@media only screen and (max-width: 1680px) {
 		& {
-			max-width: 414px;
+			max-width: 367px;
 		}
 	}
 	@media only screen and (max-width: 820px) {
-		max-width: 100%;
+		& {
+			margin: auto;
+		}
 	}
 `;
 const Subtitle = styled.p`
@@ -174,9 +191,10 @@ export default function Map(props) {
 	} = props;
 
 	return (
-		<MapSection $bg={backgroundImage}>
+		<MapSection>
 			{anchor && <a id={anchor} className="anchor" name={anchor}></a>}
 			<InnerContainer>
+				<ImageContainer>
 				<MapImage
 					src={mapImage.mediaItemUrl}
 					alt={mapImage.altText}
@@ -184,6 +202,7 @@ export default function Map(props) {
 					height={652}
 					style={{ width: "100%", height: "auto" }}
 				/>
+				</ImageContainer>
 				<ContentContainer>
 					<Title>{parse(title)}</Title>
 					<Subtitle>{subtitle}</Subtitle>
