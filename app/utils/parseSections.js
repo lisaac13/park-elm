@@ -11,7 +11,6 @@ import Forms from "../components/Forms";
 import FullWidthImageWithOverlay from "../components/FullWidthImageWithOverlay";
 
 export default function parseSections(sections) {
-	console.log(sections);
 	const gatheredSections = [];
 	for (const [index, section] of sections.entries()) {
 		if (section.hideComponent == true) continue;
@@ -34,22 +33,22 @@ export default function parseSections(sections) {
 				);
 				break;
 			case "Page_Flexiblecontent_Sections_ContentBlock":
-					gatheredSections.push(
-						<ContentBlock
-							key={componentKey}
-							{...section}
-							index={index}
-						/>
-					);
+				gatheredSections.push(
+					<ContentBlock
+						key={componentKey}
+						{...section}
+						index={index}
+					/>
+				);
 				break;
 			case "Page_Flexiblecontent_Sections_FullWidthImageWithOverlay":
-					gatheredSections.push(
-						<FullWidthImageWithOverlay
-							key={componentKey}
-							{...section}
-							index={index}
-						/>
-					);
+				gatheredSections.push(
+					<FullWidthImageWithOverlay
+						key={componentKey}
+						{...section}
+						index={index}
+					/>
+				);
 				break;
 			case "Page_Flexiblecontent_Sections_SingleColumnForm":
 				gatheredSections.push(
