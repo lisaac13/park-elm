@@ -97,6 +97,8 @@ const LeftNavigation = styled.div`
 		color: var(--rose);
 	}
 
+	.sitebranding & .telNumber,
+	.sitebranding.sticky & .telNumber,
 	.sitebranding & .telIconWhite,
 	.sitebranding.sticky & .telIconWhite,
 	.sitebranding & .telIconGold,
@@ -108,7 +110,7 @@ const LeftNavigation = styled.div`
 		.sitebranding & a.telNumber {display: none;}
 		.sitebranding & .telIconWhite,
 		.sitebranding.sticky & .telIconGold {
-			display: block;
+			display: none;
 		}
 	}
 `;
