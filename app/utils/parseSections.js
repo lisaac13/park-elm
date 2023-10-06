@@ -3,6 +3,7 @@ import Map from "../components/Map";
 import TwoColumnTextContent from "../components/TwoColumnTextContent";
 import TwoColumnMediaContent from "../components/TwoColumnMediaContent";
 import TwoColumnContentSlider from "../components/TwoColumnContentSlider";
+import ContentBlock from "../components/ContentBlock";
 import SingleColumnSlider from "../components/SingleColumnSlider";
 import FullWidthBackgroundImage from "../components/FullWidthBackgroundImage";
 import ContentTimline from "../components/ContentTimline";
@@ -29,6 +30,15 @@ export default function parseSections(sections) {
 						index={index}
 					/>
 				);
+				break;
+			case "Page_Flexiblecontent_Sections_ContentBlock":
+					gatheredSections.push(
+						<ContentBlock
+							key={componentKey}
+							{...section}
+							index={index}
+						/>
+					);
 				break;
 			case "Page_Flexiblecontent_Sections_SingleColumnForm":
 				gatheredSections.push(

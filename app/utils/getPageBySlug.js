@@ -55,6 +55,12 @@ async function getPageBySlug(pathname) {
             mediaItemUrl
           }
         }
+        ... on Page_Flexiblecontent_Sections_ContentBlock {
+          anchor
+          content
+          hideComponent
+          fieldGroupName
+        }
         ... on Page_Flexiblecontent_Sections_SingleColumnSlider {
           anchor
           captionPlacement
