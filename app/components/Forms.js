@@ -35,6 +35,12 @@ const ContentContainer = styled.div`
 const Title = styled.h2`
 	font-size: var(--heading);
 	color: var(--rose);
+	font-family: var(--font-serif-medium);
+	font-weight: 400;
+
+	& span {
+		font-family: var(--font-serif-med-italic);
+	}
 `;
 const Content = styled.p`
 	font-family: var(--font-sans-serif);
