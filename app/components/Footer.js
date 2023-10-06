@@ -223,12 +223,13 @@ export default function Footer() {
 		<StyledFooter>
 			<InnerContainer>
 			<ImageContainer>
+				<Link href="/">
 				<Image 
 				src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/PE_LogoIcon_GLD_white.svg"
 				width={209}
 				height={118}
 				alt="Park Elm at Century Park Logo with Palm Icon"/>
-
+				</Link>
 				<MobileAddress>
 					<address>2025 Avenue of the Stars<br/>Los Angeles, CA 90067</address>
 				</MobileAddress>
