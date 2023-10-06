@@ -3,8 +3,8 @@
 import styled from "styled-components";
 
 const Section = styled.section`
-	background: url(${(props) => props.$bg}) no-repeat center center;
-	min-height: 60vh;
+	background: url(${(props) => props.$bg}) no-repeat top center;
+	min-height: 75vh;
 	width: 100%;
 	display: block;
 	margin: auto;
