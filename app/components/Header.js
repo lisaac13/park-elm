@@ -19,15 +19,14 @@ const HeaderContainer = styled.header`
 		width: 100%;
 		display: flex;
 		flex-wrap: wrap;
-		align-items: center;
-		padding: 0.5rem 4rem;
+		align-items: flex-start;
+		padding: 1.5rem 4rem;
 	}
 
 	&.sitebranding.sticky {
 		background: var(--sky);
-	}
-	@media only screen and (max-width: 700px) {
-		&.sitebranding {padding: 0.5rem 2rem;}
+		align-items: center;
+		padding: 0.5rem 4rem;
 	}
 `;
 
@@ -58,7 +57,8 @@ const ImageContainer = styled.div`
 		width: 100%;
 		margin: auto;
 		text-align: center;
-		max-width: 223px;
+		max-width: 350px;
+		height: auto;
 	}
 
 	.sitebranding.sticky & a .parkElmIcon {
@@ -68,6 +68,12 @@ const ImageContainer = styled.div`
 		margin: auto;
 		max-width: 24px;
 		height: auto;
+	}
+
+	@media only screen and (max-width: 1680px) {
+		.sitebranding & a .parkElmLogo {
+			max-width: 300px;
+		}
 	}
 	@media only screen and (max-width: 600px) {
 		.sitebranding & a .parkElmLogo {
