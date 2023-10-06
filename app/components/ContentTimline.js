@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 const ContentTimlineSection = styled.section`
 	padding-block: 6rem;
+	width: 100%;
+	position: relative;
 `;
 const InnerContainer = styled.div``;
 const Supertitle = styled.p`

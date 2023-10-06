@@ -129,7 +129,7 @@ export default function TwoColumnTextContent(props) {
 	return (
 		<TwoColumnTextContentSection>
 			{anchor && <a id={anchor} className="anchor" name={anchor}></a>}
-			<InnerContainer>
+			<InnerContainer clasName="mm_reveal">
 				<TitleContainer>
 					<Title>{parse(title)}</Title>
 				</TitleContainer>

@@ -1,6 +1,6 @@
 "use client";
 import "./globals.css";
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useRef } from "react";
 import StyledComponentsRegistry from "../lib/registry";
 import dynamic from "next/dynamic";
 import Script from "next/script";
@@ -17,10 +17,13 @@ const Footer = dynamic(() => import("@/app/components/Footer"), {
 });
 
 export default function RootLayout({ children }) {
-	useEffect(() => {
-		var mmediareveals = gsap.utils.toArray(".mm_reveal");
+	const main = useRef();
 
-		mmediareveals.forEach((section) => {
+	useLayoutEffect(() => {
+		const ctx = gsap.context((self) => {
+		const reveals = self.selector('.mm_reveal');
+
+		reveals.forEach((section) => {
 			gsap.fromTo(
 				section,
 				{ autoAlpha: 0, y: 50 },
@@ -31,11 +34,13 @@ export default function RootLayout({ children }) {
 						trigger: section,
 						start: "top bottom",
 						markers: false,
-						toggleActions: "play none none reset"
+						toggleActions: "play none none reverse"
 					},
 				}
-			);
-		});
+				)
+			});
+		}, main);
+		return () => ctx.revert();
 	}, []);
 	return (
 		<html lang="en">
@@ -47,7 +52,7 @@ export default function RootLayout({ children }) {
 					gtag('config', 'G-SM79XXQQQX');`}
 			</Script>
 			<StyledComponentsRegistry>
-				<body>
+				<body ref={main}>
 					<Header />
 					<main>{children}</main>
 					<Footer />
