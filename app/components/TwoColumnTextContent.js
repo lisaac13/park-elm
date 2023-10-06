@@ -115,7 +115,7 @@ export default function TwoColumnTextContent(props) {
 	const { anchor, content, subtitle, title } = props;
 	return (
 		<TwoColumnTextContentSection>
-			{anchor && <a id={anchor}></a>}
+			{anchor && <a id={anchor} name={anchor}></a>}
 			<InnerContainer>
 				<TitleContainer>
 					<Title>{parse(title)}</Title>

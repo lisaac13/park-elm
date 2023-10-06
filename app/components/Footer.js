@@ -242,7 +242,7 @@ export default function Footer() {
 				</li>
 				<li><Link href="/#residences">Residences</Link></li>
 				<li><Link href="/#servicesamenities">Services & Amenities</Link></li>
-				<li><Link href="/#centuryplaze">Century Plaza</Link></li>
+				<li><Link href="/#centuryplaza">Century Plaza</Link></li>
 				<li><Link href="/#neighborhood">Neighborhood</Link></li>
 				<li><Link href="/#team">Team</Link></li>
 				<li className="mobile first"><Link href="/privacy-policy">Privacy Policy</Link></li>
