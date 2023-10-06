@@ -40,14 +40,14 @@ export default function Hero(props) {
 	const { anchor, videoMp4, imagePoster, videoWebm } = props;
 
 	return (
-		<HeroSection $bg={imagePoster.mediaItemUrl}>
+		<HeroSection $bg={imagePoster?.mediaItemUrl}>
 			<StyledVideo autoPlay muted loop playsInline>
 				{videoMp4 ? (
 					<source
 						src={
 							videoMp4
 								? videoMp4.mediaItemUrl
-								: "https://www.youtube.com/watch?v=5qap5aO4i9A"
+								: ""
 						}
 						type="video/mp4"
 					/>
@@ -57,7 +57,7 @@ export default function Hero(props) {
 						src={
 							videoWebm.mediaItemUrl
 								? videoWebm
-								: "https://www.youtube.com/watch?v=5qap5aO4i9A"
+								: ""
 						}
 						type="video/mp4"
 					/>
