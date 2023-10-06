@@ -10,6 +10,16 @@ const FullWidthImagewithOverlay = styled.section`
     display: block;
     z-index: 0;
     background: var(--rose);
+
+    @media only screen and (max-width: 700px) {
+        padding: 6rem 2rem 8rem 2rem;
+    }
+    @media only screen and (max-width: 820px) {
+        padding: 6rem 4rem 6rem 4rem;
+    }
+    @media only screen and (max-width: 700px) {
+        padding: 6rem 2rem 6rem 2rem;
+    }
 `;
 
 const BackgroundGradient = styled.div`
@@ -50,6 +60,25 @@ const ContentContainer = styled.div`
         font-size: var(--quote);
         font-family: var(--font-serif-med-italic);
         line-height: 1.3;
+    }
+    @media only screen and (max-width: 1680px) {
+        & p {
+            max-width: 440px;
+        }
+    }
+    @media only screen and (max-width: 900px) {
+        & {left: 4rem;}
+    }
+    @media only screen and (max-width: 820px) {
+        & {position: relative; 
+            bottom: unset; 
+            left: unset; 
+            top: unset;
+            margin: -3rem 0 0 2rem;
+        }
+    }
+    @media only screen and (max-width: 600px) {
+        & p{max-width: 80%;}
     }
 `;
 export const FullWidthImageWithOverlayQueryFragment = `
