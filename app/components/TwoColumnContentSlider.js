@@ -142,6 +142,7 @@ export default function TwoColumnContentSlider(props) {
 	});
 	return (
 		<TwoColumnContentSliderSection>
+			{anchor && <a id={anchor} name={anchor}></a>}
 			<InnerContainer>
 				<ContentContainer>
 					<Title>{title}</Title>
