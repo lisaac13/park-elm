@@ -13,7 +13,7 @@ const SingleColumnSliderSection = styled.section`
 	background: var(--rose);
 
 	@media only screen and (max-width: 700px) {
-		padding: 6rem 2rem;
+		padding: 0rem 2rem 6rem 2rem;
 	}
 `;
 const InnerContainer = styled.div`
@@ -39,6 +39,11 @@ const SliderContainer = styled.div`
 		max-width: 75%;
 		padding: 2rem 0 0 0rem;
 		color: var(--pearl);
+	}
+	@media only screen and (max-width: 600px) {
+		& p {
+			max-width: 65%;
+		}
 	}
 `;
 
