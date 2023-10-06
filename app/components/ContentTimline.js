@@ -37,6 +37,7 @@ const Title = styled.h2`
 	font-weight: 500;
 	text-align: center;
 	margin: 0 auto 5rem;
+	padding-inline: 2rem;
 `;
 const TimelineContainer = styled.div`
 	display: grid;
