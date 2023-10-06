@@ -4,8 +4,8 @@ import { useLayoutEffect, useRef } from "react";
 import StyledComponentsRegistry from "../lib/registry";
 import dynamic from "next/dynamic";
 import Script from "next/script";
-import { gsap } from "gsap/dist/gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Header = dynamic(() => import("@/app/components/Header"), {
@@ -21,17 +21,20 @@ export default function RootLayout({ children }) {
 
 	useLayoutEffect(() => {
 		const ctx = gsap.context((self) => {
-		const reveals = self.selector('.mm_reveal');
+		const reveals = self.selector('[data-animate="fadeInUp"]');
 
 		reveals.forEach((reveal) => {
-			gsap.fromTo(
-				reveal,{ autoAlpha: 0, y: 50 },
+			gsap.fromTo( reveal,
+				{ autoAlpha: 0, y: 50 },
 				{autoAlpha: 1, y: 0,
 					scrollTrigger: {
 						trigger: reveal,
 						start: "top bottom",
+						endTrigger: reveal,
+						end: "bottom center",
 						markers: false,
 						toggleActions: "play none none reverse",
+						refreshPriority: -1,
 					},
 				});
 			});

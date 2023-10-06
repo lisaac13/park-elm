@@ -146,7 +146,7 @@ export default function TwoColumnContentSlider(props) {
 	return (
 		<TwoColumnContentSliderSection>
 			{anchor && <a id={anchor} className="anchor" name={anchor}></a>}
-			<InnerContainer className="mm_reveal">
+			<InnerContainer data-animate="fadeInUp">
 				<ContentContainer>
 					<Title>{title}</Title>
 					<Subtitle>{subtitle}</Subtitle>

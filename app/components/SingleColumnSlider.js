@@ -116,7 +116,7 @@ export default function SingleColumnSlider(props) {
 	return (
 		<SingleColumnSliderSection>
 			{anchor && <a id={anchor} className="anchor" name={anchor}></a>}
-			<InnerContainer>
+			<InnerContainer data-animate="fadeInUp">
 				<SliderContainer>
 					<Flickity
 						options={{

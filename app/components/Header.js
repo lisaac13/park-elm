@@ -98,7 +98,9 @@ const LeftNavigation = styled.div`
 	}
 
 	.sitebranding & .telNumber,
-	.sitebranding.sticky & .telNumber,
+	.sitebranding.sticky & .telNumber {
+		display: block;
+	}
 	.sitebranding & .telIconWhite,
 	.sitebranding.sticky & .telIconWhite,
 	.sitebranding & .telIconGold,
@@ -107,10 +109,12 @@ const LeftNavigation = styled.div`
 	}
 
 	@media only screen and (max-width: 700px) {
-		.sitebranding & a.telNumber {display: none;}
+		.sitebranding & a.telNumber,
+		.sitebranding.sticky & .telNumber {display: none;}
+
 		.sitebranding & .telIconWhite,
 		.sitebranding.sticky & .telIconGold {
-			display: none;
+			display: block;
 		}
 	}
 `;
@@ -149,15 +153,15 @@ export default function Header() {
 	return (
 		<HeaderContainer className="sitebranding">
 			<LeftNavigation>
-				<Link href="/" className="telNumber">### ### ####</Link>
-				<Link href="" className="telIconWhite">
+				<Link href="tel:+13102464777" className="telNumber">310.246.4777</Link>
+				<Link href="tel:+13102464777" className="telIconWhite">
 					<Image 
 					src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/ic_baseline-phone.svg"
 					alt="telephone icon"
 					width={24}
 					height={24}/>
 				</Link>
-				<Link href="" className="telIconGold">
+				<Link href="tel:+13102464777" className="telIconGold">
 					<Image 
 					src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/ic_baseline-phone-1.svg"
 					alt="telephone icon"
