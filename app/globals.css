@@ -108,3 +108,31 @@ a {
 		font-size: 2rem;
 	}
 }
+
+.PolicyPageContainer {
+	width: 100%;
+	margin: auto;
+	padding: 8rem 2rem 6rem 2rem;
+	background-color: var(--pearl);
+}
+.PolicyPageConent {
+	width: 100%;
+	max-width: 1000px;
+	margin: auto;
+}
+.PolicyPageConent h1, 
+.PolicyPageConent h2 {
+	font-family: var(--font-serif-medium);
+}
+
+.PolicyPageConent h1 {font-size: var(--heading);}
+.PolicyPageConent h2 {
+	color: var(--rose);
+	margin: 1rem 0;
+}
+.PolicyPageConent p {
+	color: var(--black);
+	font-family: var(--font-sans-serif);
+	font-size: var(--body);
+	margin: 1rem 0;
+}
