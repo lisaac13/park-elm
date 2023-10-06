@@ -84,6 +84,7 @@ const StyledInput = styled.input`
 	font-size: 0.75rem;
 	font-family: var(--font-sans-serif);
 	letter-spacing: 0.25rem;
+	border-radius: 0;
 	&::placeholder {
 		color: var(--avenue);
 	}
