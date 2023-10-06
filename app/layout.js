@@ -23,21 +23,17 @@ export default function RootLayout({ children }) {
 		const ctx = gsap.context((self) => {
 		const reveals = self.selector('.mm_reveal');
 
-		reveals.forEach((section) => {
+		reveals.forEach((reveal) => {
 			gsap.fromTo(
-				section,
-				{ autoAlpha: 0, y: 50 },
-				{
-					autoAlpha: 1,
-					y: 0,
+				reveal,{ autoAlpha: 0, y: 50 },
+				{autoAlpha: 1, y: 0,
 					scrollTrigger: {
-						trigger: section,
+						trigger: reveal,
 						start: "top bottom",
 						markers: false,
-						toggleActions: "play none none reverse"
+						toggleActions: "play none none reverse",
 					},
-				}
-				)
+				});
 			});
 		}, main);
 		return () => ctx.revert();
