@@ -8,6 +8,7 @@ import SingleColumnSlider from "../components/SingleColumnSlider";
 import FullWidthBackgroundImage from "../components/FullWidthBackgroundImage";
 import ContentTimline from "../components/ContentTimline";
 import Forms from "../components/Forms";
+import FullWidthImageWithOverlay from "../components/FullWidthImageWithOverlay";
 
 export default function parseSections(sections) {
 	const gatheredSections = [];
@@ -34,6 +35,15 @@ export default function parseSections(sections) {
 			case "Page_Flexiblecontent_Sections_ContentBlock":
 					gatheredSections.push(
 						<ContentBlock
+							key={componentKey}
+							{...section}
+							index={index}
+						/>
+					);
+				break;
+			case "Page_Flexiblecontent_Sections_FullWidthImageWithOverlay":
+					gatheredSections.push(
+						<FullWidthImageWithOverlay
 							key={componentKey}
 							{...section}
 							index={index}

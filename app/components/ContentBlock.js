@@ -13,10 +13,11 @@ export const ContentBlockQueryFragment = `
         }
 `;
 
-export default function SingleColumnSlider(props) {
+export default function ContentBlock(props) {
+    const { anchor, content } = props;
     return (
         <ContentBlockContainer>
-
+            {content}
         </ContentBlockContainer>
     )
 }

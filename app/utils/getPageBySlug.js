@@ -6,6 +6,8 @@ import TwoColumnContentSliderQueryFragment from "../components/TwoColumnContentS
 import SingleColumnSliderQueryFragment from "../components/SingleColumnSlider";
 import ContentTimlineQueryFragment from "../components/ContentTimline";
 import FormQueryFragment from "../components/Forms";
+import ContentBlockQueryFragment from "../components/ContentBlock";
+import FullWidthImageWithOverlayQueryFragment from "../components/FullWidthImageWithOverlay";
 
 async function getPageBySlug(pathname) {
 	const res = await fetch(process.env.API_URL, {
@@ -60,6 +62,16 @@ async function getPageBySlug(pathname) {
           content
           hideComponent
           fieldGroupName
+        }
+        ... on Page_Flexiblecontent_Sections_FullWidthImageWithOverlay {
+          anchor
+          content
+          hideComponent
+          fieldGroupName
+          imagePoster {
+            altText
+            mediaItemUrl
+          }
         }
         ... on Page_Flexiblecontent_Sections_SingleColumnSlider {
           anchor
