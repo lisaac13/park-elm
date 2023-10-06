@@ -246,8 +246,7 @@ export default function Footer() {
 				<li><Link href="/#centuryplaza">Century Plaza</Link></li>
 				<li><Link href="/#neighborhood">Neighborhood</Link></li>
 				<li><Link href="/#team">Team</Link></li>
-				<li className="mobile first"><Link href="/privacy-policy">Privacy Policy</Link></li>
-				<li className="mobile"><Link href="/cookie-policy">Cookie Policy</Link></li>
+				<li className="mobile first"><Link href="/privacy-policy">Policies</Link></li>
 				<li className="mobile"><Link href="/accessibility">Accessibility</Link></li>
 				<li className="mobile social">
 					<Link target="_blank" href="https://www.instagram.com/parkelmcenturyplaza/">
@@ -260,8 +259,7 @@ export default function Footer() {
 				</li>
 			</FooterLinks>
 			<FooterLinksTwo>
-				<li><Link href="/privacy-policy">Privacy Policy</Link></li>
-				<li><Link href="/cookie-policy">Cookie Policy</Link></li>
+				<li><Link href="/privacy-policy">Policies</Link></li>
 				<li><Link href="/accessibility">Accessibility</Link></li>
 			</FooterLinksTwo>
 

@@ -4,7 +4,7 @@ export default function page() {
 	return <div>
 		<div className="PolicyPageContainer">
 		<div className="PolicyPageConent">
-		    <h1>Privacy Policy</h1>
+		    <h1>Policies</h1>
             <p>Effective Date/Last Reviewed Date: 9/19/2023</p>
 
 <p>Park Elm (“We, “Us,” or “Our”) values your privacy and wants you to be familiar with how we collect, disclose, or otherwise use (“Process”) any information that we collect about you. This Privacy Policy (“Privacy Policy”) describes our practices in connection with information that we collect through our Websites, social media pages we control (“Social Media Pages”), and applications we make valuable for use on or through computers or your mobile devices, that link to this Privacy Notice, and through any of our offline business uses, such as when you provide information on the phone via our call centers or in person (“Business Activities”; collectively, including the Websites, Apps, Social Media Pages, and Business Activities, the “Services”).</p>
