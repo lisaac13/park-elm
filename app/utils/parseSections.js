@@ -10,6 +10,7 @@ import ContentTimline from "../components/ContentTimline";
 import Forms from "../components/Forms";
 
 export default function parseSections(sections) {
+	console.log(sections);
 	const gatheredSections = [];
 	for (const [index, section] of sections.entries()) {
 		if (section.hideComponent == true) continue;
