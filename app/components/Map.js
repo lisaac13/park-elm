@@ -36,7 +36,9 @@ const InnerContainer = styled.div`
 		gap: 2rem;
 	}
 `;
-const MapImage = styled(Image)``;
+const MapImage = styled(Image)`
+	max-width: 100%;
+`;
 const ContentContainer = styled.div`
 	display: flex;
 	flex-direction: column;
