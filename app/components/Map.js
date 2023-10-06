@@ -175,7 +175,7 @@ export default function Map(props) {
 
 	return (
 		<MapSection $bg={backgroundImage}>
-			{anchor && <a id={anchor} name={anchor}></a>}
+			{anchor && <a id={anchor} className="anchor" name={anchor}></a>}
 			<InnerContainer>
 				<MapImage
 					src={mapImage.mediaItemUrl}

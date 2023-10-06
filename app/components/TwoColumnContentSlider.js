@@ -90,7 +90,7 @@ const ImageContainer = styled.div`
 `;
 
 const BottomContainer = styled.div`
-	width: 100%; 
+	width: 100%;
 	position: relative;
 	padding: 2rem 4rem 0 4rem;
 `;
@@ -144,7 +144,7 @@ export default function TwoColumnContentSlider(props) {
 	});
 	return (
 		<TwoColumnContentSliderSection>
-			{anchor && <a id={anchor} name={anchor}></a>}
+			{anchor && <a id={anchor} className="anchor" name={anchor}></a>}
 			<InnerContainer>
 				<ContentContainer>
 					<Title>{title}</Title>
@@ -172,33 +172,35 @@ export default function TwoColumnContentSlider(props) {
 						}}>
 						{images.map((image, index) => (
 							<div key={`carousel-${index}`}>
-							<Image
-								key={`tccs-images-${index}`}
-								src={image.mediaItemUrl}
-								alt={image.altText}
-								width={519}
-								height={413}
-								style={{ width: "100%", height: "100%" }}
-							/>
+								<Image
+									key={`tccs-images-${index}`}
+									src={image.mediaItemUrl}
+									alt={image.altText}
+									width={519}
+									height={413}
+									style={{ width: "100%", height: "100%" }}
+								/>
 							</div>
 						))}
 					</Flickity>
 					<BottomContainer>
-					<NavigationContainer>
-						<Image
-						src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/Left-Arrow-1.svg"
-						alt="left arrow"
-						width={24}
-						height={11}
-						onClick={() => slider.current.previous()}/>
+						<NavigationContainer>
+							<Image
+								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/Left-Arrow-1.svg"
+								alt="left arrow"
+								width={24}
+								height={11}
+								onClick={() => slider.current.previous()}
+							/>
 
-						<Image
-						src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/Right-Arrow-1.svg"
-						alt="right arrow"
-						width={24}
-						height={11}
-						onClick={() => slider.current.next()}/>
-					</NavigationContainer>
+							<Image
+								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/Right-Arrow-1.svg"
+								alt="right arrow"
+								width={24}
+								height={11}
+								onClick={() => slider.current.next()}
+							/>
+						</NavigationContainer>
 					</BottomContainer>
 				</ImageContainer>
 			</InnerContainer>

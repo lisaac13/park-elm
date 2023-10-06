@@ -167,7 +167,7 @@ export default function ContentTimline(props) {
 	const { anchor, content, supertitle, title, timelineSections } = props;
 	return (
 		<ContentTimlineSection>
-			{anchor && <a id={anchor}></a>}
+			{anchor && <a id={anchor} className="anchor"></a>}
 			<InnerContainer>
 				<Supertitle>{supertitle}</Supertitle>
 				<Title>{title}</Title>

@@ -44,19 +44,27 @@ const SliderContainer = styled.div`
 
 const BottomContainer = styled.div`
 	position: absolute;
-	bottom: 0; 
+	bottom: 0;
 	right: 5rem;
 	@media only screen and (max-width: 1200px) {
-		& {bottom: 1rem;}
+		& {
+			bottom: 1rem;
+		}
 	}
 	@media only screen and (max-width: 820px) {
-		& {right: 2rem;}
+		& {
+			right: 2rem;
+		}
 	}
 	@media only screen and (max-width: 700px) {
-		& {right: 0rem;}
+		& {
+			right: 0rem;
+		}
 	}
 	@media only screen and (max-width: 600px) {
-		& {bottom: 2rem;}
+		& {
+			bottom: 2rem;
+		}
 	}
 `;
 
@@ -79,7 +87,9 @@ const NavigationContainer = styled.div`
 		}
 	}
 	@media only screen and (max-width: 600px) {
-		&{gap: 2rem;}
+		& {
+			gap: 2rem;
+		}
 	}
 `;
 
@@ -105,7 +115,7 @@ export default function SingleColumnSlider(props) {
 	const slider = useRef(null);
 	return (
 		<SingleColumnSliderSection>
-			{anchor && <a id={anchor} name={anchor}></a>}
+			{anchor && <a id={anchor} className="anchor" name={anchor}></a>}
 			<InnerContainer>
 				<SliderContainer>
 					<Flickity
@@ -135,9 +145,7 @@ export default function SingleColumnSlider(props) {
 										width={1140}
 										height={650}
 									/>
-									<p>
-										{item.caption}
-									</p>
+									<p>{item.caption}</p>
 								</div>
 							);
 						})}
@@ -146,18 +154,20 @@ export default function SingleColumnSlider(props) {
 				<BottomContainer>
 					<NavigationContainer>
 						<Image
-						src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/Left-Arrow.svg"
-						alt="left arrow"
-						width={24}
-						height={11}
-						onClick={() => slider.current.previous()}/>
+							src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/Left-Arrow.svg"
+							alt="left arrow"
+							width={24}
+							height={11}
+							onClick={() => slider.current.previous()}
+						/>
 
 						<Image
-						src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/Right-Arrow.svg"
-						alt="right arrow"
-						width={24}
-						height={11}
-						onClick={() => slider.current.next()}/>
+							src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/Right-Arrow.svg"
+							alt="right arrow"
+							width={24}
+							height={11}
+							onClick={() => slider.current.next()}
+						/>
 					</NavigationContainer>
 				</BottomContainer>
 			</InnerContainer>

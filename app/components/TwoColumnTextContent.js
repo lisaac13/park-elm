@@ -8,7 +8,9 @@ const TwoColumnTextContentSection = styled.section`
 	padding: 6rem 4rem;
 
 	@media only screen and (max-width: 700px) {
-		& {padding: 6rem 2rem;}
+		& {
+			padding: 6rem 2rem;
+		}
 	}
 `;
 const InnerContainer = styled.div`
@@ -38,7 +40,7 @@ const TitleContainer = styled.div`
 		}
 	}
 `;
-	
+
 const Title = styled.h2`
 	width: 100%;
 	max-width: 50%;
@@ -52,7 +54,9 @@ const Title = styled.h2`
 	}
 
 	@media only screen and (max-width: 1680px) {
-		& {max-width: 414px;}
+		& {
+			max-width: 414px;
+		}
 	}
 `;
 const ContentContainer = styled.div`
@@ -77,10 +81,14 @@ const Subtitle = styled.p`
 	padding: 0 0 1rem 0;
 
 	@media only screen and (max-width: 1680px) {
-		& {max-width: 367px;}
+		& {
+			max-width: 367px;
+		}
 	}
 	@media only screen and (max-width: 820px) {
-		& {margin: auto;}
+		& {
+			margin: auto;
+		}
 	}
 `;
 const Content = styled.p`
@@ -92,11 +100,15 @@ const Content = styled.p`
 	line-height: 1.5;
 
 	@media only screen and (max-width: 1680px) {
-		& {max-width: 367px;}
+		& {
+			max-width: 367px;
+		}
 	}
 
 	@media only screen and (max-width: 820px) {
-		& {margin: auto;}
+		& {
+			margin: auto;
+		}
 	}
 `;
 
@@ -115,7 +127,7 @@ export default function TwoColumnTextContent(props) {
 	const { anchor, content, subtitle, title } = props;
 	return (
 		<TwoColumnTextContentSection>
-			{anchor && <a id={anchor} name={anchor}></a>}
+			{anchor && <a id={anchor} className="anchor" name={anchor}></a>}
 			<InnerContainer>
 				<TitleContainer>
 					<Title>{parse(title)}</Title>

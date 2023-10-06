@@ -120,12 +120,15 @@ a {
 	max-width: 1000px;
 	margin: auto;
 }
-.PolicyPageConent h1, 
+.PolicyPageConent h1,
 .PolicyPageConent h2 {
 	font-family: var(--font-serif-medium);
 }
 
-.PolicyPageConent h1 {font-size: var(--heading); color: var(--rose);}
+.PolicyPageConent h1 {
+	font-size: var(--heading);
+	color: var(--rose);
+}
 .PolicyPageConent h2 {
 	color: var(--rose);
 	margin: 1rem 0;
@@ -135,4 +138,9 @@ a {
 	font-family: var(--font-sans-serif);
 	font-size: var(--body);
 	margin: 1rem 0;
+}
+
+.anchor {
+	position: relative;
+	top: -100px;
 }

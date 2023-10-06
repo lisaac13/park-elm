@@ -6,7 +6,7 @@ const TwoColumnMediaContentSection = styled.section`
 	background: var(--rose);
 	width: 100%;
 	padding: 6rem 4rem 4rem 4rem;
-	
+
 	@media only screen and (max-width: 700px) {
 		& {
 			padding: 6rem 2rem 4rem 2rem;
@@ -77,7 +77,7 @@ const Title = styled.h2`
 
 	& span {
 		font-family: var(--font-serif-med-italic);
-		}
+	}
 `;
 const Subtitle = styled.p`
 	font-family: var(--font-sans-serif);
@@ -131,7 +131,7 @@ export default function TwoColumnMediaContent(props) {
 
 	return (
 		<TwoColumnMediaContentSection>
-			{anchor && <a id={anchor}></a>}
+			{anchor && <a id={anchor} className="anchor"></a>}
 			<InnerContainer>
 				<MediaContainer>
 					{videoMp4 || videoWebm ? (

@@ -206,7 +206,7 @@ export default function Forms(props) {
 
 	return (
 		<FormSection>
-			{anchor && <a id={anchor}></a>}
+			{anchor && <a id={anchor} className="anchor"></a>}
 			<ContentContainer>
 				<Image
 					src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/PE_Icon_GLD.svg"
