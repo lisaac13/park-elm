@@ -125,7 +125,7 @@ a {
 	font-family: var(--font-serif-medium);
 }
 
-.PolicyPageConent h1 {font-size: var(--heading);}
+.PolicyPageConent h1 {font-size: var(--heading); color: var(--rose);}
 .PolicyPageConent h2 {
 	color: var(--rose);
 	margin: 1rem 0;
