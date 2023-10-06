@@ -240,14 +240,14 @@ export default function Footer() {
 				<li className="xsmobile">
 				<address>2025 Avenue of the Stars<br/>Los Angeles, CA 90067</address>
 				</li>
-				<li>Residences</li>
-				<li>Services & Amenities</li>
-				<li>Century Plaza</li>
-				<li>Neighborhood</li>
-				<li>Team</li>
-				<li className="mobile first">Privacy Policy</li>
-				<li className="mobile">Cookie Policy</li>
-				<li className="mobile">Accessibility</li>
+				<li><Link href="/#residences">Residences</Link></li>
+				<li><Link href="/#servicesamenities">Services & Amenities</Link></li>
+				<li><Link href="/#centuryplaze">Century Plaza</Link></li>
+				<li><Link href="/#neighborhood">Neighborhood</Link></li>
+				<li><Link href="/#team">Team</Link></li>
+				<li className="mobile first"><Link href="/privacy-policy">Privacy Policy</Link></li>
+				<li className="mobile"><Link href="/cookie-policy">Cookie Policy</Link></li>
+				<li className="mobile"><Link href="/accessibility">Accessibility</Link></li>
 				<li className="mobile social">
 					<Link target="_blank" href="https://www.instagram.com/parkelmcenturyplaza/">
 					<Image 
@@ -259,9 +259,9 @@ export default function Footer() {
 				</li>
 			</FooterLinks>
 			<FooterLinksTwo>
-				<li>Privacy Policy</li>
-				<li>Cookie Policy</li>
-				<li>Accessibility</li>
+				<li><Link href="/privacy-policy">Privacy Policy</Link></li>
+				<li><Link href="/cookie-policy">Cookie Policy</Link></li>
+				<li><Link href="/accessibility">Accessibility</Link></li>
 			</FooterLinksTwo>
 
 			<SocialContainer>

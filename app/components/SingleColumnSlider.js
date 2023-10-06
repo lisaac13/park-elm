@@ -105,7 +105,7 @@ export default function SingleColumnSlider(props) {
 	const slider = useRef(null);
 	return (
 		<SingleColumnSliderSection>
-			{anchor && <a id={anchor}></a>}
+			{anchor && <a id={anchor} name={anchor}></a>}
 			<InnerContainer>
 				<SliderContainer>
 					<Flickity
