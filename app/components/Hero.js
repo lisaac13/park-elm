@@ -7,7 +7,10 @@ const HeroSection = styled.section`
 	width: 100%;
 	height: 100%;
 	aspect-ratio: 16 / 9;
-	background: url(${(props) => props.$bg}) no-repeat center center;
+	background-image: url(${(props) => (props.$bg ? props.$bg : "none")})
+		no-repeat center center;
+	background-position: center center;
+	background-repeat: no-repeat;
 	background-size: cover;
 `;
 const StyledVideo = styled.video`
@@ -44,21 +47,13 @@ export default function Hero(props) {
 			<StyledVideo autoPlay muted loop playsInline>
 				{videoMp4 ? (
 					<source
-						src={
-							videoMp4
-								? videoMp4.mediaItemUrl
-								: ""
-						}
+						src={videoMp4 ? videoMp4.mediaItemUrl : ""}
 						type="video/mp4"
 					/>
 				) : null}
 				{videoWebm ? (
 					<source
-						src={
-							videoWebm.mediaItemUrl
-								? videoWebm
-								: ""
-						}
+						src={videoWebm.mediaItemUrl ? videoWebm : ""}
 						type="video/mp4"
 					/>
 				) : null}
