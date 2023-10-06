@@ -125,7 +125,6 @@ export const TwoColumnTextContentSectionQueryFragment = `
 
 export default function TwoColumnTextContent(props) {
 	const { anchor, content, subtitle, title } = props;
-
 	return (
 		<TwoColumnTextContentSection>
 			{anchor && <a id={anchor} className="anchor" name={anchor}></a>}
