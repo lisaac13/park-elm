@@ -185,7 +185,7 @@ export default function Header() {
 			</ImageContainer>
 
 			<RightNavigation>
-				<Link href="/">Inquire</Link>
+				<Link href="/#inquire">Inquire</Link>
 			</RightNavigation>
 		</HeaderContainer>
 	);
