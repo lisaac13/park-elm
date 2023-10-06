@@ -5,6 +5,7 @@ const ContentTimlineSection = styled.section`
 	padding-block: 6rem;
 	width: 100%;
 	position: relative;
+	background-color: var(--pearl);
 `;
 const InnerContainer = styled.div``;
 const Supertitle = styled.p`
