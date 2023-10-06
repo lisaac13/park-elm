@@ -1,6 +1,7 @@
 "use client";
 import styled from "styled-components";
 import Image from "next/image";
+import parse from "html-react-parser";
 
 const TwoColumnMediaContentSection = styled.section`
 	background: var(--rose);
@@ -166,7 +167,7 @@ export default function TwoColumnMediaContent(props) {
 				</MediaContainer>
 				<ContentContainer>
 					<ContentInner>
-						<Title>{title}</Title>
+						<Title>{parse(title)}</Title>
 						<Subtitle>{subtitle}</Subtitle>
 						<Content>{content}</Content>
 					</ContentInner>

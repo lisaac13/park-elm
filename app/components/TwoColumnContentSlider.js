@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import "flickity/css/flickity.css";
 import Flickity from "react-flickity-component";
 import styled from "styled-components";
+import parse from "html-react-parser";
 
 const TwoColumnContentSliderSection = styled.section`
 	background: var(--pearl);
@@ -49,6 +50,10 @@ const Title = styled.h2`
 	color: var(--rose);
 	padding: 0 0 2rem 0;
 	font-weight: 500;
+
+	& span {
+		font-family: var(--font-serif-med-italic);
+	}
 `;
 const Subtitle = styled.p`
 	font-family: var(--font-sans-serif);
@@ -148,7 +153,7 @@ export default function TwoColumnContentSlider(props) {
 			{anchor && <a id={anchor} className="anchor" name={anchor}></a>}
 			<InnerContainer data-animate="fadeInUp">
 				<ContentContainer>
-					<Title>{title}</Title>
+					<Title>{parse(title)}</Title>
 					<Subtitle>{subtitle}</Subtitle>
 					<Content>{content}</Content>
 				</ContentContainer>
