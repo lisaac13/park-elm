@@ -1,7 +1,12 @@
+"use client";
 import "./globals.css";
+import { useEffect, useState } from "react";
 import StyledComponentsRegistry from "../lib/registry";
 import dynamic from "next/dynamic";
 import Script from "next/script";
+import { gsap } from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const Header = dynamic(() => import("@/app/components/Header"), {
 	ssr: false,
@@ -12,6 +17,26 @@ const Footer = dynamic(() => import("@/app/components/Footer"), {
 });
 
 export default function RootLayout({ children }) {
+	useEffect(() => {
+		var mmediareveals = gsap.utils.toArray(".mm_reveal");
+
+		mmediareveals.forEach((section) => {
+			gsap.fromTo(
+				section,
+				{ autoAlpha: 0, y: 50 },
+				{
+					autoAlpha: 1,
+					y: 0,
+					scrollTrigger: {
+						trigger: section,
+						start: "top bottom",
+						markers: false,
+						toggleActions: "play none none reset"
+					},
+				}
+			);
+		});
+	}, []);
 	return (
 		<html lang="en">
 			<Script src="https://www.googletagmanager.com/gtag/js?id=G-SM79XXQQQX" />

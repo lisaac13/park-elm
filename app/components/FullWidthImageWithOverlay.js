@@ -98,7 +98,7 @@ export default function FullWidthImageWithOverlay(props) {
     const { anchor, content, imagePoster } = props;
     return (
     <FullWidthImagewithOverlay>
-        <ImageContainer>
+        <ImageContainer className="mm_reveal">
         <Image
         src={imagePoster.mediaItemUrl}
         alt={imagePoster.altText}
