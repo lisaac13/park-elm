@@ -37,6 +37,24 @@ const HeaderContainer = styled.header`
 			padding: 0.5rem 2rem;
 		}
 	}
+
+	@media only screen and (max-width: 700px) {
+		&.sitebranding {
+			padding: 1.5rem 2rem;
+		}
+		&.sitebranding.sticky {
+			padding: 0.5rem 2rem;
+		}
+	}
+	@media only screen and (max-width: 500px) {
+		&.sitebranding {
+			padding: 1.5rem 1rem;
+		}
+		&.sitebranding.sticky {
+			padding: 0.5rem 1rem;
+		}
+	}
+
 `;
 
 const ImageContainer = styled.div`
