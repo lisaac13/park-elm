@@ -9,7 +9,9 @@ import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-const HeaderContainer = styled.header`
+const HeaderMainContainer = styled.header``;
+
+const HeaderContainer = styled.div`
 	&.sitebranding {
 		position: fixed;
 		top: 0;
@@ -157,6 +159,7 @@ export default function Header() {
 	}, []);
 
 	return (
+		<HeaderMainContainer>
 		<HeaderContainer className="sitebranding">
 			<LeftNavigation>
 				<Link href="tel:+13102464777" className="telNumber">310.246.4777</Link>
@@ -198,5 +201,6 @@ export default function Header() {
 				<Link href="/#inquire">Inquire</Link>
 			</RightNavigation>
 		</HeaderContainer>
+		</HeaderMainContainer>
 	);
 }
