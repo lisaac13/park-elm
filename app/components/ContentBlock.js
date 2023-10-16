@@ -8,6 +8,11 @@ width: 100%;
 max-width: 1000px;
 margin: auto;
 
+[data-page="/privacy-policy"] &,
+[data-page="/accessibility"] & {
+    padding: 10rem 2rem 6rem 2rem;
+}
+
 & h3,
 & h2,
 & h1 {

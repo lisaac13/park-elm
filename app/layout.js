@@ -58,9 +58,9 @@ export default function RootLayout({ children }) {
 					gtag('config', 'G-SM79XXQQQX');`}
 			</Script>
 			<StyledComponentsRegistry>
-				<body>
+				<body data-page={pathname}>
 					<Header />
-					<main ref={main} data-page={pathname}>
+					<main ref={main}>
 						{children}
 					</main>
 					<Footer />
