@@ -4,6 +4,7 @@ import TwoColumnTextContent from "../components/TwoColumnTextContent";
 import TwoColumnMediaContent from "../components/TwoColumnMediaContent";
 import TwoColumnContentSlider from "../components/TwoColumnContentSlider";
 import ContentBlock from "../components/ContentBlock";
+import ImageContentBlocksThreeUp from "../components/ImageContentBlocksThreeUp";
 import SingleColumnSlider from "../components/SingleColumnSlider";
 import FullWidthBackgroundImage from "../components/FullWidthBackgroundImage";
 import ContentTimline from "../components/ContentTimline";
@@ -35,6 +36,15 @@ export default function parseSections(sections) {
 			case "Page_Flexiblecontent_Sections_ContentBlock":
 				gatheredSections.push(
 					<ContentBlock
+						key={componentKey}
+						{...section}
+						index={index}
+					/>
+				);
+				break;
+			case "Page_Flexiblecontent_Sections_ImageContentBlocksThreeUp":
+				gatheredSections.push(
+					<ImageContentBlocksThreeUp
 						key={componentKey}
 						{...section}
 						index={index}
@@ -96,7 +106,6 @@ export default function parseSections(sections) {
 					<Map key={componentKey} {...section} index={index} />
 				);
 				break;
-			case "Page_Flexiblecontent_Sections_TwoColumnTextContent":
 			case "Page_Flexiblecontent_Sections_TwoColumnTitleContent":
 				gatheredSections.push(
 					<TwoColumnTextContent
