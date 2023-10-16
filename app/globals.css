@@ -72,6 +72,34 @@ a {
 	text-decoration: none;
 }
 
+.padding-all {
+	padding: 6rem 6rem;
+}
+.padding-top-sides {
+	padding: 6rem 6rem 0 6rem;
+}
+.padding-bottom-sides {
+	padding: 6rem 6rem 0 6rem;
+}
+.padding-top-bottom {
+	padding: 6rem 0rem;
+}
+
+@media only screen and (max-width: 820px){
+	.padding-all {
+		padding: 6rem 4rem;
+	}
+	.padding-top-sides {
+		padding: 6rem 4rem 0 4rem;
+	}
+	.padding-bottom-sides {
+		padding: 6rem 4rem 0 4rem;
+	}
+	.padding-top-bottom {
+		padding: 6rem 0rem;
+	}
+}
+
 .ThankYouSection {
 	background-image: url(https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/91235f245074279ce6706e30ab792da2-2-1.jpg);
 	width: 100%;

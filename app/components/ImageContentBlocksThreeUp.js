@@ -8,7 +8,7 @@ import Script from "next/script";
 const ImageContentBlockWrapper = styled.section`
 	width: 100%;
 	margin: auto;
-	display: block;
+	display: inline-block;
 	position: relative;
 
 	& h3 {
@@ -37,15 +37,15 @@ const ContentBlockContainer = styled.div`
 `;
 
 const Block = styled.div`
-	width: calc(25% - 1.5rem);
+	width: calc(33.33% - 1.5rem);
 	position: relative;
-	border: 1px solid var(--beige);
+	border: 1px solid var(--rose);
 
 	& img {
 		width: 100%;
 		height: auto;
 		max-width: 100%;
-		border-bottom: 1px solid var(--beige);
+		border-bottom: 1px solid var(--rose);
 	}
 	@media only screen and (max-width: 1024px) {
 		& {
@@ -67,13 +67,13 @@ const Block = styled.div`
 const CustomBlock = styled.a`
 	width: calc(25% - 1.5rem);
 	position: relative;
-	border: 1px solid var(--beige);
+	border: 1px solid var(--rose);
 
 	& img {
 		width: 100%;
 		height: auto;
 		max-width: 100%;
-		border-bottom: 1px solid var(--beige);
+		border-bottom: 1px solid var(--rose);
 	}
 	@media only screen and (max-width: 1024px) {
 		& {
@@ -100,9 +100,11 @@ const TextContainer = styled.div`
 	justify-content: space-between;
 
 	& h4 {
-		font-family: var(--font-serif);
+		font-family: var(--font-sans-serif);
 		text-transform: uppercase;
-		font-size: var(--smallheading);
+		font-size: var(--body);
+		font-weight: 400;
+		letter-spacing: 0.13rem;
 		color: var(--black);
 	}
 
