@@ -1,10 +1,4 @@
-/**
- * @name ImageContentBlocksThreeUp
- *
- * @param {string} props.heading - Heading
- *
- *
- */
+"use client";
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Image from "next/image";
