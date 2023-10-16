@@ -18,6 +18,11 @@ async function getPageBySlug(pathname) {
 			query: `
 	            query AllSectionsPerPage {
                 page(id: "${pathname}", idType: URI) {
+                  seo {
+                    metaDesc
+                    title
+                    fullHead
+                  }
                   flexibleContent {
                     sections {
                       ... on Page_Flexiblecontent_Sections_TwoColumnTitleContent {
