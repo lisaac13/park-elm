@@ -159,6 +159,7 @@ export const ImageContentBlocksThreeUpQueryFragment = `
         hideComponent
         fieldGroupName
         heading
+		anchor
         paddingOptions
         contentBlocks {
             ... on Page_Flexiblecontent_Sections_ImageContentBlocksThreeUp_contentBlocks {
@@ -182,6 +183,7 @@ export default function ImageContentBlocksThreeUp(props) {
 	const {
 		hideComponent,
 		fieldGroupName,
+		anchor,
 		heading,
 		paddingOptions,
 		contentBlocks,

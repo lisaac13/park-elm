@@ -83,23 +83,24 @@ async function getPageBySlug(pathname) {
                         hideComponent
                         fieldGroupName
                         heading
+                        anchor
                         paddingOptions
                         contentBlocks {
-                            ... on Page_Flexiblecontent_Sections_ImageContentBlocksThreeUp_contentBlocks {
-                                title
-                                linkType
-                                link
-                                image {
-                                    mediaItemUrl
-                                    altText
-                                    mediaDetails {
-                                        height
-                                        width
-                                    }
+                          ... on Page_Flexiblecontent_Sections_ImageContentBlocksThreeUp_contentBlocks {
+                            title
+                            linkType
+                            link
+                            image {
+                              mediaItemUrl
+                                altText
+                                mediaDetails {
+                                  height
+                                  width
                                 }
                             }
+                          }
                         }
-                    }
+                      }
                       ... on Page_Flexiblecontent_Sections_SingleColumnSlider {
                         anchor
                         captionPlacement
