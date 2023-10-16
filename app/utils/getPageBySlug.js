@@ -138,6 +138,8 @@ async function getPageBySlug(pathname) {
                         anchor
                         fieldGroupName
                         hideComponent
+                        mediaType
+                        height
                         imagePoster {
                           mediaItemUrl
                         }

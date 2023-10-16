@@ -13,6 +13,18 @@ margin: auto;
     padding: 10rem 2rem 6rem 2rem;
 }
 
+[data-page="/broker-portal"] & {
+    padding: 4rem 2rem 0 2rem;
+    max-width: 800px;
+}
+
+[data-page="/broker-portal"] & img {
+    width: 100%;
+    height: auto;
+    max-width: 50px;
+    padding: 0 0 1rem 0;
+}
+
 & h3,
 & h2,
 & h1 {
@@ -26,6 +38,12 @@ margin: auto;
 	color: var(--rose);
 	margin: 1rem 0;
 }
+
+[data-page="/broker-portal"] & h2 {
+    font-size: var(--heading);
+    padding: 0 0 2rem 0;
+}
+
 & ul li, 
 & ol li,
 & p {
@@ -34,7 +52,7 @@ margin: auto;
 	font-size: var(--body);
 	margin: 1rem 0;
 }
-
+& p {line-height: 1.5;}
 & ul li,
 & ol li{
 	margin-inline-start: 3rem;

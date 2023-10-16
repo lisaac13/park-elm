@@ -5,13 +5,12 @@ import styled from "styled-components";
 const HeroSection = styled.section`
 	position: relative;
 	width: 100%;
+`;
+const VideoContainer = styled.div`
+	position: relative;
+	width: 100%;
 	height: 100%;
 	aspect-ratio: 16 / 9;
-	background-image: url(${(props) => (props.$bg ? props.$bg : "none")})
-		no-repeat center center;
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
 `;
 const StyledVideo = styled.video`
 	position: absolute;
@@ -21,12 +20,31 @@ const StyledVideo = styled.video`
 	height: 100%;
 	object-fit: cover;
 `;
-
+const ImageContainer = styled.div`
+	width: 100%;
+	background-image: ${(props) =>
+	props.bgImage ? `url(${props.bgImage})` : "none"};
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover !important;
+	-webkit-background-size: cover !important;
+	-moz-background-size: cover !important;
+	-o-background-size: cover !important;
+	
+	&.full {
+		height: 90vh;
+	}
+	&.half {
+		height: 60vh;
+	}
+`;
 export const HeroQueryFragment = `
     ... on Page_Flexiblecontent_Sections_Hero {
           anchor
           fieldGroupName
           hideComponent
+		  mediaType
+		  height
 		  imagePoster {
             mediaItemUrl
           }
@@ -40,10 +58,12 @@ export const HeroQueryFragment = `
 `;
 
 export default function Hero(props) {
-	const { anchor, videoMp4, imagePoster, videoWebm } = props;
+	const { anchor, videoMp4, imagePoster, videoWebm, mediaType, height } = props;
 
 	return (
-		<HeroSection $bg={imagePoster?.mediaItemUrl}>
+		<HeroSection>
+			{mediaType == "video" ? (
+			<VideoContainer>
 			<StyledVideo autoPlay muted loop playsInline>
 				{videoMp4 ? (
 					<source
@@ -58,6 +78,13 @@ export default function Hero(props) {
 					/>
 				) : null}
 			</StyledVideo>
+			</VideoContainer>
+			) : null}
+			{mediaType == "image" ? (
+				<ImageContainer className={height} bgImage={imagePoster?.mediaItemUrl}>
+
+				</ImageContainer>
+			) : null}
 		</HeroSection>
 	);
 }
