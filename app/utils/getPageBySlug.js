@@ -195,7 +195,6 @@ async function getPageBySlug(pathname, metaDataOnly) {
 	});
 
 	const data = await res.json();
-	console.log(data);
 
 	const pageData = metaDataOnly ? data.data.page.seo : data.data.page;
 

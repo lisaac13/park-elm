@@ -9,6 +9,6 @@ export const metadata = {
 
 export default async function Page(props) {
 	const data = await getPageBySlug("home");
-	console.log(data);
+
 	return <>{parseSections(data.flexibleContent.sections)}</>;
 }
