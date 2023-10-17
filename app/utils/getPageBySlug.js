@@ -11,7 +11,7 @@ import ContentBlockQueryFragment from "../components/ContentBlock";
 import GatedContentkQueryFragment from "../components/GatedContent";
 import FullWidthImageWithOverlayQueryFragment from "../components/FullWidthImageWithOverlay";
 
-async function getPageBySlug(pathname) {
+async function getPageBySlug(pathname, metaDataOnly) {
 	const res = await fetch(process.env.API_URL, {
 		method: "POST",
 		headers: { "Content-Type": "application/json" },
@@ -195,8 +195,9 @@ async function getPageBySlug(pathname) {
 	});
 
 	const data = await res.json();
+	console.log(data);
 
-	const pageData = data.data.page;
+	const pageData = metaDataOnly ? data.data.page.seo : data.data.page;
 
 	return pageData;
 }
