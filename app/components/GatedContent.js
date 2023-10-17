@@ -42,10 +42,23 @@ const GatedForm = styled.div`
 		margin: auto;
 		text-align: center;
 		width: 100%;
-		padding: 2rem 0;
+        padding: 2rem 0 1rem 0;
 		font-weight: 400;
 		font-family: var(--font-serif-medium);
 	}
+
+    & p {
+        color: var(--rose);
+        font-family: var(--font-serif-medium);
+        font-style: italic;
+        font-size: var(--body);
+        text-align: center;
+        width: 100%;
+        display: block;
+        padding: 0 0 2rem 0;
+        margin: auto;
+    }
+
     & button {
 		-webkit-appearance: none;
 		appearance: none;
@@ -198,6 +211,7 @@ export default function GatedContent(props) {
 				/>
 
 				{heading && <h2>{heading}</h2>}
+                <p>* indicates required</p>
 				<GatedFormInner
 					name="access-form"
 					id="access-form"
