@@ -162,7 +162,7 @@ export default function GatedContent(props) {
 		if (password.trim().toLowerCase() === "parkelm") {
 			setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
 			const res = await fetch(
-				"/",
+				"https://hooks.zapier.com/hooks/catch/2001353/3sno30w/",
 				{
 					method: "POST",
 					body: JSON.stringify({
