@@ -9,6 +9,7 @@ import SingleColumnSlider from "../components/SingleColumnSlider";
 import FullWidthBackgroundImage from "../components/FullWidthBackgroundImage";
 import ContentTimline from "../components/ContentTimline";
 import Forms from "../components/Forms";
+import GatedContent from "../components/GatedContent";
 import FullWidthImageWithOverlay from "../components/FullWidthImageWithOverlay";
 
 export default function parseSections(sections) {
@@ -69,6 +70,15 @@ export default function parseSections(sections) {
 			case "Page_Flexiblecontent_Sections_FullWidthBackgroundImage":
 				gatheredSections.push(
 					<FullWidthBackgroundImage
+						key={componentKey}
+						{...section}
+						index={index}
+					/>
+				);
+				break;
+			case "Page_Flexiblecontent_Sections_GatedContent":
+				gatheredSections.push(
+					<GatedContent
 						key={componentKey}
 						{...section}
 						index={index}

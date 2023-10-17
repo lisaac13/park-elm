@@ -8,6 +8,7 @@ import ImageContentBlocksThreeUpQueryFragment from "../components/ImageContentBl
 import ContentTimlineQueryFragment from "../components/ContentTimline";
 import FormQueryFragment from "../components/Forms";
 import ContentBlockQueryFragment from "../components/ContentBlock";
+import GatedContentkQueryFragment from "../components/GatedContent";
 import FullWidthImageWithOverlayQueryFragment from "../components/FullWidthImageWithOverlay";
 
 async function getPageBySlug(pathname) {
@@ -62,6 +63,13 @@ async function getPageBySlug(pathname) {
                           altText
                           mediaItemUrl
                         }
+                      }
+                      ... on Page_Flexiblecontent_Sections_GatedContent {
+                        fieldGroupName
+                        hideComponent
+                        heading
+                        subheading
+                        subjectLine
                       }
                       ... on Page_Flexiblecontent_Sections_ContentBlock {
                         anchor
