@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
-import Head from "next/head";
 import Logo from "/public/next.svg";
 import Script from "next/script";
 import { gsap } from "gsap/dist/gsap";
@@ -217,12 +216,6 @@ export default function Header() {
 
   	gtag('config', 'G-18FJJ5D9JD');`}
 </Script>
-			<Head>
-				<meta
-					property="og:image"
-					content="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/park-elm-open-graph.jpg"
-				/>
-			</Head>
 			<LeftNavigation>
 				<Link href="tel:+13102464777" className="telNumber">310.246.4777</Link>
 				<Link href="tel:+13102464777" className="telIconWhite">

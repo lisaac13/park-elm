@@ -12,6 +12,7 @@ import Forms from "../components/Forms";
 import FullWidthImageWithOverlay from "../components/FullWidthImageWithOverlay";
 
 export default function parseSections(sections) {
+	
 	const gatheredSections = [];
 	for (const [index, section] of sections.entries()) {
 		if (section.hideComponent == true) continue;
