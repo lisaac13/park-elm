@@ -79,10 +79,12 @@ const GatedForm = styled.div`
 		padding: 1rem 1rem;
         border: 1px solid var(--rose);
 	}
+
     & button:hover {
         color: var(--rose);
         background: var(--sky);
     }
+	
     @media only screen and (max-width: 600px) {
 		& {
 			padding: 0 2rem;
