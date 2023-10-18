@@ -13,11 +13,13 @@ margin: auto;
     padding: 10rem 2rem 6rem 2rem;
 }
 
+[data-page="/savills-broker-portal"] &,
 [data-page="/broker-portal"] & {
     padding: 4rem 2rem 0 2rem;
     max-width: 800px;
 }
 
+[data-page="/savills-broker-portal"] & img,
 [data-page="/broker-portal"] & img {
     width: 100%;
     height: auto;
@@ -30,6 +32,7 @@ margin: auto;
 & h1 {
     font-family: var(--font-serif-medium);
 }
+
 & h1 {
 	font-size: var(--heading);
 	color: var(--rose);
@@ -39,6 +42,7 @@ margin: auto;
 	margin: 1rem 0;
 }
 
+[data-page="/savills-broker-portal"] & h2,
 [data-page="/broker-portal"] & h2 {
     font-size: var(--heading);
     padding: 0 0 2rem 0;
@@ -52,12 +56,14 @@ margin: auto;
 	font-size: var(--body);
 	margin: 1rem 0;
 }
+
 & p {line-height: 1.5;}
 & ul li,
 & ol li{
 	margin-inline-start: 3rem;
     line-height: 1.5;
 }
+
 & p a {
 	text-decoration: underline;
 	color: var(--rose);
