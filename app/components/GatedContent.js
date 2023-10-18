@@ -172,7 +172,7 @@ export default function GatedContent(props) {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		if (password.trim().toLowerCase() === "parkelm") {
+		if (password.trim().toLowerCase() === "landmarkofluxury") {
 			setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
 			const res = await fetch(
 				"https://hooks.zapier.com/hooks/catch/2001353/3sno30w/",
@@ -283,7 +283,7 @@ export default function GatedContent(props) {
 							email.length > 1 &&
 							phone.length > 1 &&
 							source.length > 1) ||
-						password == "parkelm"
+						password == "landmarkofluxury"
 							? false
 							: true
 					}
