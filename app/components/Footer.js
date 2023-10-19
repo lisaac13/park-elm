@@ -277,7 +277,7 @@ export default function Footer() {
 			<BottomContainer>
 				<BottomFlexContainer>
 					<Disclaimer>
-						<p>All floorplans shown are for illustrative purposes only. Floorplans may not depict final designs of units as constructed. All dimensions and square footages are approximate and subject to normal construction variances and tolerances and changes resulting from unforeseen conditions. Dimensions and square footages include certain perimeter and interior walls, windows, shafts, columns and other structural elements. The developer reserves the right to make modifications to the floor plans and unit dimensions at any time. Exclusive sales and marketing: Next Century Realty, Inc., BRE # 02028123. The Agency NRED #B.1002525.CORP Equal Housing Opportunity</p>
+						<p>All floor plans shown are for illustrative purposes only. Floor plans may not depict final designs of units as constructed. All dimensions and square footages are approximate and subject to normal construction variances and tolerances and changes resulting from unforeseen conditions. Dimensions and square footages include certain perimeter and interior walls, windows, shafts, columns and other structural elements. The developer reserves the right to make modifications to the floor plans and unit dimensions at any time. Exclusive sales and marketing: Next Century Realty, Inc., BRE # 02028123. The Agency DRE #01973483</p>
 					</Disclaimer>
 					<DeveloperContainer>
 						<li>
