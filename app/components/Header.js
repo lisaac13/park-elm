@@ -245,7 +245,7 @@ export default function Header() {
 			</ImageContainer>
 
 			<RightNavigation>
-				<Link to="https://parkelmcenturyplaza.com/#inquire" onClick={() => {window.location.href="https://parkelmcenturyplaza.com/#inquire"}} href="/#inquire">Inquire</Link>
+				<Link href="/#inquire">Inquire</Link>
 			</RightNavigation>
 		</HeaderContainer>
 	);

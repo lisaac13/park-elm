@@ -11,6 +11,7 @@ const TwoColumnContentSliderSection = styled.section`
 	width: 100%;
 	padding: 6rem 0 6rem 4rem;
 	position: relative;
+
 	@media only screen and (max-width: 700px) {
 		padding: 6rem 0 6rem 2rem;
 	}
@@ -151,7 +152,7 @@ export default function TwoColumnContentSlider(props) {
 	return (
 		<TwoColumnContentSliderSection>
 			{anchor && <a id={anchor} className="anchor" name={anchor}></a>}
-			<InnerContainer data-animate="fadeInUp">
+			<InnerContainer>
 				<ContentContainer>
 					<Title>{parse(title)}</Title>
 					<Subtitle>{subtitle}</Subtitle>

@@ -20,20 +20,22 @@ const Footer = dynamic(() => import("@/app/components/Footer"), {
 
 export default function RootLayout({ children }) {
 	const main = useRef();
-	const body = useRef();
 	const pathname = usePathname();
-	const smoother = useRef();
 
 	useLayoutEffect(() => {
 		const ctx = gsap.context((self) => {
-			  // create the smooth scroller FIRST!
-			  smoother.current = ScrollSmoother.create({
-				smooth: 2, // seconds it takes to "catch up" to native scroll position
-				effects: true, // look for data-speed and data-lag attributes on elements and animate accordingly
-			  });
+		  const pageFade = self.selector('[data-page]');
+		  var tl = gsap.timeline();
+		  tl.fromTo(pageFade,{ autoAlpha: 0, duration: 0.5 },{ autoAlpha: 1, duration: 1 }
+		  );
+		}, main); // <- Scope!
+		return () => ctx.revert(); // <- Cleanup!
+	  }, []);
+
+	useLayoutEffect(() => {
+		const ctx = gsap.context((self) => {
 
 			const reveals = self.selector('[data-animate="fadeInUp"]');
-
 			reveals.forEach((reveal) => {
 				gsap.fromTo(
 					reveal,
@@ -48,12 +50,11 @@ export default function RootLayout({ children }) {
 							end: "bottom center",
 							markers: false,
 							toggleActions: "play none none reverse",
-							refreshPriority: -1,
 						},
 					}
 				);
 			});
-		}, main, body);
+		}, main);
 		return () => ctx.revert();
 	}, []);
 
@@ -67,16 +68,14 @@ export default function RootLayout({ children }) {
 					gtag('config', 'G-SM79XXQQQX');`}
 			</Script>
 			<StyledComponentsRegistry>
-				<body data-page={pathname}>
-				<Header />
-				<div id="smooth-wrapper" ref={main}>
-        		<div id="smooth-content">
+				<body ref={main}>
+					<div data-page={pathname}>
+					<Header />
 					<main>
 						{children}
 					</main>
-					<Footer ref={smoother}/>
-				</div>
-				</div>
+					<Footer/>
+					</div>
 				</body>
 			</StyledComponentsRegistry>
 		</html>
