@@ -54,7 +54,6 @@ const HeaderContainer = styled.header`
 			padding: 0.5rem 1rem;
 		}
 	}
-
 `;
 const ImageContainer = styled.div`
 	width: 30%;
@@ -88,8 +87,9 @@ const ImageContainer = styled.div`
 	}
 
 	[data-page="/privacy-policy"] .sitebranding & a .parkElmLogo,
+	[data-page="/gallery"] .sitebranding & a .parkElmLogo,
 	[data-page="/accessibility"] .sitebranding & a .parkElmLogo {
-    	filter: invert(1);
+		filter: invert(1);
 	}
 
 	.sitebranding.sticky & a .parkElmIcon {
@@ -133,6 +133,9 @@ const LeftNavigation = styled.div`
 	[data-page="/privacy-policy"] .sitebranding & a,
 	[data-page="/privacy-policy"] .sitebranding & a:visited,
 	[data-page="/privacy-policy"] .sitebranding & a:focus,
+	[data-page="/gallery"] .sitebranding & a,
+	[data-page="/gallery"] .sitebranding & a:visited,
+	[data-page="/gallery"] .sitebranding & a:focus,
 	[data-page="/accessibility"] .sitebranding & a,
 	[data-page="/accessibility"] .sitebranding & a:visited,
 	[data-page="/accessibility"] .sitebranding & a:focus {
@@ -156,7 +159,9 @@ const LeftNavigation = styled.div`
 
 	@media only screen and (max-width: 700px) {
 		.sitebranding & a.telNumber,
-		.sitebranding.sticky & .telNumber {display: none;}
+		.sitebranding.sticky & .telNumber {
+			display: none;
+		}
 
 		.sitebranding & .telIconWhite,
 		.sitebranding.sticky & .telIconGold {
@@ -185,12 +190,15 @@ const RightNavigation = styled.div`
 	[data-page="/privacy-policy"] .sitebranding & a,
 	[data-page="/privacy-policy"] .sitebranding & a:visited,
 	[data-page="/privacy-policy"] .sitebranding & a:focus,
+	[data-page="/gallery"] .sitebranding & a,
+	[data-page="/gallery"] .sitebranding & a:visited,
+	[data-page="/gallery"] .sitebranding & a:focus,
 	[data-page="/accessibility"] .sitebranding & a,
 	[data-page="/accessibility"] .sitebranding & a:visited,
 	[data-page="/accessibility"] .sitebranding & a:focus {
 		color: var(--rose);
 	}
-	
+
 	.sitebranding.sticky & a {
 		color: var(--rose);
 	}
@@ -207,40 +215,48 @@ export default function Header() {
 
 	return (
 		<HeaderContainer className="sitebranding">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-18FJJ5D9JD"></script>
+			<script
+				async
+				src="https://www.googletagmanager.com/gtag/js?id=G-18FJJ5D9JD"></script>
 			<LeftNavigation>
-				<Link href="tel:+13102464777" className="telNumber">310.246.4777</Link>
+				<Link href="tel:+13102464777" className="telNumber">
+					310.246.4777
+				</Link>
 				<Link href="tel:+13102464777" className="telIconWhite">
-					<Image 
-					src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/ic_baseline-phone.svg"
-					alt="telephone icon"
-					width={24}
-					height={24}/>
+					<Image
+						src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/ic_baseline-phone.svg"
+						alt="telephone icon"
+						width={24}
+						height={24}
+					/>
 				</Link>
 				<Link href="tel:+13102464777" className="telIconGold">
-					<Image 
-					src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/ic_baseline-phone-1.svg"
-					alt="telephone icon"
-					width={24}
-					height={24}/>
+					<Image
+						src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/ic_baseline-phone-1.svg"
+						alt="telephone icon"
+						width={24}
+						height={24}
+					/>
 				</Link>
 			</LeftNavigation>
 
 			<ImageContainer>
 				<Link href="/">
-				<Image 
-				className="parkElmLogo"
-				src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/PE_Logo_white.svg" 
-				width={223}
-				height={73}
-				alt="Park Elm at Century Plaza" />
+					<Image
+						className="parkElmLogo"
+						src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/PE_Logo_white.svg"
+						width={223}
+						height={73}
+						alt="Park Elm at Century Plaza"
+					/>
 
-				<Image 
-				className="parkElmIcon"
-				src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/PE_Icon_GLD.svg" 
-				width={24}
-				height={27}
-				alt="Park Elm at Century Plaza Palm Tree Icon" />
+					<Image
+						className="parkElmIcon"
+						src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/PE_Icon_GLD.svg"
+						width={24}
+						height={27}
+						alt="Park Elm at Century Plaza Palm Tree Icon"
+					/>
 				</Link>
 			</ImageContainer>
 
