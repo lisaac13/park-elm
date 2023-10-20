@@ -66,7 +66,9 @@ body {
 	overflow-x: hidden;
 }
 
-[data-page] {opacity: 0;}
+[data-page] {
+	opacity: 0;
+}
 
 a {
 	color: inherit;
@@ -86,7 +88,7 @@ a {
 	padding: 6rem 0rem;
 }
 
-@media only screen and (max-width: 820px){
+@media only screen and (max-width: 820px) {
 	.padding-all {
 		padding: 6rem 4rem;
 	}
@@ -100,7 +102,7 @@ a {
 		padding: 6rem 0rem;
 	}
 }
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 600px) {
 	.padding-all {
 		padding: 6rem 2rem;
 	}
@@ -116,8 +118,9 @@ a {
 }
 
 [data-page="/privacy-policy"],
+[data-page="/gallery"],
 [data-page="/accessibility"] {
-    background: var(--pearl);
+	background: var(--pearl);
 }
 
 .ThankYouSection {
@@ -182,7 +185,7 @@ a {
 	margin: 1rem 0;
 }
 
-.PolicyPageConent ul li, 
+.PolicyPageConent ul li,
 .PolicyPageConent ol li,
 .PolicyPageConent p {
 	color: var(--black);
@@ -192,9 +195,9 @@ a {
 }
 
 .PolicyPageConent ul li,
-.PolicyPageConent ol li{
+.PolicyPageConent ol li {
 	margin-inline-start: 3rem;
-    line-height: 1.5;
+	line-height: 1.5;
 }
 
 .PolicyPageConent p a {

@@ -186,6 +186,19 @@ async function getPageBySlug(pathname, metaDataOnly) {
                         hideComponent
                         title
                       }
+                      ... on Page_Flexiblecontent_Sections_Gallery {
+                        anchor
+                        content
+                        ctaLink
+                        ctaText
+                        hideComponent
+                        fieldGroupName
+                        title
+                        images {
+                          altText
+                          mediaItemUrl
+                        }
+                      }
                     }
                   }
                 }
@@ -195,6 +208,7 @@ async function getPageBySlug(pathname, metaDataOnly) {
 	});
 
 	const data = await res.json();
+	console.log(data.data.page.flexibleContent);
 
 	const pageData = metaDataOnly ? data.data.page.seo : data.data.page;
 

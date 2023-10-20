@@ -11,9 +11,9 @@ import ContentTimline from "../components/ContentTimline";
 import Forms from "../components/Forms";
 import GatedContent from "../components/GatedContent";
 import FullWidthImageWithOverlay from "../components/FullWidthImageWithOverlay";
+import Gallery from "../components/Gallery";
 
 export default function parseSections(sections) {
-	
 	const gatheredSections = [];
 	for (const [index, section] of sections.entries()) {
 		if (section.hideComponent == true) continue;
@@ -115,6 +115,11 @@ export default function parseSections(sections) {
 			case "Page_Flexiblecontent_Sections_Map":
 				gatheredSections.push(
 					<Map key={componentKey} {...section} index={index} />
+				);
+				break;
+			case "Page_Flexiblecontent_Sections_Gallery":
+				gatheredSections.push(
+					<Gallery key={componentKey} {...section} index={index} />
 				);
 				break;
 			case "Page_Flexiblecontent_Sections_TwoColumnTitleContent":
