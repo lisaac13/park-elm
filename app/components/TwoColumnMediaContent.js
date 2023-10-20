@@ -132,7 +132,7 @@ export default function TwoColumnMediaContent(props) {
 
 	return (
 		<TwoColumnMediaContentSection>
-			{anchor && <a id={anchor} className="anchor"></a>}
+			{anchor && <a id={anchor} className={`anchor-${anchor}`}></a>}
 			<InnerContainer data-animate="fadeInUp">
 				<MediaContainer>
 					{videoMp4 || videoWebm ? (

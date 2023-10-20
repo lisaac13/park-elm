@@ -2,6 +2,7 @@
 import styled from "styled-components";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { gsap } from "gsap";
 
 const GatedSection = styled.section`
 	width: 100%;
@@ -167,6 +168,12 @@ export default function GatedContent(props) {
 
 	useEffect(() => {
 		if (localStorage.getItem("loggedin") === "true") {
+			var tl = gsap.timeline();
+		tl.fromTo(
+			".hideGate",
+			{ autoAlpha: 0 },
+			{ autoAlpha: 0 }
+		);
 			setLoggedIn(true);
 		}
 	}, []);
@@ -203,7 +210,7 @@ export default function GatedContent(props) {
 
 	return !loggedIn ? (
 		<GatedSection>
-			<GatedForm>
+			<GatedForm className="hideGate">
 				<Image
 					src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/PE_LogoIcon_GLD_white.svg"
 					alt="park elm logo"

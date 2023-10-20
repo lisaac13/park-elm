@@ -218,7 +218,9 @@ const BottomFlexContainer = styled.div`
 		& {width: 100%;}
 	}
  `;
+
 export default function Footer() {
+
 	return (
 		<StyledFooter>
 			<InnerContainer>
@@ -241,11 +243,11 @@ export default function Footer() {
 				<li className="xsmobile">
 				<address>2025 Avenue of the Stars<br/>Los Angeles, CA 90067</address>
 				</li>
-				<li><Link href="/#residences">Residences</Link></li>
-				<li><Link href="/#servicesamenities">Services & Amenities</Link></li>
-				<li><Link href="/#centuryplaza">Century Plaza</Link></li>
-				<li><Link href="/#neighborhood">Neighborhood</Link></li>
-				<li><Link href="/#team">Team</Link></li>
+				<li><Link to="https://parkelmcenturyplaza.com/#residences" onClick={() => {window.location.href="https://parkelmcenturyplaza.com/#residences"}} href="/#residences">Residences</Link></li>
+				<li><Link to="https://parkelmcenturyplaza.com/#servicesamenities" onClick={() => {window.location.href="https://parkelmcenturyplaza.com/#servicesamenities"}} href="/#servicesamenities">Services & Amenities</Link></li>
+				<li><Link to="https://parkelmcenturyplaza.com/#centuryplaza" onClick={() => {window.location.href="https://parkelmcenturyplaza.com/#centuryplaza"}} href="/#centuryplaza">Century Plaza</Link></li>
+				<li><Link to="https://parkelmcenturyplaza.com/#neighborhood" onClick={() => {window.location.href="https://parkelmcenturyplaza.com/#neighborhood"}} href="/#neighborhood">Neighborhood</Link></li>
+				<li><Link to="https://parkelmcenturyplaza.com/" onClick={() => {window.location.href="https://parkelmcenturyplaza.com/#team"}} href="/#team">Team</Link></li>
 				<li className="mobile first"><Link href="/privacy-policy">Policies</Link></li>
 				<li className="mobile"><Link href="/accessibility">Accessibility</Link></li>
 				<li className="mobile social">

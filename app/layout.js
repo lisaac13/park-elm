@@ -1,13 +1,14 @@
 "use client";
 import "./globals.css";
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useEffect } from "react";
 import StyledComponentsRegistry from "../lib/registry";
 import dynamic from "next/dynamic";
 import Script from "next/script";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { usePathname } from "next/navigation";
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 const Header = dynamic(() => import("@/app/components/Header"), {
 	ssr: false,
@@ -19,10 +20,18 @@ const Footer = dynamic(() => import("@/app/components/Footer"), {
 
 export default function RootLayout({ children }) {
 	const main = useRef();
+	const body = useRef();
 	const pathname = usePathname();
+	const smoother = useRef();
 
 	useLayoutEffect(() => {
 		const ctx = gsap.context((self) => {
+			  // create the smooth scroller FIRST!
+			  smoother.current = ScrollSmoother.create({
+				smooth: 2, // seconds it takes to "catch up" to native scroll position
+				effects: true, // look for data-speed and data-lag attributes on elements and animate accordingly
+			  });
+
 			const reveals = self.selector('[data-animate="fadeInUp"]');
 
 			reveals.forEach((reveal) => {
@@ -44,7 +53,7 @@ export default function RootLayout({ children }) {
 					}
 				);
 			});
-		}, main);
+		}, main, body);
 		return () => ctx.revert();
 	}, []);
 
@@ -59,11 +68,15 @@ export default function RootLayout({ children }) {
 			</Script>
 			<StyledComponentsRegistry>
 				<body data-page={pathname}>
-					<Header />
-					<main ref={main}>
+				<Header />
+				<div id="smooth-wrapper" ref={main}>
+        		<div id="smooth-content">
+					<main>
 						{children}
 					</main>
-					<Footer />
+					<Footer ref={smoother}/>
+				</div>
+				</div>
 				</body>
 			</StyledComponentsRegistry>
 		</html>
