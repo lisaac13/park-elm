@@ -343,12 +343,21 @@ export default function Footer() {
 							structural elements. The developer reserves the
 							right to make modifications to the floor plans and
 							unit dimensions at any time. Exclusive sales and
-							marketing: Next Century Realty, Inc., BRE #
+							marketing: Next Century Realty, Inc., DRE #
 							02028123. The Agency Development Group DRE #01973483
+							&nbsp;
+							<Image
+								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/equal-housing-opportunity-black-copy-1.svg"
+								alt="equal housing opportunity logo"
+								width={16}
+								height={17}
+								className="equalHousiing"
+								style={{ height: ".7rem", width: "auto" }}
+							/>
 						</p>
 					</Disclaimer>
 					<DeveloperContainer>
-						<li>
+						{/* <li>
 							<Image
 								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/equal-housing-opportunity-black-copy-1.svg"
 								alt="equal housing opportunity logo"
@@ -356,7 +365,7 @@ export default function Footer() {
 								height={31}
 								className="equalHousiing"
 							/>
-						</li>
+						</li> */}
 						<li>
 							<Image
 								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/ncp-logo.svg"
