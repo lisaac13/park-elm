@@ -26,7 +26,7 @@ const ImageContainer = styled.div`
 	max-width: 209px;
 	position: relative;
 
-	& img{
+	& img {
 		width: 100%;
 		max-width: 100%;
 		height: auto;
@@ -66,7 +66,9 @@ const Address = styled.div`
 	}
 
 	@media only screen and (max-width: 1024px) {
-		&{display: none;}
+		& {
+			display: none;
+		}
 	}
 `;
 
@@ -102,7 +104,9 @@ const FooterLinks = styled.ul`
 		}
 	}
 	@media only screen and (max-width: 515px) {
-		& li.xsmobile {display: block;}
+		& li.xsmobile {
+			display: block;
+		}
 		& li.xsmobile address {
 			font-family: var(--font-serif-med-italic);
 			color: var(--pearl);
@@ -160,11 +164,13 @@ const BottomFlexContainer = styled.div`
 		}
 	}
 	@media only screen and (max-width: 600px) {
-		& { padding: 2rem 2rem;}
+		& {
+			padding: 2rem 2rem;
+		}
 	}
 `;
 
- const Disclaimer = styled.div`
+const Disclaimer = styled.div`
 	width: calc(65% - 2rem);
 	& p {
 		color: var(--pearl);
@@ -174,15 +180,19 @@ const BottomFlexContainer = styled.div`
 		opacity: 0.7;
 	}
 	@media only screen and (max-width: 1220px) {
-		& {width: calc(60% - 2rem);}
+		& {
+			width: calc(60% - 2rem);
+		}
 	}
 	@media only screen and (max-width: 1024px) {
-		& {width: 100%;}
+		& {
+			width: 100%;
+		}
 	}
- `;
+`;
 
- const DeveloperContainer = styled.ul`
- 	width: calc(35% - 2rem);
+const DeveloperContainer = styled.ul`
+	width: calc(35% - 2rem);
 	list-style: none;
 	display: flex;
 	gap: 2rem;
@@ -201,7 +211,7 @@ const BottomFlexContainer = styled.div`
 	}
 	& li .agencyLogo {
 		width: 100%;
-		max-width:80px;
+		max-width: 80px;
 		height: auto;
 	}
 	& li .reubenbrothersLogo {
@@ -211,107 +221,168 @@ const BottomFlexContainer = styled.div`
 	}
 
 	@media only screen and (max-width: 1220px) {
-		& {width: calc(40% - 2rem);}
+		& {
+			width: calc(40% - 2rem);
+		}
 	}
 
 	@media only screen and (max-width: 1024px) {
-		& {width: 100%;}
+		& {
+			width: 100%;
+		}
 	}
- `;
+`;
 
 export default function Footer() {
 	return (
 		<StyledFooter>
 			<InnerContainer>
-			<ImageContainer>
-				<Link href="/">
-				<Image 
-				src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/PE_LogoIcon_GLD_white.svg"
-				width={209}
-				height={118}
-				alt="Park Elm at Century Park Logo with Palm Icon"/>
-				</Link>
-				<MobileAddress>
-					<address>2025 Avenue of the Stars<br/>Los Angeles, CA 90067</address>
-				</MobileAddress>
-			</ImageContainer>
-			<Address>
-				<address>2025 Avenue of the Stars<br/>Los Angeles, CA 90067</address>
-			</Address>
-			<FooterLinks>
-				<li className="xsmobile">
-				<address>2025 Avenue of the Stars<br/>Los Angeles, CA 90067</address>
-				</li>
-				<li><Link href="/#residences">Residences</Link></li>
-				<li><Link href="/#servicesamenities">Services & Amenities</Link></li>
-				<li><Link href="/#centuryplaza">Century Plaza</Link></li>
-				<li><Link href="/#neighborhood">Neighborhood</Link></li>
-				<li><Link href="/#team">Team</Link></li>
-				<li className="mobile first"><Link href="/privacy-policy">Policies</Link></li>
-				<li className="mobile"><Link href="/accessibility">Accessibility</Link></li>
-				<li className="mobile social">
-					<Link target="_blank" href="https://www.instagram.com/parkelmcenturyplaza/">
-					<Image 
-						src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/instagram.svg"
-						alt="instagram icon"
-						width={24}
-						height={24}/>
+				<ImageContainer>
+					<Link href="/">
+						<Image
+							src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/PE_LogoIcon_GLD_white.svg"
+							width={209}
+							height={118}
+							alt="Park Elm at Century Park Logo with Palm Icon"
+						/>
 					</Link>
-				</li>
-			</FooterLinks>
-			<FooterLinksTwo>
-				<li><Link href="/privacy-policy">Policies</Link></li>
-				<li><Link href="/accessibility">Accessibility</Link></li>
-			</FooterLinksTwo>
+					<MobileAddress>
+						<address>
+							2025 Avenue of the Stars
+							<br />
+							Los Angeles, CA 90067
+						</address>
+					</MobileAddress>
+				</ImageContainer>
+				<Address>
+					<address>
+						2025 Avenue of the Stars
+						<br />
+						Los Angeles, CA 90067
+					</address>
+				</Address>
+				<FooterLinks>
+					<li className="xsmobile">
+						<address>
+							2025 Avenue of the Stars
+							<br />
+							Los Angeles, CA 90067
+						</address>
+					</li>
+					<li>
+						<Link href="/#residences">Residences</Link>
+					</li>
+					<li>
+						<Link href="/#servicesamenities">
+							Services & Amenities
+						</Link>
+					</li>
+					<li>
+						<Link href="/#centuryplaza">Century Plaza</Link>
+					</li>
+					<li>
+						<Link href="/#neighborhood">Neighborhood</Link>
+					</li>
+					<li>
+						<Link href="/#team">Team</Link>
+					</li>
+					<li className="mobile first">
+						<Link href="/privacy-policy">Policies</Link>
+					</li>
+					<li className="mobile">
+						<Link href="/accessibility">Accessibility</Link>
+					</li>
+					<li className="mobile social">
+						<Link
+							target="_blank"
+							href="https://www.instagram.com/parkelmcenturyplaza/">
+							<Image
+								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/instagram.svg"
+								alt="instagram icon"
+								width={24}
+								height={24}
+							/>
+						</Link>
+					</li>
+				</FooterLinks>
+				<FooterLinksTwo>
+					<li>
+						<Link href="/privacy-policy">Policies</Link>
+					</li>
+					<li>
+						<Link href="/accessibility">Accessibility</Link>
+					</li>
+				</FooterLinksTwo>
 
-			<SocialContainer>
-				<Link target="_blank" href="https://www.instagram.com/parkelmcenturyplaza/">
-					<Image 
-						src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/instagram.svg"
-						alt="instagram icon"
-						width={24}
-						height={24}/>
-				</Link>
-			</SocialContainer>
+				<SocialContainer>
+					<Link
+						target="_blank"
+						href="https://www.instagram.com/parkelmcenturyplaza/">
+						<Image
+							src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/instagram.svg"
+							alt="instagram icon"
+							width={24}
+							height={24}
+						/>
+					</Link>
+				</SocialContainer>
 			</InnerContainer>
 
 			<BottomContainer>
 				<BottomFlexContainer>
 					<Disclaimer>
-						<p>All floor plans shown are for illustrative purposes only. Floor plans may not depict final designs of units as constructed. All dimensions and square footages are approximate and subject to normal construction variances and tolerances and changes resulting from unforeseen conditions. Dimensions and square footages include certain perimeter and interior walls, windows, shafts, columns and other structural elements. The developer reserves the right to make modifications to the floor plans and unit dimensions at any time. Exclusive sales and marketing: Next Century Realty, Inc., BRE # 02028123. The Agency DRE #01973483</p>
+						<p>
+							All floor plans shown are for illustrative purposes
+							only. Floor plans may not depict final designs of
+							units as constructed. All dimensions and square
+							footages are approximate and subject to normal
+							construction variances and tolerances and changes
+							resulting from unforeseen conditions. Dimensions and
+							square footages include certain perimeter and
+							interior walls, windows, shafts, columns and other
+							structural elements. The developer reserves the
+							right to make modifications to the floor plans and
+							unit dimensions at any time. Exclusive sales and
+							marketing: Next Century Realty, Inc., BRE #
+							02028123. The Agency Development Group DRE #01973483
+						</p>
 					</Disclaimer>
 					<DeveloperContainer>
 						<li>
-							<Image 
-								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/equal-housing-opportunity-black-copy-1.svg" 
-								alt="equal housing opportunity logo" 
-								width={30} 
+							<Image
+								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/equal-housing-opportunity-black-copy-1.svg"
+								alt="equal housing opportunity logo"
+								width={30}
 								height={31}
-								className="equalHousiing"/>
+								className="equalHousiing"
+							/>
 						</li>
 						<li>
 							<Image
-								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/ncp-logo.svg" 
-								alt="ncp logo" 
-								width={55} 
+								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/ncp-logo.svg"
+								alt="ncp logo"
+								width={55}
 								height={33}
-								className="ncpLogo"/>
+								className="ncpLogo"
+							/>
 						</li>
 						<li>
 							<Image
-								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/agency-logo.png" 
-								alt="the agency logo" 
-								width={80} 
+								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/agency-logo.png"
+								alt="the agency logo"
+								width={80}
 								height={80}
-								className="agencyLogo"/>
+								className="agencyLogo"
+							/>
 						</li>
 						<li>
 							<Image
-								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/reuben-brothers-logo.svg" 
-								alt="reuben brothers logo" 
-								width={150} 
+								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/reuben-brothers-logo.svg"
+								alt="reuben brothers logo"
+								width={150}
 								height={25}
-								className="reubenbrothersLogo"/>
+								className="reubenbrothersLogo"
+							/>
 						</li>
 					</DeveloperContainer>
 				</BottomFlexContainer>
