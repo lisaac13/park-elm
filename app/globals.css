@@ -208,3 +208,14 @@ a {
 	position: relative;
 	top: -100px;
 }
+
+.fh5-light-box {
+	height: 90vh;
+	overflow: hidden;
+	border: 8px solid #505050 !important;
+	border-radius: 0px !important;
+	background: #505050 !important;
+}
+.fh5-light-box iframe {
+	height: 88vh;
+}

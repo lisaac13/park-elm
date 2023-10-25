@@ -122,13 +122,13 @@ function DigitalBrochure() {
 			<Block key={99}>
 				<a
 					data-rel="fh5-light-box-demo"
-					data-href="https://online.fliphtml5.com/ydxuz/baws/"
+					data-href="https://online.fliphtml5.com/bzmsn/ftpg/"
 					data-width="1440"
 					data-height="900"
 					data-title="">
 					<Image
 						src={
-							"https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/placeholder.jpg"
+							"https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/edit_0004_Brochure.jpg"
 						}
 						alt="tower"
 						width={700}
