@@ -193,9 +193,6 @@ export default function ImageContentBlocksThreeUp(props) {
 			<ContentBlockContainer>
 				{contentBlocks &&
 					articles.map((contentBlock, index) => {
-						if (contentBlock.title === "Brochure") {
-							return <DigitalBrochure key="55" />;
-						}
 						return (
 							<Block key={index}>
 								{contentBlock.linkType === "pdf" && (
