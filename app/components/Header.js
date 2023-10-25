@@ -85,7 +85,7 @@ const ImageContainer = styled.div`
 		max-width: 350px;
 		height: auto;
 	}
-
+	[data-page="/park-elm-gallery"] .sitebranding & a .parkElmLogo,
 	[data-page="/privacy-policy"] .sitebranding & a .parkElmLogo,
 	[data-page="/gallery"] .sitebranding & a .parkElmLogo,
 	[data-page="/accessibility"] .sitebranding & a .parkElmLogo {
@@ -130,6 +130,9 @@ const LeftNavigation = styled.div`
 		letter-spacing: 0.1rem;
 	}
 
+	[data-page="/park-elm-gallery"] .sitebranding & a,
+	[data-page="/park-elm-gallery"] .sitebranding & a:visited,
+	[data-page="/park-elm-gallery"] .sitebranding & a:focus,
 	[data-page="/privacy-policy"] .sitebranding & a,
 	[data-page="/privacy-policy"] .sitebranding & a:visited,
 	[data-page="/privacy-policy"] .sitebranding & a:focus,
@@ -187,6 +190,9 @@ const RightNavigation = styled.div`
 		letter-spacing: 0.1rem;
 	}
 
+	[data-page="/park-elm-gallery"] .sitebranding & a,
+	[data-page="/park-elm-gallery"] .sitebranding & a:visited,
+	[data-page="/park-elm-gallery"] .sitebranding & a:focus,
 	[data-page="/privacy-policy"] .sitebranding & a,
 	[data-page="/privacy-policy"] .sitebranding & a:visited,
 	[data-page="/privacy-policy"] .sitebranding & a:focus,
