@@ -179,6 +179,14 @@ const Disclaimer = styled.div`
 		line-height: 1.3;
 		opacity: 0.7;
 	}
+	& p.generic {
+		display: block;
+	}
+	& p.savills {
+		display: none;
+	}
+	[data-page="/savills-broker-portal"] & p.savills {display: block;}
+	[data-page="/savills-broker-portal"] & p.generic {display: none;}
 	@media only screen and (max-width: 1220px) {
 		& {
 			width: calc(60% - 2rem);
@@ -331,7 +339,7 @@ export default function Footer() {
 			<BottomContainer>
 				<BottomFlexContainer>
 					<Disclaimer>
-						<p>
+						<p className="generic">
 							All floor plans shown are for illustrative purposes
 							only. Floor plans may not depict final designs of
 							units as constructed. All dimensions and square
@@ -346,6 +354,26 @@ export default function Footer() {
 							marketing: Next Century Realty, Inc., DRE #
 							02028123. The Agency Development Group DRE #01973483
 							&nbsp;
+							<Image
+								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/equal-housing-opportunity-black-copy-1.svg"
+								alt="equal housing opportunity logo"
+								width={16}
+								height={17}
+								className="equalHousiing"
+								style={{ height: ".7rem", width: "auto" }}
+							/>
+						</p>
+						<p className="savills">
+						These details have been prepared in good faith but are not intended to constitute 
+						part of any offer of contract or create any contractual relationship. No description 
+						orinformation of any kind contained in these particulars may be relied upon as a 
+						statement or representation, warranty or fact. All images, plans and specifications 
+						shown are indicative only, cannot be guaranteed to represent the complete interiors or 
+						exteriors of the project and are subject to change due to design coordination and other 
+						development considerations. Any areas, measurements or distances given are approximate only. 
+						It is not possible to scale exactly from these drawings. Any buyer must satisfy themselves 
+						by inspection or otherwise as to the correctness of any information given. All rights 
+						reserved to Next Century Partners. &nbsp;
 							<Image
 								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/equal-housing-opportunity-black-copy-1.svg"
 								alt="equal housing opportunity logo"
