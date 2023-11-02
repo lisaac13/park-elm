@@ -200,6 +200,13 @@ export default function Forms(props) {
 				body: JSON.stringify(formState),
 			}
 		);
+		const resNew = await fetch(
+			"https://hooks.zapier.com/hooks/catch/16106562/3z3axds/",
+			{
+				method: "POST",
+				body: JSON.stringify(formState),
+			}
+		);
 
 		handleResponse(res);
 	};
