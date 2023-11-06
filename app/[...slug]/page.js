@@ -1,6 +1,6 @@
-import Image from "next/image";
 import parseSections from "../utils/parseSections";
 import getPageBySlug from "../utils/getPageBySlug";
+import Head from "next/head";
 
 export async function generateMetadata(props) {
 	const data = await getPageBySlug(props.params.slug[0], true);

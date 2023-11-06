@@ -4,6 +4,7 @@ import { useLayoutEffect, useRef, useEffect } from "react";
 import StyledComponentsRegistry from "../lib/registry";
 import dynamic from "next/dynamic";
 import Script from "next/script";
+import Head from "next/head";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
@@ -24,17 +25,19 @@ export default function RootLayout({ children }) {
 
 	useLayoutEffect(() => {
 		const ctx = gsap.context((self) => {
-		  const pageFade = self.selector('[data-page]');
-		  var tl = gsap.timeline();
-		  tl.fromTo(pageFade,{ autoAlpha: 0, duration: 0.5 },{ autoAlpha: 1, duration: 1 }
-		  );
+			const pageFade = self.selector("[data-page]");
+			var tl = gsap.timeline();
+			tl.fromTo(
+				pageFade,
+				{ autoAlpha: 0, duration: 0.5 },
+				{ autoAlpha: 1, duration: 1 }
+			);
 		}, main); // <- Scope!
 		return () => ctx.revert(); // <- Cleanup!
-	  }, []);
+	}, []);
 
 	useLayoutEffect(() => {
 		const ctx = gsap.context((self) => {
-
 			const reveals = self.selector('[data-animate="fadeInUp"]');
 			reveals.forEach((reveal) => {
 				gsap.fromTo(
@@ -60,6 +63,12 @@ export default function RootLayout({ children }) {
 
 	return (
 		<html lang="en">
+			<Head>
+				<meta
+					property="og:image"
+					content="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/11/C88A2126-Edit-scaled.jpg"
+				/>
+			</Head>
 			<Script src="https://www.googletagmanager.com/gtag/js?id=G-SM79XXQQQX" />
 			<Script id="wicked-ga4">
 				{`window.dataLayer = window.dataLayer || [];
@@ -70,11 +79,9 @@ export default function RootLayout({ children }) {
 			<StyledComponentsRegistry>
 				<body ref={main}>
 					<div data-page={pathname}>
-					<Header />
-					<main>
-						{children}
-					</main>
-					<Footer/>
+						<Header />
+						<main>{children}</main>
+						<Footer />
 					</div>
 				</body>
 			</StyledComponentsRegistry>

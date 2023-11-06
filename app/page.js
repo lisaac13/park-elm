@@ -11,15 +11,5 @@ export const metadata = {
 export default async function Page(props) {
 	const data = await getPageBySlug("home");
 
-	return (
-		<>
-			<Head>
-				<meta
-					property="og:image"
-					content="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/11/C88A2126-Edit-scaled.jpg"
-				/>
-			</Head>
-			{parseSections(data.flexibleContent.sections)}
-		</>
-	);
+	return <>{parseSections(data.flexibleContent.sections)}</>;
 }
