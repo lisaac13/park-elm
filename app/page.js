@@ -3,7 +3,7 @@ import getPageBySlug from "./utils/getPageBySlug";
 import parseSections from "./utils/parseSections";
 
 export const metadata = {
-	metadataBase: new URL("https://parkelmcms.wpenginepowered.com"),
+	metadataBase: new URL("https://parkelmcenturyplaza.com"),
 	// metadataBase: new URL("https://localhost:3000"),
 	title: "Park Elm at Century Plaza",
 	description:
