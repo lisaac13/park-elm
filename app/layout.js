@@ -73,7 +73,7 @@ export default function RootLayout({ children }) {
 					content="lFjtLXr4ydz1JFnvQDVhmdOsBdUDkXLxegro0vltDo8"
 				/>
 			</Head>
-			<Script>
+			<Script id="fb-pixel">
 				{`!function(f,b,e,v,n,t,s)
 					{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 					n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -102,7 +102,7 @@ export default function RootLayout({ children }) {
 			</Script>
 			<StyledComponentsRegistry>
 				<body ref={main}>
-					<Script>
+					<Script id="clickcease">
 						{`var script = document.createElement('script');
       			script.async = true; script.type = 'text/javascript';
       			var target = 'https://www.clickcease.com/monitor/stat.js';
