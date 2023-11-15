@@ -65,12 +65,12 @@ export default function RootLayout({ children }) {
 		<html lang="en">
 			<Head>
 				<meta
-					property="og:image"
-					content="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/11/C88A2126-Edit-scaled.jpg"
-				/>
-				<meta
 					name="google-site-verification"
 					content="lFjtLXr4ydz1JFnvQDVhmdOsBdUDkXLxegro0vltDo8"
+				/>
+				<meta
+					property="og:image"
+					content="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/11/C88A2126-Edit-scaled.jpg"
 				/>
 			</Head>
 			<Script id="fb-pixel">
