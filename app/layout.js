@@ -68,6 +68,10 @@ export default function RootLayout({ children }) {
 					property="og:image"
 					content="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/11/C88A2126-Edit-scaled.jpg"
 				/>
+				<meta
+					name="google-site-verification"
+					content="lFjtLXr4ydz1JFnvQDVhmdOsBdUDkXLxegro0vltDo8"
+				/>
 			</Head>
 			<Script>
 				{`!function(f,b,e,v,n,t,s)
