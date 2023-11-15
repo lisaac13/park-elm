@@ -68,8 +68,9 @@ export default function RootLayout({ children }) {
 					property="og:image"
 					content="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/11/C88A2126-Edit-scaled.jpg"
 				/>
-				<Script>
-					{`!function(f,b,e,v,n,t,s)
+			</Head>
+			<Script>
+				{`!function(f,b,e,v,n,t,s)
 					{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 					n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 					if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
@@ -79,16 +80,15 @@ export default function RootLayout({ children }) {
 					'https://connect.facebook.net/en_US/fbevents.js');
 					fbq('init', '735360295307560');
 					fbq('track', 'PageView');`}
-				</Script>
-				<noscript>
-					<img
-						height="1"
-						width="1"
-						style="display:none"
-						src="https://www.facebook.com/tr?id=735360295307560&ev=PageView&noscript=1"
-					/>
-				</noscript>
-			</Head>
+			</Script>
+			<noscript>
+				<img
+					height="1"
+					width="1"
+					style="display:none"
+					src="https://www.facebook.com/tr?id=735360295307560&ev=PageView&noscript=1"
+				/>
+			</noscript>
 			<Script src="https://www.googletagmanager.com/gtag/js?id=G-SM79XXQQQX" />
 			<Script id="wicked-ga4">
 				{`window.dataLayer = window.dataLayer || [];
