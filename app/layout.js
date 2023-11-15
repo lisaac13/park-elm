@@ -64,21 +64,6 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
 			<Head>
-				<Script>
-					{`var script = document.createElement('script');
-      			script.async = true; script.type = 'text/javascript';
-      			var target = 'https://www.clickcease.com/monitor/stat.js';
-      			script.src = target;var elem = document.head;elem.appendChild(script);`}
-				</Script>
-				<noscript>
-					<a href="https://www.clickcease.com" rel="nofollow">
-						<img
-							src="https://monitor.clickcease.com"
-							alt="ClickCease"
-						/>
-					</a>
-				</noscript>
-
 				<meta
 					property="og:image"
 					content="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/11/C88A2126-Edit-scaled.jpg"
@@ -113,6 +98,20 @@ export default function RootLayout({ children }) {
 			</Script>
 			<StyledComponentsRegistry>
 				<body ref={main}>
+					<Script>
+						{`var script = document.createElement('script');
+      			script.async = true; script.type = 'text/javascript';
+      			var target = 'https://www.clickcease.com/monitor/stat.js';
+      			script.src = target;var elem = document.head;elem.appendChild(script);`}
+					</Script>
+					<noscript>
+						<a href="https://www.clickcease.com" rel="nofollow">
+							<img
+								src="https://monitor.clickcease.com"
+								alt="ClickCease"
+							/>
+						</a>
+					</noscript>
 					<div data-page={pathname}>
 						<Header />
 						<main>{children}</main>
