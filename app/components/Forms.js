@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import prase from "html-react-parser";
 import { useEffect, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const FormSection = styled.section`
 	background-color: var(--sky);
@@ -150,7 +151,7 @@ const SubmitButton = styled.input`
 	font-style: normal;
 	transition: 0.3s ease all;
 	margin-left: auto;
-	grid-column: span 2;
+	grid-column: 2/3;
 
 	@media screen and (max-width: 820px) {
 		grid-column: auto;
@@ -175,6 +176,7 @@ export const FormQueryFragment = `
 
 export default function Forms(props) {
 	const { anchor, content, title, formToUse } = props;
+	const [isVerified, setIsVerified] = useState(false);
 	const [formState, setFormState] = useState({
 		source: "Park Elm Landing Page",
 	});
@@ -192,6 +194,11 @@ export default function Forms(props) {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+
+		if (!isVerified) {
+			alert("Please verify that you are not a robot.");
+			return;
+		}
 
 		const res = await fetch(
 			"https://hooks.zapier.com/hooks/catch/2001353/3s3a7jh/",
@@ -327,6 +334,10 @@ export default function Forms(props) {
 							onChange={handleChange}
 							placeholder="Write Message Here"></StyledTextArea>
 					</FieldGroup>
+					<ReCAPTCHA
+						sitekey={process.env.NEXT_RECAPTCHA_SITE_KEY}
+						onChange={setIsVerified}
+					/>
 					<SubmitButton type="submit" name="submit" value="Submit" />
 				</Form>
 			</FormContainer>
