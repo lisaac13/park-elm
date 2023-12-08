@@ -121,6 +121,20 @@ const RadioContainer = styled.div`
 const RadioField = styled.input`
 	accent-color: var(--rose);
 `;
+const StyledSelect = styled.select`
+	background-color: transparent;
+	-webkit-appearance: none;
+	border: 0;
+	border-bottom: 1.5px solid var(--pearl);
+	padding: 0.9rem 0.9rem 0.9rem 0;
+	color: var(--avenue);
+	text-transform: uppercase;
+	font-size: 0.75rem;
+	font-family: var(--font-sans-serif);
+	&::placeholder {
+		color: var(--avenue);
+	}
+`;
 const StyledTextArea = styled.textarea`
 	background-color: transparent;
 	-webkit-appearance: none;
@@ -138,7 +152,7 @@ const StyledTextArea = styled.textarea`
 const SubmitButton = styled.input`
 	width: fit-content;
 	width: -webkit-fit-content;
-	margin-top: 1.5rem;
+	max-height: 74px;
 	font-size: clamp(1rem, 1.2vh, 1.4rem);
 	background-color: transparent;
 	border: 1px solid var(--rose);
@@ -318,7 +332,32 @@ export default function Forms(props) {
 							required
 						/>
 					</FieldGroup>
-					<FieldGroup $span="2">
+					<FieldGroup>
+						<StyledLabel htmlFor="desiredPricing">
+							Desired Pricing <span>*</span>
+						</StyledLabel>
+						<StyledSelect
+							id="desiredPricing"
+							type="text"
+							name="desiredPricing"
+							onChange={handleChange}
+							required>
+							<option>Select Desired Pricing</option>
+							<option value="One Bedrooms">
+								One bedrooms from $1.8M
+							</option>
+							<option value="Two Bedrooms">
+								Two bedrooms from $2.9M
+							</option>
+							<option value="Three Bedrooms">
+								Three bedrooms from $7.7M
+							</option>
+							<option value="Penthouses">
+								Penthouses (pricing upon request)
+							</option>
+						</StyledSelect>
+					</FieldGroup>
+					<FieldGroup>
 						<StyledLabel>
 							Are You a Broker?
 							<span>*</span>
@@ -348,6 +387,7 @@ export default function Forms(props) {
 							</RadioContainer>
 						</MainRadioContainer>
 					</FieldGroup>
+
 					<FieldGroup $span="2">
 						<StyledLabel htmlFor="message">
 							Your Inquiry <span>*</span>
