@@ -5,6 +5,9 @@ import prase from "html-react-parser";
 import { useEffect, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
+import { verifyCaptcha } from "../utils/verifyCaptcha";
+import { useSearchParams } from "next/navigation";
+
 const FormSection = styled.section`
 	background-color: var(--sky);
 	padding: 6rem 0;
@@ -176,12 +179,32 @@ export const FormQueryFragment = `
 
 export default function Forms(props) {
 	const { anchor, content, title, formToUse } = props;
+	const [verifyToken, setVerifyToken] = useState(false);
 	const [isVerified, setIsVerified] = useState(false);
+	const [success, setSuccess] = useState(false);
 	const [formState, setFormState] = useState({
 		source: "Park Elm Landing Page",
+		utm_source: "",
+		utm_medium: "",
+		utm_campaign: "",
+		utm_term: "",
+		utm_content: "",
 	});
 
-	const [success, setSuccess] = useState(false);
+	const searchParams = useSearchParams();
+
+	useEffect(() => {
+		if (searchParams.has("utm_source")) {
+			setFormState({
+				...formState,
+				utm_source: searchParams.get("utm_source"),
+				utm_medium: searchParams.get("utm_medium"),
+				utm_campaign: searchParams.get("utm_campaign"),
+				utm_term: searchParams.get("utm_term"),
+				utm_content: searchParams.get("utm_content"),
+			});
+		}
+	}, [searchParams]);
 
 	const handleChange = (e) => {
 		e.preventDefault();
@@ -195,7 +218,9 @@ export default function Forms(props) {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		if (!isVerified) {
+		const verified = await verifyCaptcha(verifyToken);
+
+		if (verified.success !== true) {
 			alert("Please verify that you are not a robot.");
 			return;
 		}
@@ -336,7 +361,7 @@ export default function Forms(props) {
 					</FieldGroup>
 					<ReCAPTCHA
 						sitekey={process.env.NEXT_RECAPTCHA_SITE_KEY}
-						onChange={setIsVerified}
+						onChange={setVerifyToken}
 					/>
 					<SubmitButton type="submit" name="submit" value="Submit" />
 				</Form>
