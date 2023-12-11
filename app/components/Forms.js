@@ -194,10 +194,10 @@ export const FormQueryFragment = `
 export default function Forms(props) {
 	const { anchor, content, title, formToUse } = props;
 	const [verifyToken, setVerifyToken] = useState(false);
-	const [isVerified, setIsVerified] = useState(false);
 	const [success, setSuccess] = useState(false);
 	const [formState, setFormState] = useState({
 		source: "Park Elm Landing Page",
+		desiredPricing: "",
 		utm_source: "",
 		utm_medium: "",
 		utm_campaign: "",
@@ -341,8 +341,8 @@ export default function Forms(props) {
 							type="text"
 							name="desiredPricing"
 							onChange={handleChange}
-							required>
-							<option>Select Desired Pricing</option>
+							required="true">
+							<option value="">Select Desired Pricing</option>
 							<option value="One Bedrooms">
 								One bedrooms from $1.8M
 							</option>
