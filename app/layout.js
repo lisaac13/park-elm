@@ -11,6 +11,7 @@ import { usePathname } from "next/navigation";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { useIsomorphicLayoutEffect } from '@/lib/helpers/isomorphicEffect';
 import TransitionContext from '@/lib/context/TransitionContext';
+import TrackingScripts from "@/app/components/TrackingScripts";
 import { TransitionProvider } from "@/lib/context/TransitionContext";
 import TransitionComponent from "@/app/components/Transition";
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
@@ -78,35 +79,8 @@ export default function RootLayout({ children }) {
 					property="og:image"
 					content="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/11/C88A2126-Edit-scaled.jpg"
 				/>
-				<script id="fb-pixel">
-				{`!function(f,b,e,v,n,t,s)
-					{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-					n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-					if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-					n.queue=[];t=b.createElement(e);t.async=!0;
-					t.src=v;s=b.getElementsByTagName(e)[0];
-					s.parentNode.insertBefore(t,s)}(window, document,'script',
-					'https://connect.facebook.net/en_US/fbevents.js');
-					fbq('init', '735360295307560');
-					fbq('track', 'PageView');`}
-			</script>
-			<noscript>
-				<img
-					height="1"
-					width="1"
-					style={{ display: "none" }}
-					src="https://www.facebook.com/tr?id=735360295307560&ev=PageView&noscript=1"
-				/>
-			</noscript>
-			<script src="https://www.googletagmanager.com/gtag/js?id=G-SM79XXQQQX" />
-			<script id="wicked-ga4">
-				{`window.dataLayer = window.dataLayer || [];
-					function gtag(){dataLayer.push(arguments);}
-					gtag('js', new Date());
-					gtag('config', 'G-SM79XXQQQX');`}
-			</script>
+				<TrackingScripts/>
 			</Head>
-			
 			<StyledComponentsRegistry>
 				<body data-page={pathname}>
 					<Script id="clickcease">
