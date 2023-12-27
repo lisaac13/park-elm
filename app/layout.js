@@ -78,7 +78,8 @@ export default function RootLayout({ children }) {
 					property="og:image"
 					content="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/11/C88A2126-Edit-scaled.jpg"
 				/>
-				<Script id="fb-pixel">
+			</Head>
+			<Script id="fb-pixel">
 				{`!function(f,b,e,v,n,t,s)
 					{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 					n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -105,7 +106,6 @@ export default function RootLayout({ children }) {
 					gtag('js', new Date());
 					gtag('config', 'G-SM79XXQQQX');`}
 			</Script>
-			</Head>
 			<StyledComponentsRegistry>
 				<body data-page={pathname}>
 					<Script id="clickcease">
