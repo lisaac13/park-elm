@@ -34,6 +34,42 @@ async function getPageBySlug(pathname, metaDataOnly) {
                         subtitle
                         title
                       }
+                      ... on Page_Flexiblecontent_Sections_Availability {
+                        anchor
+                        fieldGroupName
+                        hideComponent
+                        heading
+                        blurb
+                        paddingOptions
+                        residencesRepeater {
+                            title
+                            fieldGroupName
+                            residences {
+                              ... on Residence {
+                                title
+                                singleResidences {
+                                  bedrooms
+                                  fieldGroupName
+                                  price
+                                  residence
+                                  squareMeters
+                                  squareFeet
+                                  viewDirection
+                                  floorPlan {
+                                    altText
+                                    mediaItemUrl
+                                    mediaDetails {
+                                      height
+                                      width
+                                    }
+                                  }
+                                  videoEmbed
+                                  bathrooms
+                                }
+                              }
+                            }
+                          }
+                      }
                       ... on Page_Flexiblecontent_Sections_TwoColumnMediaContent {
                         anchor
                         content

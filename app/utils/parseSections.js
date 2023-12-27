@@ -1,5 +1,6 @@
 import Hero from "../components/Hero";
 import Map from "../components/Map";
+import Availability from "../components/Availability";
 import TwoColumnTextContent from "../components/TwoColumnTextContent";
 import TwoColumnMediaContent from "../components/TwoColumnMediaContent";
 import TwoColumnContentSlider from "../components/TwoColumnContentSlider";
@@ -25,6 +26,11 @@ export default function parseSections(sections) {
 				gatheredSections.push(
 					<Hero key={componentKey} {...section} index={index} />
 				);
+				break;
+			case "Page_Flexiblecontent_Sections_Availability":
+					gatheredSections.push(
+						<Availability key={componentKey} {...section} index={index} />
+					);
 				break;
 			case "Page_Flexiblecontent_Sections_ContentTimeline":
 				gatheredSections.push(
