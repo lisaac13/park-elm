@@ -1,15 +1,19 @@
 "use client";
 import "./globals.css";
-import { useLayoutEffect, useRef, useEffect } from "react";
+import { useContext, useLayoutEffect, useRef, useEffect, useState } from "react";
 import StyledComponentsRegistry from "../lib/registry";
 import dynamic from "next/dynamic";
 import Script from "next/script";
 import Head from "next/head";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { usePathname } from "next/navigation";
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { useIsomorphicLayoutEffect } from '@/lib/helpers/isomorphicEffect';
+import TransitionContext from '@/lib/context/TransitionContext';
+import { TransitionProvider } from "@/lib/context/TransitionContext";
+import TransitionComponent from "@/app/components/Transition";
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const Header = dynamic(() => import("@/app/components/Header"), {
 	ssr: false,
@@ -22,44 +26,50 @@ const Footer = dynamic(() => import("@/app/components/Footer"), {
 export default function RootLayout({ children }) {
 	const main = useRef();
 	const pathname = usePathname();
+	const scrollTween = useRef();
+  	const [ctx] = useState(gsap.context(() => {}, main));
+  	const { completed } = useContext(TransitionContext);
 
-	useLayoutEffect(() => {
-		const ctx = gsap.context((self) => {
-			const pageFade = self.selector("[data-page]");
-			var tl = gsap.timeline();
-			tl.fromTo(
-				pageFade,
-				{ autoAlpha: 0, duration: 0.5 },
-				{ autoAlpha: 1, duration: 1 }
-			);
-		}, main); // <- Scope!
-		return () => ctx.revert(); // <- Cleanup!
-	}, []);
-
-	useLayoutEffect(() => {
-		const ctx = gsap.context((self) => {
-			const reveals = self.selector('[data-animate="fadeInUp"]');
-			reveals.forEach((reveal) => {
-				gsap.fromTo(
-					reveal,
-					{ autoAlpha: 0, y: 50 },
-					{
-						autoAlpha: 1,
-						y: 0,
-						scrollTrigger: {
-							trigger: reveal,
-							start: "top bottom",
-							endTrigger: reveal,
-							end: "bottom center",
-							markers: false,
-							toggleActions: "play none none reverse",
-						},
-					}
-				);
+	  const goToSection = (i) => {
+		// Remove the GSAP instance with the specific ID
+		// to prevent memory leak
+		ctx.data.forEach((e) => {
+		  if (e.vars && e.vars.id === 'scrollTween') {
+			e.kill();
+		  }
+		});
+		ctx.add(() => {
+		  scrollTween.current = gsap.to(window, {
+			scrollTo: { y: i * window.innerHeight, autoKill: false },
+			duration: 1,
+			id: 'scrollTween',
+			onComplete: () => (scrollTween.current = null),
+			overwrite: true,
+		  });
+		});
+	  };
+	
+	  useIsomorphicLayoutEffect(() => {
+		if (!completed) return;
+		ctx.add(() => {
+		  const panels = gsap.utils.toArray('.panel');
+		  panels.forEach((panel, i) => {
+			ScrollTrigger.create({
+			  trigger: panel,
+			  start: 'top bottom',
+			  end: '+=200%',
+			  onToggle: (self) =>
+				self.isActive && !scrollTween.current && goToSection(i),
 			});
-		}, main);
+		  });
+		  ScrollTrigger.create({
+			start: 0,
+			end: 'max',
+			snap: 1 / (panels.length - 1),
+		  });
+		});
 		return () => ctx.revert();
-	}, []);
+	  }, [completed]);
 
 	return (
 		<html lang="en">
@@ -68,8 +78,7 @@ export default function RootLayout({ children }) {
 					property="og:image"
 					content="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/11/C88A2126-Edit-scaled.jpg"
 				/>
-			</Head>
-			<Script id="fb-pixel">
+				<Script id="fb-pixel">
 				{`!function(f,b,e,v,n,t,s)
 					{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 					n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -96,8 +105,9 @@ export default function RootLayout({ children }) {
 					gtag('js', new Date());
 					gtag('config', 'G-SM79XXQQQX');`}
 			</Script>
+			</Head>
 			<StyledComponentsRegistry>
-				<body ref={main}>
+				<body data-page={pathname}>
 					<Script id="clickcease">
 						{`var script = document.createElement('script');
       			script.async = true; script.type = 'text/javascript';
@@ -112,11 +122,15 @@ export default function RootLayout({ children }) {
 							/>
 						</a>
 					</noscript>
-					<div data-page={pathname}>
 						<Header />
-						<main>{children}</main>
+						<TransitionProvider>
+						<TransitionComponent>
+							<main ref={main} className="panel">
+								{children}
+							</main>
+						</TransitionComponent>
+						</TransitionProvider>
 						<Footer />
-					</div>
 				</body>
 			</StyledComponentsRegistry>
 		</html>

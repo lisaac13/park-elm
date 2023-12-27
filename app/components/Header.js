@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
 import Logo from "/public/next.svg";
+import Script from "next/script";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -228,9 +229,9 @@ export default function Header() {
 
 	return (
 		<HeaderContainer className="sitebranding">
-			<script
+			<Script
 				async
-				src="https://www.googletagmanager.com/gtag/js?id=G-18FJJ5D9JD"></script>
+				src="https://www.googletagmanager.com/gtag/js?id=G-18FJJ5D9JD"></Script>
 			<LeftNavigation>
 				<Link href="tel:+13102464777" className="telNumber">
 					310.246.4777

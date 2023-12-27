@@ -19,6 +19,7 @@
     "react-flickity-component": "^4.0.6",
     "react-google-recaptcha": "^3.1.0",
     "react-responsive-masonry": "^2.1.7",
+    "react-transition-group": "^4.4.5",
     "styled-components": "^6.0.8"
   },
   "devDependencies": {

@@ -67,15 +67,10 @@ body {
 	overflow-x: hidden;
 }
 
-[data-page] {
-	opacity: 0;
-}
-
 a {
 	color: inherit;
 	text-decoration: none;
 }
-
 .padding-all {
 	padding: 6rem 6rem;
 }

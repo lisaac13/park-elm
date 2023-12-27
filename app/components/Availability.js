@@ -4,7 +4,6 @@ import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 import parse from "html-react-parser";
-import Script from "next/script";
 
 const Availabilityrapper = styled.section`
     width: 100%;
@@ -195,42 +194,43 @@ const SingleResidence = styled.ul`
         & li .mobileShow {display: block;}
     }
 `;
+
 export const AvailabilityQueryFragment = `
     ... on Page_Flexiblecontent_Sections_Availability {
-        hideComponent
+        anchor
         fieldGroupName
+        hideComponent
         heading
-		anchor
         blurb
         paddingOptions
-        residencesRepeater {
-            title
-            fieldGroupName
-            residences {
-              ... on Residence {
+            residencesRepeater {
                 title
-                singleResidences {
-                  bedrooms
-                  fieldGroupName
-                  price
-                  residence
-                  squareMeters
-                  squareFeet
-                  viewDirection
-                  floorPlan {
-                    altText
-                    mediaItemUrl
-                    mediaDetails {
-                      height
-                      width
+                fieldGroupName
+                residences {
+                    ... on Residence {
+                        title
+                        singleResidences {
+                            bedrooms
+                            fieldGroupName
+                            price
+                            residence
+                            squareMeters
+                            squareFeet
+                            viewDirection
+                            floorPlan {
+                                altText
+                                mediaItemUrl
+                                mediaDetails {
+                                    height
+                                    width
+                                }
+                            }
+                            videoEmbed
+                            bathrooms
+                        }
                     }
-                  }
-                  videoEmbed
-                  bathrooms
                 }
-              }
-            }
-          }
+        }
     }
 `;
 
@@ -271,7 +271,7 @@ export default function Availability(props) {
                             <li className="inner reg center paddLeft"><span className="mobileShow">Bed / Bath: </span>{single?.singleResidences?.bedrooms} / {single?.singleResidences?.bathrooms}</li>
                             <li className="inner reg center line"><span className="mobileShow">SQ FT / SQ M: </span>{single?.singleResidences?.squareFeet} / {single?.singleResidences?.squareMeters}</li>
                             <li className="inner reg center paddLeft"><span className="mobileShow">View Direction: </span>{single?.singleResidences?.viewDirection}</li>
-                            <li className="end reg right">{single?.singleResidences?.floorPlan && <span>Floor Plan</span>}{single?.singleResidences?.videoEmbed && <span>Video</span>} <span>Inquire</span></li>
+                            <li className="end reg right">{single?.singleResidences?.floorPlan && <span>Floor Plan</span>}{single?.singleResidences?.videoEmbed && <span>Video</span>} <Link href="#inquire" className="inquire">Inquire</Link></li>
                             </SingleResidence>
                             )
                         })}
