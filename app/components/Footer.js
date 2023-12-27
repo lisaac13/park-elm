@@ -292,9 +292,6 @@ export default function Footer() {
 						<Link href="/#neighborhood">Neighborhood</Link>
 					</li>
 					<li>
-						<Link href="/availability">Availability</Link>
-					</li>
-					<li>
 						<Link href="/#team">Team</Link>
 					</li>
 					<li className="mobile first">
