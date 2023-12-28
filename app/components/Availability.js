@@ -52,21 +52,26 @@ const AvailabilityContent = styled.div`
     }
 `;
 
-const ResidencesAvailability = styled.div``;
+const ResidencesAvailability = styled.div`
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    display: block;
+`;
 
 const ResidenceContainer = styled.div`
     width: 100%;
     padding: 0 0 4rem 0;
-& h2 {
-    color: var(--rose);
-    font-family: var(--font-serif-medium);
-    font-size: var(--smallheading);
-    font-weight: 500;
-}
-@media screen and (max-width: 900px) {
-    & h2 {border-bottom: 1px solid var(--sky);
-    padding: 0 0 1rem 0;}
-}
+    & h2 {
+        color: var(--rose);
+        font-family: var(--font-serif-medium);
+        font-size: var(--smallheading);
+        font-weight: 500;
+    }
+    @media screen and (max-width: 900px) {
+        & h2 {border-bottom: 1px solid var(--sky);
+        padding: 0 0 1rem 0;}
+    }
 `;
 
 const Heading = styled.ul`
