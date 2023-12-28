@@ -83,13 +83,13 @@ const Heading = styled.ul`
     border-bottom: 1px solid var(--sky);
     padding: 1rem 0;
     & li.first {
-        width: calc(14% - 1rem);
+        width: calc(12% - 1rem);
     }
     & li.inner {
         width: calc(17% - 1rem);
     }
     & li.end {
-        width: calc(18% - 1rem);
+        width: calc(20% - 1rem);
     }
 
     & li {
@@ -121,13 +121,13 @@ const SingleResidence = styled.ul`
     padding: 1rem 0;
     border-bottom: 1px solid var(--sky);
     & li.first {
-        width: calc(14% - 1rem);
+        width: calc(12% - 1rem);
     }
     & li.inner {
         width: calc(17% - 1rem);
     }
     & li.end {
-        width: calc(18% - 1rem);
+        width: calc(20% - 1rem);
     }
     & li.heading {
         font-family: var(--font-serif-medium);
