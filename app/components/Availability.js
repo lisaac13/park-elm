@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
+import Fancybox from "./FancyBox.js";
 import Image from "next/image";
 import Link from "next/link";
 import parse from "html-react-parser";
@@ -147,6 +148,31 @@ const SingleResidence = styled.ul`
     }
     & li .mobileShowHeading,
     & li .mobileShow {display: none;}
+    & li .flpLink {
+        display: inline-block;
+        padding: 0 0.5rem 0 0;
+    }
+
+    & li a .line {
+        vertical-align: middle;
+        width: 1px;
+        background: var(--black);
+        height: 15px;
+        display: inline-block;
+        margin: 0 0rem 0 0.5rem;
+    }
+    & li a,
+    & li a:visited,
+    & li a:focus {
+        transition: 0.2s ease all;
+        color: var(--black);
+    }
+    & li a:hover {
+        color: var(--rose);
+    }
+    & li a::hover .link {
+        color: var(--black);
+    }
     @media screen and (max-width: 900px) {
         border-bottom: 0px solid var(--sky);
         padding: 0rem 0 0 0;
@@ -271,7 +297,7 @@ export default function Availability(props) {
                             <li className="inner reg center paddLeft"><span className="mobileShow">Bed / Bath: </span>{single?.singleResidences?.bedrooms} / {single?.singleResidences?.bathrooms}</li>
                             <li className="inner reg center line"><span className="mobileShow">SQ FT / SQ M: </span>{single?.singleResidences?.squareFeet} / {single?.singleResidences?.squareMeters}</li>
                             <li className="inner reg center paddLeft"><span className="mobileShow">View Direction: </span>{single?.singleResidences?.viewDirection}</li>
-                            <li className="end reg right">{single?.singleResidences?.floorPlan && <span>Floor Plan</span>}{single?.singleResidences?.videoEmbed && <span>Video</span>} <Link href="#inquire" className="inquire">Inquire</Link></li>
+                            <li className="end reg right">{single?.singleResidences?.floorPlan && <Link className="flpLink" target="_blank" href={single?.singleResidences?.floorPlan?.mediaItemUrl}>Floor Plan <span className="line"></span></Link>}{single?.singleResidences?.videoEmbed && <span>Video</span>} <Link href="#inquire" className="inquire">Inquire</Link></li>
                             </SingleResidence>
                             )
                         })}

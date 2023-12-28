@@ -58,10 +58,6 @@ async function getPageBySlug(pathname, metaDataOnly) {
                                   floorPlan {
                                     altText
                                     mediaItemUrl
-                                    mediaDetails {
-                                      height
-                                      width
-                                    }
                                   }
                                   videoEmbed
                                   bathrooms
