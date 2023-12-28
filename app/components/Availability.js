@@ -10,6 +10,7 @@ const Availabilityrapper = styled.section`
     width: 100%;
     margin: auto;
     display: block;
+    position: relative;
     
     &.paddingpage {padding: 12rem 6rem 6rem 6rem;}
     @media screen and (max-width: 820px) {
@@ -153,11 +154,14 @@ const SingleResidence = styled.ul`
     }
     & li .mobileShowHeading,
     & li .mobileShow {display: none;}
+
+    & li .videoPopup,
     & li .flpLink {
         display: inline-block;
         padding: 0 0.5rem 0 0;
+        cursor: pointer;
     }
-
+    & li .videoPopup .line,
     & li a .line {
         vertical-align: middle;
         width: 1px;
@@ -172,6 +176,7 @@ const SingleResidence = styled.ul`
         transition: 0.2s ease all;
         color: var(--black);
     }
+    & li .videoPopup:hover,
     & li a:hover {
         color: var(--rose);
     }
@@ -226,6 +231,89 @@ const SingleResidence = styled.ul`
     }
 `;
 
+const Modal = styled.div`
+    opacity: 0;
+    position: fixed;
+    display: block;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    z-index: -10;
+    background: var(--pearl);
+    height: 100vh;
+    width: 100%;
+    padding: 8rem 6rem;
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+
+    &.active {
+        z-index: 100000;
+        opacity: 1;
+    }
+
+    .border {
+        width: 100%;
+        height: 100%;
+        border: 1px solid var(--rose);
+        padding: 2rem;
+        position: relative;
+        display: block;
+    }
+    .border::after {
+        content: "";
+        position: absolute;
+        top: 2rem;
+        bottom: 2rem;
+        left: -0.5rem;
+        background: var(--sky);
+        width: 1rem;
+        height: calc(100% - 4rem);
+        display: block;
+        z-index: 100001;
+    }
+    .closeBtn {
+        background: var(--sky);
+        top: 1px;
+        right: 1px;
+        z-index: 100002;
+        display: block;
+        position: absolute;
+        width: 3rem;
+        height: 3rem;
+    }
+    .closeBtn img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        padding: 5px;
+    }
+    .videoContainer {
+        width: 90%;
+        position: absolute;
+        padding: 0 2rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 100001;
+    }
+    video {
+        width: 100%;
+        height: auto;
+    }
+    @media screen and (max-width: 900px) {
+        padding: 8rem 4rem;
+        .videoContainer {
+            width: 100%;
+            padding: 0 1.5rem;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        padding: 8rem 2rem;
+    }
+`;
+
 export const AvailabilityQueryFragment = `
     ... on Page_Flexiblecontent_Sections_Availability {
         anchor
@@ -275,6 +363,13 @@ export default function Availability(props) {
         paddingOptions,
         residencesRepeater,
 	} = props;
+
+    const [isActive, setActive] = useState(false);
+
+    const toggleClass = () => {
+        setActive(!isActive);
+    };
+
     return (
         <Availabilityrapper className={paddingOptions}>
             <AvailabilityContent>
@@ -296,14 +391,29 @@ export default function Availability(props) {
                         </Heading>
                         {item?.residences?.map((single, index) => {
                             return (
+                            <>
                             <SingleResidence key={`single-${index}`}>
                             <li className="first heading left"><span className="mobileShowHeading">Redsidence </span>{single?.singleResidences?.residence}</li>
                             <li className="inner reg center line"><span className="mobileShow">Listing Price: </span>{single?.singleResidences?.price}</li>
                             <li className="inner reg center paddLeft"><span className="mobileShow">Bed / Bath: </span>{single?.singleResidences?.bedrooms} / {single?.singleResidences?.bathrooms}</li>
                             <li className="inner reg center line"><span className="mobileShow">SQ FT / SQ M: </span>{single?.singleResidences?.squareFeet} / {single?.singleResidences?.squareMeters}</li>
                             <li className="inner reg center paddLeft"><span className="mobileShow">View Direction: </span>{single?.singleResidences?.viewDirection}</li>
-                            <li className="end reg right">{single?.singleResidences?.floorPlan && <Link className="flpLink" target="_blank" href={single?.singleResidences?.floorPlan?.mediaItemUrl}>Floor Plan <span className="line"></span></Link>}{single?.singleResidences?.videoEmbed && <span>Video</span>} <Link href="#inquire" className="inquire">Inquire</Link></li>
+                            <li className="end reg right">{single?.singleResidences?.floorPlan && <Link className="flpLink" target="_blank" href={single?.singleResidences?.floorPlan?.mediaItemUrl}>Floor Plan <span className="line"></span></Link>}{single?.singleResidences?.videoMp4?.mediaItemUrl && <span className="videoPopup" onClick={toggleClass}>Video <span className="line"></span></span>} <Link href="#inquire" className="inquire">Inquire</Link></li>
                             </SingleResidence>
+
+                            <Modal className={isActive ? 'active': null}>
+                                <div className="border">
+                                    <div onClick={toggleClass} class="closeBtn">
+                                        <Image src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/12/Close-Icon.svg" width={36} height={35} alt="close icon"/>
+                                    </div>
+                                    <div className="videoContainer">
+                                        <video controls muted>
+                                            <source src={single?.singleResidences?.videoMp4?.mediaItemUrl} type="video/webm"/>
+                                        </video>
+                                    </div>
+                                </div>
+                            </Modal>
+                            </>
                             )
                         })}
                         </ResidenceContainer>

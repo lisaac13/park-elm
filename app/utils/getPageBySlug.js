@@ -59,7 +59,10 @@ async function getPageBySlug(pathname, metaDataOnly) {
                                     altText
                                     mediaItemUrl
                                   }
-                                  videoEmbed
+                                  videoMp4{
+                                    mediaItemUrl
+                                    altText
+                                  }
                                   bathrooms
                                 }
                               }
