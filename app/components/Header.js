@@ -86,7 +86,7 @@ const ImageContainer = styled.div`
 		max-width: 350px;
 		height: auto;
 	}
-	[data-page="/availability"] .sitebranding & a .parkElmLogo,
+	[data-page="/floor-plans"] .sitebranding & a .parkElmLogo,
 	[data-page="/park-elm-gallery"] .sitebranding & a .parkElmLogo,
 	[data-page="/privacy-policy"] .sitebranding & a .parkElmLogo,
 	[data-page="/gallery"] .sitebranding & a .parkElmLogo,
@@ -132,9 +132,9 @@ const LeftNavigation = styled.div`
 		letter-spacing: 0.1rem;
 	}
 
-	[data-page="/availability"] .sitebranding & a,
-	[data-page="/availability"] .sitebranding & a:visited,
-	[data-page="/availability"] .sitebranding & a:focus,
+	[data-page="/floor-plans"] .sitebranding & a,
+	[data-page="/floor-plans"] .sitebranding & a:visited,
+	[data-page="/floor-plans"] .sitebranding & a:focus,
 	[data-page="/park-elm-gallery"] .sitebranding & a,
 	[data-page="/park-elm-gallery"] .sitebranding & a:visited,
 	[data-page="/park-elm-gallery"] .sitebranding & a:focus,
@@ -195,9 +195,9 @@ const RightNavigation = styled.div`
 		letter-spacing: 0.1rem;
 	}
 
-	[data-page="/availability"] .sitebranding & a,
-	[data-page="/availability"] .sitebranding & a:visited,
-	[data-page="/availability"] .sitebranding & a:focus,
+	[data-page="/floor-plans"] .sitebranding & a,
+	[data-page="/floor-plans"] .sitebranding & a:visited,
+	[data-page="/floor-plans"] .sitebranding & a:focus,
 	[data-page="/park-elm-gallery"] .sitebranding & a,
 	[data-page="/park-elm-gallery"] .sitebranding & a:visited,
 	[data-page="/park-elm-gallery"] .sitebranding & a:focus,
