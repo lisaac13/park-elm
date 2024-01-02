@@ -77,7 +77,7 @@ export default function RootLayout({ children }) {
 			<Head>
 				<meta
 					property="og:image"
-					content="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/11/C88A2126-Edit-scaled.jpg"
+					content="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2024/01/park-elm-at-century-plaza-open-graph-image.jpg"
 				/>
 				<TrackingScripts/>
 			</Head>
