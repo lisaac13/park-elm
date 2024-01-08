@@ -294,6 +294,9 @@ export default function Footer() {
 					<li>
 						<Link href="/#team">Team</Link>
 					</li>
+					<li>
+						<Link href="/floor-plans">Floor Plans</Link>
+					</li>
 					<li className="mobile first">
 						<Link href="/privacy-policy">Policies</Link>
 					</li>
