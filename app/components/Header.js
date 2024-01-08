@@ -513,7 +513,7 @@ export default function Header() {
 						<li onClick={() => toggleNav()}><Link href="/#servicesamenities">Amenities & Services</Link></li>
 						<li onClick={() => toggleNav()}><Link href="/#centuryplaza">Neighborhood</Link></li>
 						<li onClick={() => toggleNav()}><Link href="/#team">Team</Link></li>
-						<li onClick={() => toggleNav()}><Link href="/Floor Plans">Floor Plans</Link></li>
+						<li onClick={() => toggleNav()}><Link href="/floor-plans">Floor Plans</Link></li>
 						<li onClick={() => toggleNav()}><Link href="/#inquire">Inquire</Link></li>
 					</TopLinks>
 					<BottomLinks>
