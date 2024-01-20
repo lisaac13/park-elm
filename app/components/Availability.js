@@ -419,7 +419,7 @@ export default function Availability(props) {
 											key={`single-${index}`}>
 											<li className="first heading left">
 												<span className="mobileShowHeading">
-													Residences{" "}
+													Residence{" "}
 												</span>
 												{
 													single?.singleResidences
