@@ -229,7 +229,9 @@ const RightNavigation = styled.div`
 	}
 
 	.sitebranding & a.open,
-	.sitebranding.sticky & a.open {display: none;}
+	.sitebranding.sticky & a.open {
+		display: none;
+	}
 
 	[data-page="/floor-plans"] .sitebranding & a,
 	[data-page="/floor-plans"] .sitebranding & a:visited,
@@ -378,7 +380,7 @@ const TopLinks = styled.ul`
 	list-style: none;
 	& li {
 		margin-bottom: 1rem;
-	} 
+	}
 	& li a {
 		color: var(--black);
 		text-decoration: none;
@@ -388,7 +390,9 @@ const TopLinks = styled.ul`
 		letter-spacing: 0.1rem;
 		transition: color 0.3s ease-in-out;
 	}
-	& li a:hover {color: var(--rose);}
+	& li a:hover {
+		color: var(--rose);
+	}
 `;
 const BottomLinks = styled.ul`
 	list-style: none;
@@ -447,102 +451,138 @@ export default function Header() {
 
 	return (
 		<>
-		<HeaderContainer className="sitebranding">
-			<Script
-				async
-				src="https://www.googletagmanager.com/gtag/js?id=G-18FJJ5D9JD"></Script>
-			<LeftNavigation>
-				<Link href="tel:+13102464777" className={`telNumber ${navIsOpen ? "open" : ""}`}>
-					310.246.4777
-				</Link>
-				<Link href="tel:+13102464777" className={`telIconWhite ${navIsOpen ? "open" : ""}`}>
-					<Image
-						src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/ic_baseline-phone.svg"
-						alt="telephone icon"
-						width={24}
-						height={24}
-					/>
-				</Link>
-				<Link href="tel:+13102464777" className={`telIconGold ${navIsOpen ? "open" : ""}`}>
-					<Image
-						src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/ic_baseline-phone-1.svg"
-						alt="telephone icon"
-						width={24}
-						height={24}
-					/>
-				</Link>
-			</LeftNavigation>
+			<HeaderContainer className="sitebranding">
+				<Script
+					async
+					src="https://www.googletagmanager.com/gtag/js?id=G-18FJJ5D9JD"></Script>
+				<LeftNavigation>
+					<Link
+						href="tel:+13102464777"
+						className={`telNumber ${navIsOpen ? "open" : ""}`}>
+						310.246.4777
+					</Link>
+					<Link
+						href="tel:+13102464777"
+						className={`telIconWhite ${navIsOpen ? "open" : ""}`}>
+						<Image
+							src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/ic_baseline-phone.svg"
+							alt="telephone icon"
+							width={24}
+							height={24}
+						/>
+					</Link>
+					<Link
+						href="tel:+13102464777"
+						className={`telIconGold ${navIsOpen ? "open" : ""}`}>
+						<Image
+							src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/ic_baseline-phone-1.svg"
+							alt="telephone icon"
+							width={24}
+							height={24}
+						/>
+					</Link>
+				</LeftNavigation>
 
-			<ImageContainer>
-				<Link href="/">
-					<Image
-						className={`parkElmLogo ${navIsOpen ? "open" : ""}`}
-						src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/PE_Logo_white.svg"
-						width={223}
-						height={73}
-						alt="Park Elm at Century Plaza"
-					/>
+				<ImageContainer>
+					<Link href="/">
+						<Image
+							className={`parkElmLogo ${navIsOpen ? "open" : ""}`}
+							src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/PE_Logo_white.svg"
+							width={223}
+							height={73}
+							alt="Park Elm at Century Plaza"
+						/>
 
-					<Image
-						className={`parkElmIcon ${navIsOpen ? "open" : ""}`}
-						src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/PE_Icon_GLD.svg"
-						width={24}
-						height={27}
-						alt="Park Elm at Century Plaza Palm Tree Icon"
-					/>
-				</Link>
-			</ImageContainer>
+						<Image
+							className={`parkElmIcon ${navIsOpen ? "open" : ""}`}
+							src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/PE_Icon_GLD.svg"
+							width={24}
+							height={27}
+							alt="Park Elm at Century Plaza Palm Tree Icon"
+						/>
+					</Link>
+				</ImageContainer>
 
-			<RightNavigation>
-				<Link className={`inquireNav ${navIsOpen ? "open" : ""}`} href="/#inquire">Inquire</Link>
-				<Hamburger onClick={() => toggleNav()} className={navIsOpen ? "open" : ""}>
-					<span className="topBar"></span>
-					<span className="bottomBar"></span>
-				</Hamburger>
-			</RightNavigation>
-		</HeaderContainer>
+				<RightNavigation>
+					<Link
+						className={`inquireNav ${navIsOpen ? "open" : ""}`}
+						href="/#inquire">
+						Inquire
+					</Link>
+					<Hamburger
+						onClick={() => toggleNav()}
+						className={navIsOpen ? "open" : ""}>
+						<span className="topBar"></span>
+						<span className="bottomBar"></span>
+					</Hamburger>
+				</RightNavigation>
+			</HeaderContainer>
 
-		<MobileContainer className={navIsOpen ? "open" : ""}>
-			<MobileFlex>
-				<MobileImageContainer className="default">
-				</MobileImageContainer>
-				<Sidebar>
-					<TopLinks>
-						<li onClick={() => toggleNav()}><Link href="/#residences">Estate Residences</Link></li>
-						<li onClick={() => toggleNav()}><Link href="/floor-plans">Floor Plans</Link></li>
-						<li onClick={() => toggleNav()}><Link href="/#servicesamenities">Amenities & Services</Link></li>
-						<li onClick={() => toggleNav()}><Link href="/#centuryplaza">Neighborhood</Link></li>
-						<li onClick={() => toggleNav()}><Link href="/#team">Team</Link></li>
-						<li onClick={() => toggleNav()}><Link href="/floor-plans">Floor Plans</Link></li>
-						<li onClick={() => toggleNav()}><Link href="/#inquire">Inquire</Link></li>
-					</TopLinks>
-					<BottomLinks>
-					<li>
-						<Link target="_blank" href="https://www.instagram.com/parkelmcenturyplaza/">
-							<Image
-								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2024/01/instagram-rose.svg"
-								alt="instagram icon"
-								width={24}
-								height={24}
-							/>
-						</Link>
-					</li>
-					<li><address>2025 Avenue of the Stars<br/>Los Angeles, CA 90067</address></li>
-					<li>
-						<Link href="tel:+13102464777" className="mobiletel">
-							<Image
-								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2024/01/telephone-rose.svg"
-								alt="telephone icon"
-								width={24}
-								height={24}
-							/>
-							310.246.4777
-						</Link>
-					</li>
-					</BottomLinks>
-				</Sidebar>
-			</MobileFlex>
-		</MobileContainer>
+			<MobileContainer className={navIsOpen ? "open" : ""}>
+				<MobileFlex>
+					<MobileImageContainer className="default"></MobileImageContainer>
+					<Sidebar>
+						<TopLinks>
+							<li onClick={() => toggleNav()}>
+								<Link href="/#residences">
+									Estate Residences
+								</Link>
+							</li>
+							<li onClick={() => toggleNav()}>
+								<Link href="/floor-plans">Floor Plans</Link>
+							</li>
+							<li onClick={() => toggleNav()}>
+								<Link href="/#servicesamenities">
+									Amenities & Services
+								</Link>
+							</li>
+							<li onClick={() => toggleNav()}>
+								<Link href="/#centuryplaza">Neighborhood</Link>
+							</li>
+							<li onClick={() => toggleNav()}>
+								<Link href="/#team">Team</Link>
+							</li>
+							<li onClick={() => toggleNav()}>
+								<Link href="/#inquire">Inquire</Link>
+							</li>
+						</TopLinks>
+						<BottomLinks>
+							<li>
+								<Link
+									target="_blank"
+									href="https://www.instagram.com/parkelmcenturyplaza/">
+									<Image
+										src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2024/01/instagram-rose.svg"
+										alt="instagram icon"
+										width={24}
+										height={24}
+									/>
+								</Link>
+							</li>
+							<li>
+								<address>
+									2025 Avenue of the Stars
+									<br />
+									Los Angeles, CA 90067
+								</address>
+							</li>
+							<li>
+								<Link
+									href="tel:+13102464777"
+									className="mobiletel">
+									<Image
+										src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2024/01/telephone-rose.svg"
+										alt="telephone icon"
+										width={24}
+										height={24}
+									/>
+									310.246.4777
+								</Link>
+							</li>
+						</BottomLinks>
+					</Sidebar>
+				</MobileFlex>
+			</MobileContainer>
 		</>
 	);
 }
