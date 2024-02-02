@@ -90,7 +90,7 @@ export default function RootLayout({ children }) {
 					console.log("scrolling to section");
 					section.scrollIntoView({ behavior: "smooth" });
 				}
-			}, 500);
+			}, 1000);
 		}
 	}, []);
 
