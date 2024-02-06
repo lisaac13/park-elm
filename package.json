@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fancyapps/ui": "^5.0.24",
+    "@next/third-parties": "^14.1.0",
     "flickity": "^3.0.0",
     "gsap": "file:gsap-bonus.tgz",
     "html-react-parser": "^4.2.2",

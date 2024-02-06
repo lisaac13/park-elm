@@ -8,6 +8,7 @@ import Logo from "/public/next.svg";
 import Script from "next/script";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { GoogleTagManager } from "@next/third-parties/google";
 gsap.registerPlugin(ScrollTrigger);
 
 const HeaderContainer = styled.header`
@@ -455,6 +456,7 @@ export default function Header() {
 				<Script
 					async
 					src="https://www.googletagmanager.com/gtag/js?id=G-18FJJ5D9JD"></Script>
+				<GoogleTagManager gtmId="G-SM79XXQQQX" />
 				<LeftNavigation>
 					<Link
 						href="tel:+13102464777"
