@@ -36,10 +36,15 @@ margin: auto;
 & h1 {
 	font-size: var(--heading);
 	color: var(--rose);
+    font-weight: 500;
 }
 & h2 {
 	color: var(--rose);
 	margin: 1rem 0;
+}
+& h1 span {
+		font-family: var(--font-serif-med-italic);
+        font-weight: 500;
 }
 
 [data-page="/savills-broker-portal"] & h2,
