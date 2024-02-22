@@ -15,6 +15,8 @@ import FullWidthImageWithOverlay from "../components/FullWidthImageWithOverlay";
 import Gallery from "../components/Gallery";
 
 export default function parseSections(sections) {
+	if (!sections) return null;
+
 	const gatheredSections = [];
 	for (const [index, section] of sections.entries()) {
 		if (section.hideComponent == true) continue;
@@ -28,9 +30,13 @@ export default function parseSections(sections) {
 				);
 				break;
 			case "Page_Flexiblecontent_Sections_Availability":
-					gatheredSections.push(
-						<Availability key={componentKey} {...section} index={index} />
-					);
+				gatheredSections.push(
+					<Availability
+						key={componentKey}
+						{...section}
+						index={index}
+					/>
+				);
 				break;
 			case "Page_Flexiblecontent_Sections_ContentTimeline":
 				gatheredSections.push(
