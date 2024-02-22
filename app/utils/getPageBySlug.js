@@ -240,9 +240,13 @@ async function getPageBySlug(pathname, metaDataOnly) {
               }
             `,
 		}),
+		next: {
+			revalidate: 60,
+		},
 	});
 
 	const data = await res.json();
+	console.log(data.data.page.flexibleContent);
 
 	const pageData = metaDataOnly ? data?.data?.page?.seo : data?.data?.page;
 
