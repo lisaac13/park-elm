@@ -6,9 +6,9 @@ import Image from "next/image";
 import styled from "styled-components";
 import Logo from "/public/next.svg";
 import Script from "next/script";
-import { GoogleTagManager } from "@next/third-parties/google";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { GoogleTagManager } from "@next/third-parties/google";
 gsap.registerPlugin(ScrollTrigger);
 
 const HeaderContainer = styled.header`
@@ -489,7 +489,7 @@ export default function Header() {
 					<Link href="/">
 						<Image
 							className={`parkElmLogo ${navIsOpen ? "open" : ""}`}
-							src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2024/02/PE_Logo_WHT.svg"
+							src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/PE_Logo_white.svg"
 							width={223}
 							height={73}
 							alt="Park Elm at Century Plaza"
