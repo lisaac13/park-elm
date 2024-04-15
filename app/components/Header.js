@@ -24,7 +24,7 @@ const HeaderContainer = styled.header`
 		align-items: flex-start;
 		padding: 1.5rem 4rem;
 	}
-
+	& .mobileInquire {display: none;}
 	&.sitebranding.sticky {
 		background: var(--sky);
 		align-items: center;
@@ -48,12 +48,27 @@ const HeaderContainer = styled.header`
 			padding: 0.5rem 2rem;
 		}
 	}
-	@media only screen and (max-width: 500px) {
-		&.sitebranding {
-			padding: 1.5rem 1rem;
+	@media only screen and (max-width: 600px) {
+		& .mobileInquire {
+			display: block;
+			width: 100%;
+			margin: 0 auto;
+			text-align: center;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			right: 0px;
+			padding: 1rem;
+			background: var(--rose);
+			color: var(--pearl);
+			font-weight: 400;
+			font-family: var(--font-sans-serif);
+			letter-spacing: 0.1rem;
+			text-transform: uppercase;
 		}
+		&.sitebranding,
 		&.sitebranding.sticky {
-			padding: 0.5rem 1rem;
+			padding: 4rem 1rem 1.5rem 1rem;
 		}
 	}
 `;
@@ -457,6 +472,11 @@ export default function Header() {
 					async
 					src="https://www.googletagmanager.com/gtag/js?id=G-18FJJ5D9JD"></Script>
 				<GoogleTagManager gtmId="G-SM79XXQQQX" />
+					<Link
+						className="mobileInquire"
+						href="/#inquire">
+						Inquire
+					</Link>
 				<LeftNavigation>
 					<Link
 						href="tel:+13102464777"
