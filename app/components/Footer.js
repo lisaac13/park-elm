@@ -217,9 +217,9 @@ const DeveloperContainer = styled.ul`
 		max-width: 55px;
 		height: auto;
 	}
-	& li .agencyLogo {
+	& li .douglasEllimanLogo {
 		width: 100%;
-		max-width: 80px;
+		max-width: 150px;
 		height: auto;
 	}
 	& li .reubenbrothersLogo {
@@ -248,7 +248,7 @@ export default function Footer() {
 				<ImageContainer>
 					<Link href="/">
 						<Image
-							src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/PE_LogoIcon_GLD_white.svg"
+							src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2024/06/PE_LogoIcon_GLD_white.svg"
 							width={209}
 							height={118}
 							alt="Park Elm at Century Park Logo with Palm Icon"
@@ -343,19 +343,7 @@ export default function Footer() {
 				<BottomFlexContainer>
 					<Disclaimer>
 						<p className="generic">
-							All floor plans shown are for illustrative purposes
-							only. Floor plans may not depict final designs of
-							units as constructed. All dimensions and square
-							footages are approximate and subject to normal
-							construction variances and tolerances and changes
-							resulting from unforeseen conditions. Dimensions and
-							square footages include certain perimeter and
-							interior walls, windows, shafts, columns and other
-							structural elements. The developer reserves the
-							right to make modifications to the floor plans and
-							unit dimensions at any time. Exclusive sales and
-							marketing: Next Century Realty, Inc., DRE #
-							02028123. The Agency Development Group DRE #01973483
+						150 EL CAMINO DRIVE, SUITE 150, BEVERLY HILLS, CA 90212. 310.595.3888. DRE# 01947727. © 2024 DOUGLAS ELLIMAN REAL ESTATE. ALL MATERIAL PRESENTED HEREIN IS INTENDED FOR INFORMATION PURPOSES ONLY. WHILE, THISINFORMATION IS BELIEVED TO BE CORRECT, IT IS REPRESENTED SUBJECT TO ERRORS, OMISSIONS, CHANGES OR WITHDRAWAL WITHOUT NOTICE. ALL PROPERTY INFORMATION, INCLUDING, BUT NOT LIMITED TO SQUARE FOOTAGE, ROOM COUNT,NUMBER OF BEDROOMS AND THE SCHOOL DISTRICT IN PROPERTY LISTINGS SHOULD BE VERIFIED BY YOUR OWN ATTORNEY, ARCHITECT OR ZONING EXPERT. IF YOUR PROPERTY IS CURRENTLY LISTED WITH ANOTHER REAL ESTATE BROKER, PLEASEDISREGARD THIS OFFER. IT IS NOT OUR INTENTION TO SOLICIT THE OFFERINGS OF OTHER REAL ESTATE BROKERS. WE COOPERATE WITH THEM FULLY. EQUAL HOUSING OPPORTUNITY. DRE #: 01309146
 							&nbsp;
 							<Image
 								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/equal-housing-opportunity-black-copy-1.svg"
@@ -398,22 +386,13 @@ export default function Footer() {
 							/>
 						</li> */}
 						<li>
-							<Image
-								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/ncp-logo.svg"
-								alt="ncp logo"
-								width={55}
-								height={33}
-								className="ncpLogo"
-							/>
-						</li>
-						<li>
-							<Image
-								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/agency-logo.png"
-								alt="the agency logo"
-								width={80}
-								height={80}
-								className="agencyLogo"
-							/>
+							<Image 
+								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2024/06/Douglas_Elliman_Logo_white.png" 
+								alt="douglas elliman logo"
+								width={150}
+								height={25}
+								className="douglasEllimanLogo"
+								/>
 						</li>
 						<li>
 							<Image
