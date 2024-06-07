@@ -1,12 +1,12 @@
 "use client";
-import styled from "styled-components";
-import Image from "next/image";
 import prase from "html-react-parser";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import styled from "styled-components";
 
-import { verifyCaptcha } from "../utils/verifyCaptcha";
 import { useSearchParams } from "next/navigation";
+import { verifyCaptcha } from "../utils/verifyCaptcha";
 
 const FormSection = styled.section`
 	background-color: var(--sky);
@@ -341,7 +341,7 @@ export default function Forms(props) {
 							type="text"
 							name="desiredPricing"
 							onChange={handleChange}
-							required="true">
+							required>
 							<option value="">Select Desired Pricing</option>
 							<option value="One Bedrooms">
 								One bedrooms from $1.8M
