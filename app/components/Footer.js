@@ -365,14 +365,6 @@ export default function Footer() {
 						It is not possible to scale exactly from these drawings. Any buyer must satisfy themselves 
 						by inspection or otherwise as to the correctness of any information given. All rights 
 						reserved to Next Century Partners. &nbsp;
-							<Image
-								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/equal-housing-opportunity-black-copy-1.svg"
-								alt="equal housing opportunity logo"
-								width={16}
-								height={17}
-								className="equalHousiing"
-								style={{ height: ".7rem", width: "auto" }}
-							/>
 						</p>
 					</Disclaimer>
 					<DeveloperContainer>
@@ -385,6 +377,15 @@ export default function Footer() {
 								className="equalHousiing"
 							/>
 						</li> */}
+						<li>
+						<Image
+								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/equal-housing-opportunity-black-copy-1.svg"
+								alt="equal housing opportunity logo"
+								width={30}
+								height={31}
+								className="equalHousiing"
+							/>
+						</li>
 						<li>
 							<Image 
 								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2024/06/Douglas_Elliman_Logo_white.png" 
