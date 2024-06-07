@@ -509,7 +509,7 @@ export default function Header() {
 					<Link href="/">
 						<Image
 							className={`parkElmLogo ${navIsOpen ? "open" : ""}`}
-							src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/PE_Logo_white.svg"
+							src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2024/06/park-elm-updated-logo-white.svg"
 							width={223}
 							height={73}
 							alt="Park Elm at Century Plaza"
