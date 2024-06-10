@@ -480,6 +480,27 @@ export default function Header() {
 					id="cookieScript"
 					src="//cdn.cookie-script.com/s/9d713e61d1c3ad8592b40ba9f593d525.js"
 				/>
+				{/* <!-- Google tag (gtag.js) -->
+				<script async src="https://www.googletagmanager.com/gtag/js?id=G-SM79XXQQQX"></script>
+				<script>
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+
+				gtag('config', 'G-SM79XXQQQX');
+				</script> */}
+				<Script
+					id="googleTag"
+					src="https://www.googletagmanager.com/gtag/js?id=G-SM79XXQQQX"
+				/>
+				<Script id="googleTagConfig">
+					{`
+					window.dataLayer = window.dataLayer || [];
+					function gtag(){dataLayer.push(arguments);}
+					gtag('js', new Date());
+					gtag('config', 'G-SM79XXQQQX');
+				`}
+				</Script>
 				<GoogleTagManager gtmId="G-SM79XXQQQX" />
 				<Link className="mobileInquire" href="/#inquire">
 					Inquire
