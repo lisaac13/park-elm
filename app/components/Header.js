@@ -1,14 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import styled from "styled-components";
-import Logo from "/public/next.svg";
-import Script from "next/script";
-import { gsap } from "gsap/dist/gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { GoogleTagManager } from "@next/third-parties/google";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { gsap } from "gsap/dist/gsap";
+import Image from "next/image";
+import Link from "next/link";
+import Script from "next/script";
+import { useEffect, useState } from "react";
+import styled from "styled-components";
 gsap.registerPlugin(ScrollTrigger);
 
 const HeaderContainer = styled.header`
@@ -24,7 +23,9 @@ const HeaderContainer = styled.header`
 		align-items: flex-start;
 		padding: 1.5rem 4rem;
 	}
-	& .mobileInquire {display: none;}
+	& .mobileInquire {
+		display: none;
+	}
 	&.sitebranding.sticky {
 		background: var(--sky);
 		align-items: center;
@@ -471,12 +472,18 @@ export default function Header() {
 				<Script
 					async
 					src="https://www.googletagmanager.com/gtag/js?id=G-18FJJ5D9JD"></Script>
+				{/* <script
+					type="text/javascript"
+					charset="UTF-8"
+					src="//cdn.cookie-script.com/s/9d713e61d1c3ad8592b40ba9f593d525.js"></script> */}
+				<Script
+					id="cookieScript"
+					src="//cdn.cookie-script.com/s/9d713e61d1c3ad8592b40ba9f593d525.js"
+				/>
 				<GoogleTagManager gtmId="G-SM79XXQQQX" />
-					<Link
-						className="mobileInquire"
-						href="/#inquire">
-						Inquire
-					</Link>
+				<Link className="mobileInquire" href="/#inquire">
+					Inquire
+				</Link>
 				<LeftNavigation>
 					<Link
 						href="tel:+13102464777"
@@ -504,7 +511,6 @@ export default function Header() {
 						/>
 					</Link>
 				</LeftNavigation>
-
 				<ImageContainer>
 					<Link href="/">
 						<Image
@@ -524,7 +530,6 @@ export default function Header() {
 						/>
 					</Link>
 				</ImageContainer>
-
 				<RightNavigation>
 					<Link
 						className={`inquireNav ${navIsOpen ? "open" : ""}`}
