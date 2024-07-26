@@ -507,12 +507,12 @@ export default function Header() {
 				</Link>
 				<LeftNavigation>
 					<Link
-						href="tel:+13102464777"
+						href="tel:3109221124"
 						className={`telNumber ${navIsOpen ? "open" : ""}`}>
-						310.246.4777
+						310.922.1124
 					</Link>
 					<Link
-						href="tel:+13102464777"
+						href="tel:3109221124"
 						className={`telIconWhite ${navIsOpen ? "open" : ""}`}>
 						<Image
 							src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/ic_baseline-phone.svg"
@@ -522,7 +522,7 @@ export default function Header() {
 						/>
 					</Link>
 					<Link
-						href="tel:+13102464777"
+						href="tel:3109221124"
 						className={`telIconGold ${navIsOpen ? "open" : ""}`}>
 						<Image
 							src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/ic_baseline-phone-1.svg"
