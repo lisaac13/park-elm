@@ -226,6 +226,7 @@ export default function Forms(props) {
 		setFormState({
 			...formState,
 			[e.target.name]: e.target.value,
+			date: new Date().toLocaleString(),
 		});
 	};
 

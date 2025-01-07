@@ -185,8 +185,12 @@ const Disclaimer = styled.div`
 	& p.savills {
 		display: none;
 	}
-	[data-page="/savills-broker-portal"] & p.savills {display: block;}
-	[data-page="/savills-broker-portal"] & p.generic {display: none;}
+	[data-page="/savills-broker-portal"] & p.savills {
+		display: block;
+	}
+	[data-page="/savills-broker-portal"] & p.generic {
+		display: none;
+	}
 	@media only screen and (max-width: 1220px) {
 		& {
 			width: calc(60% - 2rem);
@@ -343,8 +347,22 @@ export default function Footer() {
 				<BottomFlexContainer>
 					<Disclaimer>
 						<p className="generic">
-						150 EL CAMINO DRIVE, SUITE 150, BEVERLY HILLS, CA 90212. 310.595.3888. DRE# 01947727. © 2024 DOUGLAS ELLIMAN REAL ESTATE. ALL MATERIAL PRESENTED HEREIN IS INTENDED FOR INFORMATION PURPOSES ONLY. WHILE, THISINFORMATION IS BELIEVED TO BE CORRECT, IT IS REPRESENTED SUBJECT TO ERRORS, OMISSIONS, CHANGES OR WITHDRAWAL WITHOUT NOTICE. ALL PROPERTY INFORMATION, INCLUDING, BUT NOT LIMITED TO SQUARE FOOTAGE, ROOM COUNT,NUMBER OF BEDROOMS AND THE SCHOOL DISTRICT IN PROPERTY LISTINGS SHOULD BE VERIFIED BY YOUR OWN ATTORNEY, ARCHITECT OR ZONING EXPERT. IF YOUR PROPERTY IS CURRENTLY LISTED WITH ANOTHER REAL ESTATE BROKER, PLEASEDISREGARD THIS OFFER. IT IS NOT OUR INTENTION TO SOLICIT THE OFFERINGS OF OTHER REAL ESTATE BROKERS. WE COOPERATE WITH THEM FULLY. EQUAL HOUSING OPPORTUNITY. DRE #: 01309146
-							&nbsp;
+							150 EL CAMINO DRIVE, SUITE 150, BEVERLY HILLS, CA
+							90212. 310.595.3888. DRE# 01947727. © 2025 DOUGLAS
+							ELLIMAN REAL ESTATE. ALL MATERIAL PRESENTED HEREIN
+							IS INTENDED FOR INFORMATION PURPOSES ONLY. WHILE,
+							THISINFORMATION IS BELIEVED TO BE CORRECT, IT IS
+							REPRESENTED SUBJECT TO ERRORS, OMISSIONS, CHANGES OR
+							WITHDRAWAL WITHOUT NOTICE. ALL PROPERTY INFORMATION,
+							INCLUDING, BUT NOT LIMITED TO SQUARE FOOTAGE, ROOM
+							COUNT,NUMBER OF BEDROOMS AND THE SCHOOL DISTRICT IN
+							PROPERTY LISTINGS SHOULD BE VERIFIED BY YOUR OWN
+							ATTORNEY, ARCHITECT OR ZONING EXPERT. IF YOUR
+							PROPERTY IS CURRENTLY LISTED WITH ANOTHER REAL
+							ESTATE BROKER, PLEASEDISREGARD THIS OFFER. IT IS NOT
+							OUR INTENTION TO SOLICIT THE OFFERINGS OF OTHER REAL
+							ESTATE BROKERS. WE COOPERATE WITH THEM FULLY. EQUAL
+							HOUSING OPPORTUNITY. DRE #: 01309146 &nbsp;
 							<Image
 								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/equal-housing-opportunity-black-copy-1.svg"
 								alt="equal housing opportunity logo"
@@ -355,16 +373,23 @@ export default function Footer() {
 							/>
 						</p>
 						<p className="savills">
-						These details have been prepared in good faith but are not intended to constitute 
-						part of any offer of contract or create any contractual relationship. No description 
-						orinformation of any kind contained in these particulars may be relied upon as a 
-						statement or representation, warranty or fact. All images, plans and specifications 
-						shown are indicative only, cannot be guaranteed to represent the complete interiors or 
-						exteriors of the project and are subject to change due to design coordination and other 
-						development considerations. Any areas, measurements or distances given are approximate only. 
-						It is not possible to scale exactly from these drawings. Any buyer must satisfy themselves 
-						by inspection or otherwise as to the correctness of any information given. All rights 
-						reserved to Next Century Partners. &nbsp;
+							These details have been prepared in good faith but
+							are not intended to constitute part of any offer of
+							contract or create any contractual relationship. No
+							description orinformation of any kind contained in
+							these particulars may be relied upon as a statement
+							or representation, warranty or fact. All images,
+							plans and specifications shown are indicative only,
+							cannot be guaranteed to represent the complete
+							interiors or exteriors of the project and are
+							subject to change due to design coordination and
+							other development considerations. Any areas,
+							measurements or distances given are approximate
+							only. It is not possible to scale exactly from these
+							drawings. Any buyer must satisfy themselves by
+							inspection or otherwise as to the correctness of any
+							information given. All rights reserved to Next
+							Century Partners. &nbsp;
 						</p>
 					</Disclaimer>
 					<DeveloperContainer>
@@ -378,7 +403,7 @@ export default function Footer() {
 							/>
 						</li> */}
 						<li>
-						<Image
+							<Image
 								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/equal-housing-opportunity-black-copy-1.svg"
 								alt="equal housing opportunity logo"
 								width={30}
@@ -387,13 +412,13 @@ export default function Footer() {
 							/>
 						</li>
 						<li>
-							<Image 
-								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2024/06/Douglas_Elliman_Logo_white.png" 
+							<Image
+								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2024/06/Douglas_Elliman_Logo_white.png"
 								alt="douglas elliman logo"
 								width={150}
 								height={25}
 								className="douglasEllimanLogo"
-								/>
+							/>
 						</li>
 						<li>
 							<Image
