@@ -97,7 +97,7 @@ const Heading = styled.ul`
 		width: calc(12% - 1rem);
 	}
 	& li.inner {
-		width: calc(17% - 1rem);
+		width: calc(22% - 1rem);
 	}
 	& li.end {
 		width: calc(20% - 1rem);
@@ -135,7 +135,7 @@ const SingleResidence = styled.ul`
 		width: calc(12% - 1rem);
 	}
 	& li.inner {
-		width: calc(17% - 1rem);
+		width: calc(22% - 1rem);
 	}
 	& li.end {
 		width: calc(20% - 1rem);
@@ -404,7 +404,7 @@ export default function Availability(props) {
 							{item.title && <h2>{item.title}</h2>}
 							<Heading>
 								<li className="first left">Residence</li>
-								<li className="inner center">List Price</li>
+								{/* <li className="inner center">List Price</li> */}
 								<li className="inner center">Bed / Bath</li>
 								<li className="inner center">SF / SM</li>
 								<li className="inner center">View Direction</li>
@@ -426,7 +426,7 @@ export default function Availability(props) {
 														?.residence
 												}
 											</li>
-											<li className="inner reg center line">
+											{/* <li className="inner reg center line">
 												<span className="mobileShow">
 													Listing Price:{" "}
 												</span>
@@ -434,7 +434,7 @@ export default function Availability(props) {
 													single?.singleResidences
 														?.price
 												}
-											</li>
+											</li>{" "} */}
 											<li className="inner reg center paddLeft">
 												<span className="mobileShow">
 													Bed / Bath:{" "}
