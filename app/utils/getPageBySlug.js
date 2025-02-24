@@ -97,6 +97,7 @@ async function getPageBySlug(pathname, metaDataOnly) {
                         images {
                           altText
                           mediaItemUrl
+                          caption
                         }
                       }
                       ... on Page_Flexiblecontent_Sections_GatedContent {

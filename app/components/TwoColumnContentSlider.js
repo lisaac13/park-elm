@@ -99,10 +99,14 @@ const ImageContainer = styled.div`
 const BottomContainer = styled.div`
 	width: 100%;
 	position: relative;
-	padding: 2rem 4rem 0 4rem;
+	/* padding: 2rem 4rem 0 4rem; */
+	padding: 2rem 4rem 0 0;
+
+	display: flex;
 `;
 
 const NavigationContainer = styled.div`
+	flex: 1;
 	display: flex;
 	align-items: center;
 	gap: 3rem;
@@ -120,6 +124,14 @@ const NavigationContainer = styled.div`
 		}
 	}
 `;
+const Caption = styled.div`
+	font-family: var(--font-sans-serif);
+	color: var(--black);
+	font-weight: 500;
+	font-size: var(--body);
+	line-height: 1.5;
+	flex: 1;
+`;
 
 export const TwoColumnContentSliderQueryFragment = `
     ... on Page_Flexiblecontent_Sections_TwoColumnContentSlider {
@@ -132,6 +144,7 @@ export const TwoColumnContentSliderQueryFragment = `
           images {
            	altText
             mediaItemUrl
+			caption
 		  }
         }
 `;
@@ -148,7 +161,9 @@ export default function TwoColumnContentSlider(props) {
 
 	slider?.current?.on("change", function () {
 		setActiveIndex(slider.current.selectedIndex);
+		console.log(slider.current.selectedIndex);
 	});
+
 	return (
 		<TwoColumnContentSliderSection>
 			{anchor && <a id={anchor} className="anchor" name={anchor}></a>}
@@ -170,6 +185,13 @@ export default function TwoColumnContentSlider(props) {
 							selectedAttraction: 0.01,
 							friction: 0.2,
 							initialIndex: 1,
+							on: {
+								change: function () {
+									setActiveIndex(
+										slider.current.selectedIndex
+									);
+								},
+							},
 						}}
 						disableImagesLoaded={false} // default false
 						reloadOnUpdate={false} // default false
@@ -191,6 +213,11 @@ export default function TwoColumnContentSlider(props) {
 						))}
 					</Flickity>
 					<BottomContainer>
+						<Caption
+							dangerouslySetInnerHTML={{
+								__html: images[activeIndex].caption,
+							}}
+						/>
 						<NavigationContainer>
 							<Image
 								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/Left-Arrow-1.svg"
