@@ -103,6 +103,11 @@ const BottomContainer = styled.div`
 	padding: 2rem 4rem 0 0;
 
 	display: flex;
+
+	@media only screen and (max-width: 550px) {
+		flex-direction: column;
+		gap: 1.5rem;
+	}
 `;
 
 const NavigationContainer = styled.div`
