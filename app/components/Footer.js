@@ -7,6 +7,18 @@ import Image from "next/image";
 const StyledFooter = styled.footer`
 	width: 100%;
 	background: var(--rose);
+
+	& .telLink,
+	& .emailLink {
+		display: block;
+		color: var(--pearl);
+		font-family: var(--font-sans-serif);
+		font-size: var(--cta);
+		font-weight: 400;
+	}
+	& .telLink {
+		padding: 1.5rem 0 0.5rem 0;
+	}
 `;
 
 const InnerContainer = styled.div`
@@ -19,6 +31,7 @@ const InnerContainer = styled.div`
 
 	@media only screen and (max-width: 600px) {
 		padding: 4rem 2rem;
+		flex-direction: column;
 	}
 `;
 
@@ -106,6 +119,10 @@ const FooterLinks = styled.ul`
 	@media only screen and (max-width: 515px) {
 		& li.xsmobile {
 			display: block;
+			padding: 0rem 0 2rem 0;
+		}
+		& li.xsmobile .telLink {
+			padding: 0.5rem 0 0.5rem 0;
 		}
 		& li.xsmobile address {
 			font-family: var(--font-serif-med-italic);
@@ -264,6 +281,8 @@ export default function Footer() {
 							<br />
 							Los Angeles, CA 90067
 						</address>
+						<Link href="tel:+13109221124" className="telLink">310.922.1124</Link>
+						<Link href="mailto:info@parkelmcenturyplaza.com" className="emailLink">info@parkelmcenturyplaza.com</Link>
 					</MobileAddress>
 				</ImageContainer>
 				<Address>
@@ -272,6 +291,8 @@ export default function Footer() {
 						<br />
 						Los Angeles, CA 90067
 					</address>
+					<Link href="tel:+13109221124" className="telLink">310.922.1124</Link>
+					<Link href="mailto:info@parkelmcenturyplaza.com" className="emailLink">info@parkelmcenturyplaza.com</Link>
 				</Address>
 				<FooterLinks>
 					<li className="xsmobile">
@@ -280,6 +301,8 @@ export default function Footer() {
 							<br />
 							Los Angeles, CA 90067
 						</address>
+						<Link href="tel:+13109221124" className="telLink">310.922.1124</Link>
+						<Link href="mailto:info@parkelmcenturyplaza.com" className="emailLink">info@parkelmcenturyplaza.com</Link>
 					</li>
 					<li>
 						<Link href="/#residences">Residences</Link>
