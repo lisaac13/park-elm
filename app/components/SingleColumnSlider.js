@@ -130,10 +130,7 @@ export default function SingleColumnSlider(props) {
 							pageDots: false,
 							prevNextButtons: false,
 							draggable: true,
-							wrapAround: true,
-							selectedAttraction: 0.01,
-							initialIndex: 1,
-							friction: 0.2,
+							wrapAround: true
 						}}
 						disableImagesLoaded={false} // default false
 						reloadOnUpdate={false} // default false

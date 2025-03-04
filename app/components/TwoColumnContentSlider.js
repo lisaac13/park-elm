@@ -156,17 +156,17 @@ export const TwoColumnContentSliderQueryFragment = `
 
 export default function TwoColumnContentSlider(props) {
 	const { anchor, content, title, subtitle, images } = props;
-	const slider = useRef(null);
+	const twocolslider = useRef(null);
 	const [activeIndex, setActiveIndex] = useState(0);
 
 	function changeSlider(index) {
 		setActiveIndex(index);
-		slider.current.select(index);
+		twocolslider.current.select(index);
 	}
 
-	slider?.current?.on("change", function () {
-		setActiveIndex(slider.current.selectedIndex);
-		console.log(slider.current.selectedIndex);
+	twocolslider?.current?.on("change", function () {
+		setActiveIndex(twocolslider.current.selectedIndex);
+		console.log(twocolslider.current.selectedIndex);
 	});
 
 	return (
@@ -193,7 +193,7 @@ export default function TwoColumnContentSlider(props) {
 							on: {
 								change: function () {
 									setActiveIndex(
-										slider.current.selectedIndex
+										twocolslider.current.selectedIndex
 									);
 								},
 							},
@@ -202,7 +202,7 @@ export default function TwoColumnContentSlider(props) {
 						reloadOnUpdate={false} // default false
 						static // default false
 						flickityRef={(c) => {
-							slider.current = c;
+							twocolslider.current = c;
 						}}>
 						{images.map((image, index) => (
 							<div key={`carousel-${index}`}>
@@ -229,7 +229,7 @@ export default function TwoColumnContentSlider(props) {
 								alt="left arrow"
 								width={24}
 								height={11}
-								onClick={() => slider.current.previous()}
+								onClick={() => twocolslider.current.previous()}
 							/>
 
 							<Image
@@ -237,7 +237,7 @@ export default function TwoColumnContentSlider(props) {
 								alt="right arrow"
 								width={24}
 								height={11}
-								onClick={() => slider.current.next()}
+								onClick={() => twocolslider.current.next()}
 							/>
 						</NavigationContainer>
 					</BottomContainer>
