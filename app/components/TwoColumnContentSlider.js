@@ -164,11 +164,6 @@ export default function TwoColumnContentSlider(props) {
 		twocolslider.current.select(index);
 	}
 
-	twocolslider?.current?.on("change", function () {
-		setActiveIndex(twocolslider.current.selectedIndex);
-		console.log(twocolslider.current.selectedIndex);
-	});
-
 	return (
 		<TwoColumnContentSliderSection>
 			{anchor && <a id={anchor} className="anchor" name={anchor}></a>}
@@ -187,16 +182,7 @@ export default function TwoColumnContentSlider(props) {
 							prevNextButtons: false,
 							draggable: true,
 							wrapAround: true,
-							selectedAttraction: 0.01,
-							friction: 0.2,
-							initialIndex: 1,
-							on: {
-								change: function () {
-									setActiveIndex(
-										twocolslider.current.selectedIndex
-									);
-								},
-							},
+							initialIndex: 1
 						}}
 						disableImagesLoaded={false} // default false
 						reloadOnUpdate={false} // default false
