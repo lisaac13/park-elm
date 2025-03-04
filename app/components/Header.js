@@ -609,7 +609,7 @@ export default function Header() {
 							</li>
 							<li>
 								<address>
-									2025 Avenue of the Stars
+									211 Elm Court
 									<br />
 									Los Angeles, CA 90067
 								</address>

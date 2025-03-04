@@ -260,7 +260,7 @@ export default function Footer() {
 					</Link>
 					<MobileAddress>
 						<address>
-							2025 Avenue of the Stars
+							211 Elm Court
 							<br />
 							Los Angeles, CA 90067
 						</address>
@@ -268,7 +268,7 @@ export default function Footer() {
 				</ImageContainer>
 				<Address>
 					<address>
-						2025 Avenue of the Stars
+						211 Elm Court
 						<br />
 						Los Angeles, CA 90067
 					</address>
@@ -276,7 +276,7 @@ export default function Footer() {
 				<FooterLinks>
 					<li className="xsmobile">
 						<address>
-							2025 Avenue of the Stars
+							211 Elm Court
 							<br />
 							Los Angeles, CA 90067
 						</address>
