@@ -281,8 +281,14 @@ export default function Footer() {
 							<br />
 							Los Angeles, CA 90067
 						</address>
-						<Link href="tel:+13109221124" className="telLink">310.922.1124</Link>
-						<Link href="mailto:info@parkelmcenturyplaza.com" className="emailLink">info@parkelmcenturyplaza.com</Link>
+						<Link href="tel:+13109221124" className="telLink">
+							310.922.1124
+						</Link>
+						<Link
+							href="mailto:hello@parkelmcenturyplaza.com"
+							className="emailLink">
+							hello@parkelmcenturyplaza.com
+						</Link>
 					</MobileAddress>
 				</ImageContainer>
 				<Address>
@@ -291,8 +297,14 @@ export default function Footer() {
 						<br />
 						Los Angeles, CA 90067
 					</address>
-					<Link href="tel:+13109221124" className="telLink">310.922.1124</Link>
-					<Link href="mailto:info@parkelmcenturyplaza.com" className="emailLink">info@parkelmcenturyplaza.com</Link>
+					<Link href="tel:+13109221124" className="telLink">
+						310.922.1124
+					</Link>
+					<Link
+						href="mailto:hello@parkelmcenturyplaza.com"
+						className="emailLink">
+						hello@parkelmcenturyplaza.com
+					</Link>
 				</Address>
 				<FooterLinks>
 					<li className="xsmobile">
@@ -301,8 +313,14 @@ export default function Footer() {
 							<br />
 							Los Angeles, CA 90067
 						</address>
-						<Link href="tel:+13109221124" className="telLink">310.922.1124</Link>
-						<Link href="mailto:info@parkelmcenturyplaza.com" className="emailLink">Contact Us</Link>
+						<Link href="tel:+13109221124" className="telLink">
+							310.922.1124
+						</Link>
+						<Link
+							href="mailto:hello@parkelmcenturyplaza.com"
+							className="emailLink">
+							Contact Us
+						</Link>
 					</li>
 					<li>
 						<Link href="/#residences">Residences</Link>
