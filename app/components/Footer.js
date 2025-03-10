@@ -285,9 +285,9 @@ export default function Footer() {
 							310.922.1124
 						</Link>
 						<Link
-							href="mailto:hello@parkelmcenturyplaza.com"
+							href="mailto:info@parkelmcenturyplaza.com"
 							className="emailLink">
-							hello@parkelmcenturyplaza.com
+							info@parkelmcenturyplaza.com
 						</Link>
 					</MobileAddress>
 				</ImageContainer>
@@ -301,9 +301,9 @@ export default function Footer() {
 						310.922.1124
 					</Link>
 					<Link
-						href="mailto:hello@parkelmcenturyplaza.com"
+						href="mailto:info@parkelmcenturyplaza.com"
 						className="emailLink">
-						hello@parkelmcenturyplaza.com
+						info@parkelmcenturyplaza.com
 					</Link>
 				</Address>
 				<FooterLinks>
@@ -317,7 +317,7 @@ export default function Footer() {
 							310.922.1124
 						</Link>
 						<Link
-							href="mailto:hello@parkelmcenturyplaza.com"
+							href="mailto:info@parkelmcenturyplaza.com"
 							className="emailLink">
 							Contact Us
 						</Link>
