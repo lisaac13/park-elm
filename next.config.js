@@ -8,10 +8,10 @@ const nextConfig = {
 		styledComponents: true,
 	},
 	images: {
-		domains: ["parkelmcms.wpenginepowered.com"],
+		domains: ["cms.parkelmcenturyplaza.com"],
 	},
 	env: {
-		API_URL: "https://parkelmcms.wpenginepowered.com/graphql",
+		API_URL: "https://cms.parkelmcenturyplaza.com/graphql",
 		NEXT_RECAPTCHA_SITE_KEY: "6Le6NiIpAAAAAEjImqTyZkxGdTnrwbu-LW2olv2-",
 		NEXT_RECAPTCHA_SECRET_KEY: "6Le6NiIpAAAAAMc4TflVzFoDDRM_okciOKo6-uJL",
 	},
