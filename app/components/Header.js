@@ -443,7 +443,7 @@ const MobileImageContainer = styled.div`
 	background-position: center center;
 
 	&.default {
-		background-image: url("https://parkelmcms.wpenginepowered.com/wp-content/uploads/2024/01/park-elm-at-century-plaza-open-graph-image.jpg");
+		background-image: url("https://cms.parkelmcenturyplaza.com/wp-content/uploads/2024/01/park-elm-at-century-plaza-open-graph-image.jpg");
 	}
 
 	@media only screen and (max-width: 820px) {
@@ -515,7 +515,7 @@ export default function Header() {
 						href="tel:3109221124"
 						className={`telIconWhite ${navIsOpen ? "open" : ""}`}>
 						<Image
-							src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/ic_baseline-phone.svg"
+							src="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2023/10/ic_baseline-phone.svg"
 							alt="telephone icon"
 							width={24}
 							height={24}
@@ -525,7 +525,7 @@ export default function Header() {
 						href="tel:3109221124"
 						className={`telIconGold ${navIsOpen ? "open" : ""}`}>
 						<Image
-							src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/ic_baseline-phone-1.svg"
+							src="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2023/10/ic_baseline-phone-1.svg"
 							alt="telephone icon"
 							width={24}
 							height={24}
@@ -536,7 +536,7 @@ export default function Header() {
 					<Link href="/">
 						<Image
 							className={`parkElmLogo ${navIsOpen ? "open" : ""}`}
-							src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2024/06/park-elm-updated-logo-white.svg"
+							src="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2024/06/park-elm-updated-logo-white.svg"
 							width={223}
 							height={73}
 							alt="Park Elm at Century Plaza"
@@ -544,7 +544,7 @@ export default function Header() {
 
 						<Image
 							className={`parkElmIcon ${navIsOpen ? "open" : ""}`}
-							src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/PE_Icon_GLD.svg"
+							src="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2023/10/PE_Icon_GLD.svg"
 							width={24}
 							height={27}
 							alt="Park Elm at Century Plaza Palm Tree Icon"
@@ -600,7 +600,7 @@ export default function Header() {
 									target="_blank"
 									href="https://www.instagram.com/parkelmcenturyplaza/">
 									<Image
-										src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2024/01/instagram-rose.svg"
+										src="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2024/01/instagram-rose.svg"
 										alt="instagram icon"
 										width={24}
 										height={24}
@@ -619,7 +619,7 @@ export default function Header() {
 									href="tel:+13109221124"
 									className="mobiletel">
 									<Image
-										src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2024/01/telephone-rose.svg"
+										src="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2024/01/telephone-rose.svg"
 										alt="telephone icon"
 										width={24}
 										height={24}
