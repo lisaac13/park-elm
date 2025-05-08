@@ -269,7 +269,7 @@ export default function Footer() {
 				<ImageContainer>
 					<Link href="/">
 						<Image
-							src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2024/06/PE_LogoIcon_GLD_white.svg"
+							src="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2024/06/PE_LogoIcon_GLD_white.svg"
 							width={209}
 							height={118}
 							alt="Park Elm at Century Park Logo with Palm Icon"
@@ -353,7 +353,7 @@ export default function Footer() {
 							target="_blank"
 							href="https://www.instagram.com/parkelmcenturyplaza/">
 							<Image
-								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/instagram.svg"
+								src="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2023/10/instagram.svg"
 								alt="instagram icon"
 								width={24}
 								height={24}
@@ -375,7 +375,7 @@ export default function Footer() {
 						target="_blank"
 						href="https://www.instagram.com/parkelmcenturyplaza/">
 						<Image
-							src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/instagram.svg"
+							src="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2023/10/instagram.svg"
 							alt="instagram icon"
 							width={24}
 							height={24}
@@ -405,7 +405,7 @@ export default function Footer() {
 							ESTATE BROKERS. WE COOPERATE WITH THEM FULLY. EQUAL
 							HOUSING OPPORTUNITY. DRE #: 01309146 &nbsp;
 							<Image
-								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/equal-housing-opportunity-black-copy-1.svg"
+								src="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2023/10/equal-housing-opportunity-black-copy-1.svg"
 								alt="equal housing opportunity logo"
 								width={16}
 								height={17}
@@ -436,7 +436,7 @@ export default function Footer() {
 					<DeveloperContainer>
 						{/* <li>
 							<Image
-								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/equal-housing-opportunity-black-copy-1.svg"
+								src="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2023/10/equal-housing-opportunity-black-copy-1.svg"
 								alt="equal housing opportunity logo"
 								width={30}
 								height={31}
@@ -445,7 +445,7 @@ export default function Footer() {
 						</li> */}
 						<li>
 							<Image
-								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/equal-housing-opportunity-black-copy-1.svg"
+								src="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2023/10/equal-housing-opportunity-black-copy-1.svg"
 								alt="equal housing opportunity logo"
 								width={30}
 								height={31}
@@ -454,7 +454,7 @@ export default function Footer() {
 						</li>
 						<li>
 							<Image
-								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2024/06/Douglas_Elliman_Logo_white.png"
+								src="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2024/06/Douglas_Elliman_Logo_white.png"
 								alt="douglas elliman logo"
 								width={150}
 								height={25}
@@ -463,7 +463,7 @@ export default function Footer() {
 						</li>
 						<li>
 							<Image
-								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/reuben-brothers-logo.svg"
+								src="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2023/10/reuben-brothers-logo.svg"
 								alt="reuben brothers logo"
 								width={150}
 								height={25}
