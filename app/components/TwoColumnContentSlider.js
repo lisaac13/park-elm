@@ -211,7 +211,7 @@ export default function TwoColumnContentSlider(props) {
 						/>
 						<NavigationContainer>
 							<Image
-								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/Left-Arrow-1.svg"
+								src="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2023/10/Left-Arrow-1.svg"
 								alt="left arrow"
 								width={24}
 								height={11}
@@ -219,7 +219,7 @@ export default function TwoColumnContentSlider(props) {
 							/>
 
 							<Image
-								src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/Right-Arrow-1.svg"
+								src="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2023/10/Right-Arrow-1.svg"
 								alt="right arrow"
 								width={24}
 								height={11}
