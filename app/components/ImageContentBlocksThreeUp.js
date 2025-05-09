@@ -217,7 +217,7 @@ export default function ImageContentBlocksThreeUp(props) {
 											<h4>{contentBlock.title}</h4>
 											<Image
 												className="icon"
-												src="https://originlasvegas.wpengine.com/wp-content/uploads/2023/09/pdficon.svg"
+												src="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2025/05/pdficon_converted.png"
 												alt="pdf icon"
 												width={21}
 												height={27}
@@ -246,7 +246,7 @@ export default function ImageContentBlocksThreeUp(props) {
 											<h4>{contentBlock.title}</h4>
 											<Image
 												className="icon"
-												src="https://originlasvegas.wpengine.com/wp-content/uploads/2023/09/angledArrow.svg"
+												src="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2025/05/angledArrow_converted.png"
 												alt="angled arrow icon"
 												width={16}
 												height={16}
