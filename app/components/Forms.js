@@ -269,7 +269,7 @@ export default function Forms(props) {
 			{anchor && <a id={anchor} className="anchor"></a>}
 			<ContentContainer>
 				<Image
-					src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/PE_Icon_GLD.svg"
+					src="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2023/10/PE_Icon_GLD.svg"
 					width="42"
 					height="66"
 					alt="Park Elm Logo"
