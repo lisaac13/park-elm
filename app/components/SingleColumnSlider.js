@@ -156,7 +156,7 @@ export default function SingleColumnSlider(props) {
 				<BottomContainer>
 					<NavigationContainer>
 						<Image
-							src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/Left-Arrow.svg"
+							src="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2023/10/Left-Arrow.svg"
 							alt="left arrow"
 							width={24}
 							height={11}
@@ -164,7 +164,7 @@ export default function SingleColumnSlider(props) {
 						/>
 
 						<Image
-							src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/Right-Arrow.svg"
+							src="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2023/10/Right-Arrow.svg"
 							alt="right arrow"
 							width={24}
 							height={11}
