@@ -212,7 +212,7 @@ export default function GatedContent(props) {
 		<GatedSection>
 			<GatedForm className="hideGate">
 				<Image
-					src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/PE_LogoIcon_GLD_white.svg"
+					src="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2023/10/PE_LogoIcon_GLD_white.svg"
 					alt="park elm logo"
 					className="ParkElmLogo"
 					width={350}
