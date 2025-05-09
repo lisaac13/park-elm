@@ -515,7 +515,7 @@ export default function Availability(props) {
 													onClick={toggleClass}
 													class="closeBtn">
 													<Image
-														src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/12/Close-Icon.svg"
+														src="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2023/12/Close-Icon.svg"
 														width={36}
 														height={35}
 														alt="close icon"
