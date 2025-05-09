@@ -128,7 +128,7 @@ function DigitalBrochure() {
 					data-title="">
 					<Image
 						src={
-							"https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/edit_0004_Brochure.jpg"
+							"https://cms.parkelmcenturyplaza.com/wp-content/uploads/2023/10/edit_0004_Brochure.jpg"
 						}
 						alt="tower"
 						width={700}
@@ -138,7 +138,7 @@ function DigitalBrochure() {
 						<h4>Brochure</h4>
 						<Image
 							className="icon"
-							src="https://parkelmcms.wpenginepowered.com/wp-content/uploads/2023/10/iconoir_arrow-tr-2.svg"
+							src="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2023/10/iconoir_arrow-tr-2.svg"
 							alt="pdf icon"
 							width={21}
 							height={27}
