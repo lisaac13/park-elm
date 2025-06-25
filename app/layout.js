@@ -105,7 +105,14 @@ export default function RootLayout({ children }) {
 			</Head>
 			<StyledComponentsRegistry>
 				<body data-page={pathname}>
-					<Script id="clickcease">
+					<Script
+ 		 src="https://www.google.com/recaptcha/api.js"
+  			strategy="afterInteractive"
+  				async
+  				defer
+				/>
+
+						<Script id="clickcease">
 						{`var script = document.createElement('script');
       			script.async = true; script.type = 'text/javascript';
       			var target = 'https://www.clickcease.com/monitor/stat.js';
