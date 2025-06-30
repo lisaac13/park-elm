@@ -401,7 +401,7 @@ export default function Forms(props) {
 							placeholder="Write Message Here"></StyledTextArea>
 </FieldGroup>
 <ReCAPTCHA
-						sitekey={process.env.NEXT_RECAPTCHA_SITE_KEY}
+						sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
 						onChange={setVerifyToken}
 					/>
 <SubmitButton type="submit" name="submit" value="Submit" />
