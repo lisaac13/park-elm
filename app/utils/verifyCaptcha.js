@@ -1,16 +1,10 @@
-"use server";
-
-export const verifyCaptcha = async (verifyToken) => {
-  console.log("🔍 Token received for verification:", verifyToken); // <-- Add this
-  const res = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+export const verifyCaptcha = async (token) => {
+  const res = await fetch("/api/verify-captcha", {
     method: "POST",
-    body: `secret=${process.env.NEXT_RECAPTCHA_SECRET_KEY}&response=${verifyToken}`,
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ token }),
   });
 
-  const data = await res.json();
-  console.log("📩 reCAPTCHA verification result:", data); // <-- Add this
-  return data;
+  return await res.json(); // { success: true } expected
 };
+
