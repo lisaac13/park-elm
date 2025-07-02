@@ -5,7 +5,15 @@ import { useEffect, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import styled from "styled-components";
 import { useSearchParams } from "next/navigation";
-import { verifyCaptcha } from "../utils/verifyCaptcha";
+const verifyCaptcha = async (token) => {
+  const res = await fetch("/api/verify-captcha", {
+    method: "POST",
+    body: JSON.stringify({ token }),
+  });
+
+  return await res.json();
+};
+
 const FormSection = styled.section`
 	background-color: var(--sky);
 	padding: 6rem 0;
