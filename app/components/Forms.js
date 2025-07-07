@@ -257,15 +257,21 @@ export default function Forms(props) {
 			return;
 		}
 
-		const res = await fetch("https://hooks.zapier.com/hooks/catch/2001353/3s3a7jh/", {
-			method: "POST",
-			body: JSON.stringify(formState),
-		});
+		const res = await fetch(
+			"https://hooks.zapier.com/hooks/catch/2001353/3s3a7jh/",
+			{
+				method: "POST",
+				body: JSON.stringify(formState),
+			}
+		);
 
-		const resNew = await fetch("https://hooks.zapier.com/hooks/catch/16106562/3z3axds/", {
-			method: "POST",
-			body: JSON.stringify(formState),
-		});
+		const resNew = await fetch(
+			"https://hooks.zapier.com/hooks/catch/16106562/3z3axds/",
+			{
+				method: "POST",
+				body: JSON.stringify(formState),
+			}
+		);
 
 		handleResponse(res);
 	};
@@ -294,57 +300,131 @@ export default function Forms(props) {
 			<FormContainer>
 				<Form onSubmit={handleSubmit}>
 					<FieldGroup>
-						<StyledLabel htmlFor="firstName">First Name <span>*</span></StyledLabel>
-						<StyledInput id="firstName" type="text" name="firstName" placeholder="First Name" onChange={handleChange} required />
+						<StyledLabel htmlFor="firstName">
+							First Name <span>*</span>
+						</StyledLabel>
+						<StyledInput
+							id="firstName"
+							type="text"
+							name="firstName"
+							placeholder="First Name"
+							onChange={handleChange}
+							required
+						/>
 					</FieldGroup>
 
 					<FieldGroup>
-						<StyledLabel htmlFor="lastName">Last Name <span>*</span></StyledLabel>
-						<StyledInput id="lastName" type="text" name="lastName" placeholder="Last Name" onChange={handleChange} required />
+						<StyledLabel htmlFor="lastName">
+							Last Name <span>*</span>
+						</StyledLabel>
+						<StyledInput
+							id="lastName"
+							type="text"
+							name="lastName"
+							placeholder="Last Name"
+							onChange={handleChange}
+							required
+						/>
 					</FieldGroup>
 
 					<FieldGroup>
-						<StyledLabel htmlFor="email">Email <span>*</span></StyledLabel>
-						<StyledInput id="email" type="email" name="email" placeholder="johndoe@email.com" onChange={handleChange} required />
+						<StyledLabel htmlFor="email">
+							Email <span>*</span>
+						</StyledLabel>
+						<StyledInput
+							id="email"
+							type="email"
+							name="email"
+							placeholder="johndoe@email.com"
+							onChange={handleChange}
+							required
+						/>
 					</FieldGroup>
 
 					<FieldGroup>
-						<StyledLabel htmlFor="phone">Phone Number <span>*</span></StyledLabel>
-						<StyledInput id="phone" type="text" name="phone" placeholder="### ### ####" onChange={handleChange} required />
+						<StyledLabel htmlFor="phone">
+							Phone Number <span>*</span>
+						</StyledLabel>
+						<StyledInput
+							id="phone"
+							type="text"
+							name="phone"
+							placeholder="### ### ####"
+							onChange={handleChange}
+							required
+						/>
 					</FieldGroup>
 
 					<FieldGroup>
-						<StyledLabel htmlFor="desiredPricing">Desired Pricing <span>*</span></StyledLabel>
-						<StyledSelect id="desiredPricing" name="desiredPricing" onChange={handleChange} required>
+						<StyledLabel htmlFor="desiredPricing">
+							Desired Pricing <span>*</span>
+						</StyledLabel>
+						<StyledSelect
+							id="desiredPricing"
+							name="desiredPricing"
+							onChange={handleChange}
+							required>
 							<option value="">Select Desired Pricing</option>
-							<option value="One Bedrooms">One bedrooms from $1.8M</option>
-							<option value="Two Bedrooms">Two bedrooms from $2.9M</option>
-							<option value="Three Bedrooms">Three bedrooms from $7.7M</option>
-							<option value="Penthouses">Penthouses (pricing upon request)</option>
+							<option value="One Bedrooms">
+								One bedrooms from $1.8M
+							</option>
+							<option value="Two Bedrooms">
+								Two bedrooms from $2.9M
+							</option>
+							<option value="Three Bedrooms">
+								Three bedrooms from $7.7M
+							</option>
+							<option value="Penthouses">
+								Penthouses (pricing upon request)
+							</option>
 						</StyledSelect>
 					</FieldGroup>
 
 					<FieldGroup>
-						<StyledLabel>Are You a Broker?<span>*</span></StyledLabel>
+						<StyledLabel>
+							Are You a Broker?<span>*</span>
+						</StyledLabel>
 						<MainRadioContainer>
 							<RadioContainer>
-								<RadioField id="broker" type="radio" name="broker" value="yes" />
-								<StyledRadioLabel htmlFor="broker">Yes</StyledRadioLabel>
+								<RadioField
+									id="broker"
+									type="radio"
+									name="broker"
+									value="yes"
+								/>
+								<StyledRadioLabel htmlFor="broker">
+									Yes
+								</StyledRadioLabel>
 							</RadioContainer>
 							<RadioContainer>
-								<RadioField id="notbroker" type="radio" name="broker" value="no" />
-								<StyledRadioLabel htmlFor="notbroker">No</StyledRadioLabel>
+								<RadioField
+									id="notbroker"
+									type="radio"
+									name="broker"
+									value="no"
+								/>
+								<StyledRadioLabel htmlFor="notbroker">
+									No
+								</StyledRadioLabel>
 							</RadioContainer>
 						</MainRadioContainer>
 					</FieldGroup>
 
 					<FieldGroup $span="2">
-						<StyledLabel htmlFor="message">Your Inquiry <span>*</span></StyledLabel>
-						<StyledTextArea id="message" name="message" onChange={handleChange} placeholder="Write Message Here" required />
+						<StyledLabel htmlFor="message">
+							Your Inquiry <span>*</span>
+						</StyledLabel>
+						<StyledTextArea
+							id="message"
+							name="message"
+							onChange={handleChange}
+							placeholder="Write Message Here"
+							required
+						/>
 					</FieldGroup>
 
 					<ReCAPTCHA
-						sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+						sitekey={process.env.NEXT_RECAPTCHA_SITE_KEY}
 						onChange={(token) => {
 							console.log("✅ reCAPTCHA token:", token);
 							setVerifyToken(token);
