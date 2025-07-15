@@ -3,6 +3,7 @@ import prase from "html-react-parser";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import Script from "next/script";
 import styled from "styled-components";
 import { useSearchParams } from "next/navigation";
 import { verifyCaptcha } from "../utils/verifyCaptcha";
@@ -167,7 +168,7 @@ const StyledTextArea = styled.textarea`
 	}
 `;
 
-const SubmitButton = styled.input`
+const SubmitButton = styled.button`
 	width: fit-content;
 	width: -webkit-fit-content;
 	max-height: 74px;
@@ -238,14 +239,14 @@ export default function Forms(props) {
 		}
 	}, [searchParams]);
 
-	const handleChange = (e) => {
-		e.preventDefault();
-		setFormState({
-			...formState,
-			[e.target.name]: e.target.value,
-			date: new Date().toLocaleString(),
-		});
-	};
+	// const handleChange = (e) => {
+	// 	e.preventDefault();
+	// 	setFormState({
+	// 		...formState,
+	// 		[e.target.name]: e.target.value,
+	// 		date: new Date().toLocaleString(),
+	// 	});
+	// };
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -265,13 +266,13 @@ export default function Forms(props) {
 			}
 		);
 
-		const resNew = await fetch(
-			"https://hooks.zapier.com/hooks/catch/16106562/3z3axds/",
-			{
-				method: "POST",
-				body: JSON.stringify(formState),
-			}
-		);
+		// const resNew = await fetch(
+		// 	"https://hooks.zapier.com/hooks/catch/16106562/3z3axds/",
+		// 	{
+		// 		method: "POST",
+		// 		body: JSON.stringify(formState),
+		// 	}
+		// );
 
 		handleResponse(res);
 	};
@@ -280,6 +281,63 @@ export default function Forms(props) {
 		if (res.status === 200) setSuccess(true);
 		window.location.href = "/thank-you";
 	};
+
+	// rewrite the script above into a useEffect hook
+	useEffect(() => {
+		const form = document.getElementById("spark-registration-form");
+		const siteKey = process.env.NEXT_RECAPTCHA_NEW_SITE_KEY;
+
+		// Hide spam trap
+		document.getElementById("are_you_simulated").style.display = "none";
+
+		form.addEventListener("submit", (e) => {
+			e.preventDefault();
+
+			let missing = "";
+			const requiredFields = document.querySelectorAll(
+				"input:required, textarea:required, select:required"
+			);
+
+			requiredFields.forEach((field) => {
+				if (!field.value.trim()) {
+					missing += `- ${
+						field.placeholder || field.name
+					} is required\n`;
+				}
+			});
+
+			// Validate email format
+			const email = document.getElementById("contact_email").value.trim();
+			const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			if (email && !emailRegex.test(email)) {
+				missing += "- Email is invalid\n";
+			}
+
+			if (missing !== "") {
+				alert("Please correct the following:\n" + missing);
+				return;
+			}
+
+			// Disable the button to prevent duplicate submissions
+			const button = document.getElementById("gform_submit_button_1");
+			button.disabled = true;
+
+			grecaptcha.ready(function () {
+				grecaptcha
+					.execute(siteKey, { action: "registration" })
+					.then(function (token) {
+						document.getElementById("g-recaptcha-response").value =
+							token;
+						form.submit();
+					});
+			});
+
+			// Re-enable button after 3 seconds in case something fails
+			setTimeout(() => {
+				button.disabled = false;
+			}, 3000);
+		});
+	}, []);
 
 	return (
 		<FormSection>
@@ -294,11 +352,18 @@ export default function Forms(props) {
 				<div>
 					<Title>{prase(title)}</Title>
 					<Content>{content}</Content>
+					<Content style={{ marginTop: "1rem" }}>
+						* indicates a required field
+					</Content>
 				</div>
 			</ContentContainer>
 
+			<Script
+				src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_RECAPTCHA_NEW_SITE_KEY}`}
+			/>
+
 			<FormContainer>
-				<Form onSubmit={handleSubmit}>
+				{/* <Form onSubmit={handleSubmit}>
 					<FieldGroup>
 						<StyledLabel htmlFor="firstName">
 							First Name <span>*</span>
@@ -432,6 +497,379 @@ export default function Forms(props) {
 					/>
 
 					<SubmitButton type="submit" name="submit" value="Submit" />
+				</Form> */}
+
+				<Form
+					id="spark-registration-form"
+					action="https://spark.re/douglas-elliman-development-marketing/park-elm/register/registration-form"
+					acceptCharset="UTF-8"
+					method="post">
+					{/* Hidden fields for UTM parameters */}
+					<div
+						style={{
+							visibility: "hidden",
+							height: 0,
+							overflow: "hidden",
+							position: "absolute",
+						}}>
+						<table className="responsive-table filterer resize-table">
+							<tbody>
+								<tr>
+									<td>
+										<table width="100%">
+											<tbody>
+												<tr>
+													<td className="custom-field-widget">
+														<div>
+															<label className="label-text">
+																GCLID
+															</label>
+															<input
+																maxLength="1000"
+																data-type="gclid"
+																data-other-options="false"
+																type="text"
+																id="contact[custom_fields_attributes][21455]_21455"
+																name="contact[custom_fields_attributes][21455][value]"
+															/>
+															<input
+																type="hidden"
+																name="contact[custom_fields_attributes][21455][template_id]"
+																value="21455"
+															/>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<table className="responsive-table filterer resize-table">
+							<tbody>
+								<tr>
+									<td>
+										<table width="100%">
+											<tbody>
+												<tr>
+													<td className="custom-field-widget">
+														<div>
+															<label className="label-text">
+																utm_source
+															</label>
+															<input
+																maxLength="1000"
+																className=""
+																data-type="utm_source"
+																data-other-options="false"
+																type="text"
+																id="contact[custom_fields_attributes][21450]_21450"
+																name="contact[custom_fields_attributes][21450][value]"
+															/>
+															<input
+																type="hidden"
+																name="contact[custom_fields_attributes][21450][template_id]"
+																value="21450"
+															/>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<table className="responsive-table filterer resize-table">
+							<tbody>
+								<tr>
+									<td>
+										<table width="100%">
+											<tbody>
+												<tr>
+													<td className="custom-field-widget">
+														<div>
+															<label className="label-text">
+																utm_campaign
+															</label>
+															<input
+																maxLength="1000"
+																className=""
+																data-type="utm_campaign"
+																data-other-options="false"
+																type="text"
+																id="contact[custom_fields_attributes][21452]_21452"
+																name="contact[custom_fields_attributes][21452][value]"
+															/>
+															<input
+																type="hidden"
+																name="contact[custom_fields_attributes][21452][template_id]"
+																value="21452"
+															/>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<table className="responsive-table filterer resize-table">
+							<tbody>
+								<tr>
+									<td>
+										<table width="100%">
+											<tbody>
+												<tr>
+													<td className="custom-field-widget">
+														<div>
+															<label className="label-text">
+																utm_medium
+															</label>
+															<input
+																maxLength="1000"
+																className=""
+																data-type="utm_medium"
+																data-other-options="false"
+																type="text"
+																id="contact[custom_fields_attributes][21451]_21451"
+																name="contact[custom_fields_attributes][21451][value]"
+															/>
+															<input
+																type="hidden"
+																name="contact[custom_fields_attributes][21451][template_id]"
+																value="21451"
+															/>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<table className="responsive-table filterer resize-table">
+							<tbody>
+								<tr>
+									<td>
+										<table width="100%">
+											<tbody>
+												<tr>
+													<td className="custom-field-widget">
+														<div>
+															<label className="label-text">
+																utm_term
+															</label>
+															<input
+																maxLength="1000"
+																className=""
+																data-type="utm_term"
+																data-other-options="false"
+																type="text"
+																id="contact[custom_fields_attributes][21453]_21453"
+																name="contact[custom_fields_attributes][21453][value]"
+															/>
+															<input
+																type="hidden"
+																name="contact[custom_fields_attributes][21453][template_id]"
+																value="21453"
+															/>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<table className="responsive-table filterer resize-table">
+							<tbody>
+								<tr>
+									<td>
+										<table width="100%">
+											<tbody>
+												<tr>
+													<td className="custom-field-widget">
+														<div>
+															<label className="label-text">
+																utm_content
+															</label>
+															<input
+																maxLength="1000"
+																className=""
+																data-type="utm_content"
+																data-other-options="false"
+																type="text"
+																id="contact[custom_fields_attributes][21454]_21454"
+																name="contact[custom_fields_attributes][21454][value]"
+															/>
+															<input
+																type="hidden"
+																name="contact[custom_fields_attributes][21454][template_id]"
+																value="21454"
+															/>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<FieldGroup>
+						<StyledLabel htmlFor="contact_first_name">
+							First Name <span>*</span>
+						</StyledLabel>
+						<StyledInput
+							required=""
+							type="text"
+							id="contact_first_name"
+							name="contact[first_name]"
+							placeholder="First Name *"
+						/>
+					</FieldGroup>
+
+					<FieldGroup>
+						<StyledLabel htmlFor="contact_last_name">
+							Last Name <span>*</span>
+						</StyledLabel>
+						<StyledInput
+							required=""
+							type="text"
+							id="contact_last_name"
+							name="contact[last_name]"
+							placeholder="Last Name *"
+						/>
+					</FieldGroup>
+
+					<FieldGroup>
+						<StyledLabel htmlFor="contact_phone">
+							Phone <span>*</span>
+						</StyledLabel>
+						<StyledInput
+							id="contact_phone"
+							name="contact[phone]"
+							required=""
+							type="tel"
+							placeholder="Phone *"
+						/>
+					</FieldGroup>
+
+					<FieldGroup>
+						<StyledLabel htmlFor="contact_email">
+							Email <span>*</span>
+						</StyledLabel>
+						<StyledInput
+							id="contact_email"
+							name="contact[email]"
+							required=""
+							type="email"
+							placeholder="Email *"
+						/>
+					</FieldGroup>
+
+					<FieldGroup className="answer">
+						<StyledLabel htmlFor="answers_23619">
+							Desired Pricing <span>*</span>
+						</StyledLabel>
+						<StyledSelect
+							name="answers[23619][answers]"
+							id="answers_23619">
+							<option value="">Desired Pricing</option>
+							<option value="ONE BEDROOMS FROM $1.8M">
+								ONE BEDROOMS FROM $1.8M
+							</option>
+							<option value="TWO BEDROOMS FROM $2.9M">
+								TWO BEDROOMS FROM $2.9M
+							</option>
+							<option value="THREE BEDROOMS FROM $7.7M">
+								THREE BEDROOMS FROM $7.7M
+							</option>
+							<option value="PENTHOUSES (PRICING UPON REQUEST)">
+								PENTHOUSES (PRICING UPON REQUEST)
+							</option>
+						</StyledSelect>
+					</FieldGroup>
+
+					<FieldGroup>
+						<StyledLabel htmlFor="agent">
+							Are You a Broker? <span>*</span>
+						</StyledLabel>
+						<StyledSelect name="agent" id="agent">
+							<option value="">Are You a Broker?</option>
+							<option value="false">No</option>
+							<option value="true">Yes</option>
+						</StyledSelect>
+					</FieldGroup>
+
+					<FieldGroup $span="2">
+						<StyledLabel htmlFor="contact_comments">
+							Your Inquiry
+						</StyledLabel>
+						<StyledTextArea
+							style={{ height: "96px" }}
+							type="textarea"
+							name="contact[comments]"
+							id="contact_comments"
+							placeholder="Write Your Inquiry Here"
+							rows="5"
+							data-enhance="false"
+						/>
+					</FieldGroup>
+
+					{/* <ReCAPTCHA
+						sitekey={process.env.NEXT_RECAPTCHA_SITE_KEY}
+						onChange={(token) => {
+							console.log("✅ reCAPTCHA token:", token);
+							setVerifyToken(token);
+						}}
+					/> */}
+
+					<SubmitButton
+						type="submit"
+						// className="gform_button button wpcf7-form-control wpcf7-submit"
+						id="gform_submit_button_1">
+						Submit
+						{/* <svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="32"
+							height="32"
+							viewBox="0 0 32 32">
+							<path d="M18.4 6l-1.68 1.75 6.72 7h-19.44v2.5h19.44l-6.72 7 1.68 1.75 9.6-10-9.6-10z"></path>
+						</svg> */}
+					</SubmitButton>
+
+					<input
+						type="hidden"
+						name="redirect_success"
+						id="redirect_success"
+						value="https://parkelmcenturyplaza.com/thank-you/"
+					/>
+					<input
+						type="hidden"
+						name="are_you_simulated"
+						id="are_you_simulated"
+						placeholder="Leave this field blank"
+						style={{ display: "none" }}
+					/>
+					<input
+						type="hidden"
+						name="g-recaptcha-response"
+						id="g-recaptcha-response"
+						className="g-recaptcha-response"
+					/>
 				</Form>
 			</FormContainer>
 		</FormSection>

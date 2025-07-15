@@ -15,6 +15,7 @@ const nextConfig = {
 		API_URL: "https://cms.parkelmcenturyplaza.com/graphql",
 		NEXT_RECAPTCHA_SITE_KEY: "6Ldd2HIrAAAAALGFeMoce7XlbWrl8Mag48gznPIh",
 		NEXT_RECAPTCHA_SECRET_KEY: "6Ldd2HIrAAAAAAIGHuInxmG-gkKVgexH55ASSx8l",
+		NEXT_RECAPTCHA_NEW_SITE_KEY: "6LeiT3UrAAAAACwCMY02rrWshbE3MqERaOreG4gD",
 	},
 };
 
