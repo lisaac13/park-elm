@@ -20,6 +20,7 @@ import TransitionContext from "@/lib/context/TransitionContext";
 import TrackingScripts from "@/app/components/TrackingScripts";
 import { TransitionProvider } from "@/lib/context/TransitionContext";
 import TransitionComponent from "@/app/components/Transition";
+import { GoogleTagManager } from "@next/third-parties/google";
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const Header = dynamic(() => import("@/app/components/Header"), {
@@ -97,6 +98,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
 			<Head>
+				<GoogleTagManager gtmId="GTM-KC7P4QQC" />
 				<meta
 					property="og:image"
 					content="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2024/01/park-elm-at-century-plaza-open-graph-image.jpg"
@@ -106,13 +108,13 @@ export default function RootLayout({ children }) {
 			<StyledComponentsRegistry>
 				<body data-page={pathname}>
 					<Script
- 		 src="https://www.google.com/recaptcha/api.js"
-  			strategy="afterInteractive"
-  				async
-  				defer
-				/>
+						src="https://www.google.com/recaptcha/api.js"
+						strategy="afterInteractive"
+						async
+						defer
+					/>
 
-						<Script id="clickcease">
+					<Script id="clickcease">
 						{`var script = document.createElement('script');
       			script.async = true; script.type = 'text/javascript';
       			var target = 'https://www.clickcease.com/monitor/stat.js';
