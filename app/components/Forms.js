@@ -339,6 +339,28 @@ export default function Forms(props) {
 		});
 	}, []);
 
+	// write useeffect hook to handle setting of the utm inputs fields to their respective values from the searchParams
+	useEffect(() => {
+		const utmFields = {
+			utm_source: searchParams.get("utm_source") || "",
+			utm_medium: searchParams.get("utm_medium") || "",
+			utm_campaign: searchParams.get("utm_campaign") || "",
+			utm_term: searchParams.get("utm_term") || "",
+			utm_content: searchParams.get("utm_content") || "",
+		};
+
+		Object.keys(utmFields).forEach((key) => {
+			// find the correct field by the data-type attribute
+			const field = document.querySelector(`input[data-type="${key}"]`);
+			if (field) {
+				field.value = utmFields[key];
+			}
+			// Log the setting of the field for debugging
+			// This can be removed in production
+			console.log("Setting field:", key, "to value:", utmFields[key]);
+		});
+	}, [searchParams]);
+
 	return (
 		<FormSection>
 			{anchor && <a id={anchor} className="anchor"></a>}
