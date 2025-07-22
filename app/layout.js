@@ -97,8 +97,8 @@ export default function RootLayout({ children }) {
 
 	return (
 		<html lang="en">
+			<GoogleTagManager gtmId="GTM-KC7P4QQC" />
 			<Head>
-				<GoogleTagManager gtmId="GTM-KC7P4QQC" />
 				<meta
 					property="og:image"
 					content="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2024/01/park-elm-at-century-plaza-open-graph-image.jpg"
