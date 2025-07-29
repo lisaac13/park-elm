@@ -103,6 +103,10 @@ export default function RootLayout({ children }) {
 					property="og:image"
 					content="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2024/01/park-elm-at-century-plaza-open-graph-image.jpg"
 				/>
+				<meta
+					name="google-site-verification"
+					content="UeCT3eTDL7XP2AfTW6-x_EJpjH0ikmNiIhunRaMpZuc"
+				/>
 				<TrackingScripts />
 			</Head>
 			<StyledComponentsRegistry>
