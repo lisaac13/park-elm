@@ -297,8 +297,8 @@ export default function Footer() {
 						<br />
 						Los Angeles, CA 90067
 					</address>
-					<Link href="tel:+13109221124" className="telLink">
-						310.922.1124
+					<Link href="tel:+13103406144" className="telLink">
+						310.340.6144
 					</Link>
 					<Link
 						href="mailto:info@parkelmcenturyplaza.com"
