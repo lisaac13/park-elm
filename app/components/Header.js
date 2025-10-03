@@ -507,29 +507,31 @@ export default function Header() {
 				</Link>
 				<LeftNavigation>
 					<Link
-						href="tel:3109221124"
+						href="tel:13103406144"
 						className={`telNumber ${navIsOpen ? "open" : ""}`}>
-						310.922.1124
+						310.340.6144
 					</Link>
 					<Link
-						href="tel:3109221124"
+						href="tel:13103406144"
 						className={`telIconWhite ${navIsOpen ? "open" : ""}`}>
-						<Image
+						310.340.6144
+						{/* <Image
 							src="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2023/10/ic_baseline-phone.svg"
 							alt="telephone icon"
 							width={24}
 							height={24}
-						/>
+						/> */}
 					</Link>
 					<Link
-						href="tel:3109221124"
+						href="tel:13103406144"
 						className={`telIconGold ${navIsOpen ? "open" : ""}`}>
-						<Image
+						310.340.6144
+						{/* <Image
 							src="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2023/10/ic_baseline-phone-1.svg"
 							alt="telephone icon"
 							width={24}
 							height={24}
-						/>
+						/> */}
 					</Link>
 				</LeftNavigation>
 				<ImageContainer>
