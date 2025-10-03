@@ -4,6 +4,8 @@ import styled from "styled-components";
 import Link from "next/link";
 import Image from "next/image";
 
+import SLogo from "../../public/SIR_Black.png";
+
 const StyledFooter = styled.footer`
 	width: 100%;
 	background: var(--rose);
@@ -238,7 +240,7 @@ const DeveloperContainer = styled.ul`
 		max-width: 55px;
 		height: auto;
 	}
-	& li .douglasEllimanLogo {
+	& li .sothebyLogo {
 		width: 100%;
 		max-width: 150px;
 		height: auto;
@@ -452,13 +454,23 @@ export default function Footer() {
 								className="equalHousiing"
 							/>
 						</li>
-						<li>
+						{/* <li>
 							<Image
 								src="https://cms.parkelmcenturyplaza.com/wp-content/uploads/2024/06/Douglas_Elliman_Logo_white.png"
 								alt="douglas elliman logo"
 								width={150}
 								height={25}
-								className="douglasEllimanLogo"
+								className="sothebyLogo"
+							/>
+						</li> */}
+						<li>
+							<Image
+								src={SLogo}
+								alt="Sotheby Logo"
+								width={150}
+								height={25}
+								className="sothebyLogo"
+								style={{ filter: "brightness(100)" }}
 							/>
 						</li>
 						<li>
